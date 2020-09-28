@@ -1,65 +1,61 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Init from '../components/index/Init'
+import Home from '../components/index/Home'
 
-export default function Home() {
+export default function Index() {
+  const [pressed, setPressed] = useState(false);
+  const [counter, setCounter] = useState(0)
+
+  useEffect(() => {
+    handleSpaceBarPress()
+  }, [])
+
+
+  function handleSpaceBarPress() {
+    let i = 0;
+
+    document.addEventListener('keydown', event => {
+      if (event.code === 'Space') {
+        i++;
+        setCounter(i)
+        console.log('i', i)
+        if (i > 30) {
+          setPressed(true)
+          console.log("***OK***")
+        }
+      }
+    })
+
+    document.addEventListener('keyup', event => {
+      if (event.code === 'Space') {
+        if (!pressed) {
+          i = 0;
+          setCounter(i)
+        }
+      }
+    })
+  }
+
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Jam</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossOrigin="anonymous"></link>
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      {
+        !pressed ?
+          <>
+            <Init counter={counter} />
+          </>
+          :
+          <>
+            <Home />
+          </>
+      }
+    </>
   )
 }
