@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
+
 import Init from '../components/index/Init'
 import Home from '../components/index/Home'
+import Nav from '../Layout/Nav'
+import Footer from '../Layout/Footer'
+import Features from '../components/index/Features'
 
 export default function Index() {
   const [pressed, setPressed] = useState(false);
@@ -53,7 +57,10 @@ export default function Index() {
           </>
           :
           <>
+            <Nav />
             <Home />
+            <Features />
+            <Footer />
           </>
       }
     </>
