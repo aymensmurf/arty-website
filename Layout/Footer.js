@@ -33,8 +33,8 @@ const Footer = () => {
                     </div>
 
                     <div style={{ display: 'flex' }}>
-                        <a href="#" style={{ marginRight: 40 }}>Privacy policy</a>
-                        <a href="#">Terms & conditions</a>
+                        <a href="/privacy-policy" style={{ marginRight: 40 }}>Privacy policy</a>
+                        <a href="/terms-and-conditions">Terms & conditions</a>
                     </div>
 
                     <p style={{ marginTop: 30 }}>© All rights reserved for JAM 2020</p>

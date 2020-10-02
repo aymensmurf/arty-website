@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Contact from '../components/widgets/Contact'
 
 const Nav = () => {
+    const [contact, setContact] = useState(false)
+    
     return (
         <>
             <nav style={{ position: 'fixed', width: '100%' }}>
@@ -9,7 +12,7 @@ const Nav = () => {
                         <a href="#">Features</a>
                         <a href="#">FAQ</a>
                         <a href="#">Download</a>
-                        <a href="#">Contact</a>
+                        <a onClick={() => setContact(true)}>Contact</a>
                     </div>
                     <div style={{ width: '33.33%', textAlign: 'center' }}>
                         <a href="/"><img src="/img/logo-black.svg" alt="Jam" /></a>
@@ -21,9 +24,12 @@ const Nav = () => {
                 </div>
             </nav>
 
+            <Contact show={contact} handleClose={() => setContact(false)} />
+
             <style jsx>{`
                 a {
                     margin-right: 40px;
+                    cursor: pointer;
                 }
             `}</style>
         </>

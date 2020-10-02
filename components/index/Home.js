@@ -3,7 +3,7 @@ import React from 'react'
 const Home = () => {
     return (
         <>
-            <div style={{ minHeight: '100vh', background: 'linear-gradient(225deg, rgba(237,30,70,1) 0%, rgba(246,137,85,1) 100%)' }}>
+            <section style={{ minHeight: '100vh', background: 'linear-gradient(225deg, rgba(237,30,70,1) 0%, rgba(246,137,85,1) 100%)' }}>
                 <div className="container" style={{ paddingTop: 200, paddingBottom: 200 }}>
                     <h1>Connect, meet and play music with JAM.</h1>
 
@@ -45,7 +45,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <style jsx>{`
                 h1 {

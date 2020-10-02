@@ -9,6 +9,12 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 h1,
@@ -23,12 +29,16 @@ p {
   font-weight: 400;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4 {
   font-family: "Republica";
 }
 
 p,
-a {
+a,
+li {
   font-size: 20px;
 }
 

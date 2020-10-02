@@ -6,6 +6,7 @@ import Home from '../components/index/Home'
 import Nav from '../Layout/Nav'
 import Footer from '../Layout/Footer'
 import Features from '../components/index/Features'
+import FAQ from '../components/index/FAQ'
 
 export default function Index() {
   const [pressed, setPressed] = useState(false);
@@ -44,7 +45,7 @@ export default function Index() {
   return (
     <>
       <Head>
-        <title>Jam</title>
+        <title>JAM</title>
 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossOrigin="anonymous"></link>
@@ -60,6 +61,7 @@ export default function Index() {
             <Nav />
             <Home />
             <Features />
+            <FAQ />
             <Footer />
           </>
       }
