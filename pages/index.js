@@ -24,11 +24,9 @@ export default function Index() {
       if (event.code === 'Space') {
         i++;
         setCounter(i)
-        console.log('i', i)
         if (i > 30) {
           setPressed(true)
-          console.log("***OK***")
-        }
+        } 
       }
     })
 

@@ -14,6 +14,7 @@ const Nav = () => {
         let prevDirection = 0;
 
         let header = document.getElementById('main-nav');
+        // header.classList.remove('bg-color');
 
         let checkScroll = function () {
             /*
@@ -22,6 +23,11 @@ const Nav = () => {
             */
 
             curScroll = w.scrollY || doc.scrollTop;
+
+            if (curScroll <= 150) {
+                header.classList.remove('bg-color');
+            }
+
             if (curScroll > prevScroll) {
                 direction = 2;
             }
@@ -39,15 +45,11 @@ const Nav = () => {
         let toggleHeader = function (direction, curScroll) {
             if (direction === 2 && curScroll > 150) {
                 header.classList.add('hide');
-                header.classList.remove('bg-color');
                 prevDirection = direction;
-            }
-            else if (direction === 1) {
+            } else if (direction === 1) {
                 header.classList.remove('hide');
                 header.classList.add('bg-color');
                 prevDirection = direction;
-            } else if (direction === 1 && curScroll <= 150) {
-                header.classList.remove('bg-color');
             }
         };
 
@@ -78,10 +80,12 @@ const Nav = () => {
 
             <style jsx>{`
                 #main-nav {
+                    background-color: transparent;
                     position: fixed;
                     top: 0;
                     width: 100%;
-                    transition: all .3s ease;
+                    transition: all .5s ease;
+                    z-index: 99;
                 }
 
                 #main-nav.hide {
