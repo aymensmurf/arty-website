@@ -26,7 +26,7 @@ const Footer = () => {
                                     <i className="fab fa-instagram"></i>
                                 </a>
                                 <a href="#" target="_blank" rel="noopener noreferrer" className="header-social-box">
-                                    <i className="fab fa-linkedin"></i>
+                                    <i className="fab fa-linkedin" style={{marginRight: 0}}></i>
                                 </a>
                             </div>
                         </div>
@@ -44,7 +44,7 @@ const Footer = () => {
             <style jsx>{`
                 footer {
                     background-color: #0F0F0F;
-                    padding: 70px 0px;
+                    padding: 70px 10px;
                 }
 
                 .social-media i {

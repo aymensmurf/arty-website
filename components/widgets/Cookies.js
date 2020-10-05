@@ -28,7 +28,7 @@ const Cookies = () => {
             <style jsx>{`
                 .cookies {
                     width: 100%;
-                    padding: 30px 0px;
+                    padding: 30px 10px;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;

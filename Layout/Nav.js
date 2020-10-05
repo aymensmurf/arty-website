@@ -58,18 +58,18 @@ const Nav = ({ contact, openContact, closeContact }) => {
     return (
         <>
             <nav id="main-nav">
-                <div className="container" style={{ display: 'flex', justifyContent: 'space-between', padding: '20px 0px', alignItems: 'center' }}>
-                    <div style={{ width: '33.33%' }}>
+                <div className="container grid-3" style={{ padding: '20px 10px' }}>
+                    <div>
                         <a href="#">Features</a>
                         <a href="#">FAQ</a>
                         <a href="#">Download</a>
                         <a onClick={openContact}>Contact</a>
                     </div>
-                    <div style={{ width: '33.33%', textAlign: 'center' }}>
-                        <a href="/"><img src="/img/logo-black.svg" alt="Jam" /></a>
+                    <div style={{ textAlign: 'center' }}>
+                        <a href="/"><img id="logo" src="/img/logo-black.svg" alt="Jam" /></a>
                     </div>
-                    <div style={{ width: '33.33%', textAlign: 'right' }}>
-                        <img src="/img/nav-google.png" alt="Google Play" style={{ marginRight: 11 }} />
+                    <div id="stores" style={{ textAlign: 'end' }}>
+                        <img src="/img/nav-google.png" alt="Google Play" style={{ marginRight: 10 }} />
                         <img src="/img/nav-apple.png" alt="App store" />
                     </div>
                 </div>
@@ -95,9 +95,34 @@ const Nav = ({ contact, openContact, closeContact }) => {
                     background-color: #fff;
                 }
 
+                .grid-3 {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    align-items: center;
+                }
+
                 a {
                     margin-right: 40px;
                     cursor: pointer;
+                }
+
+                @media only screen and (max-width: 1439px){
+                    a {
+                        margin-right: 20px;
+                        font-size: 17px;
+                    }
+
+                    #logo {
+                        width: 142px;
+                        height: 45px;
+                        object-fit: contain;
+                    }
+
+                    #stores img {
+                        width: 65px;
+                        height: 43px;
+                        object-fit: contain;
+                    }
                 }
             `}</style>
         </>

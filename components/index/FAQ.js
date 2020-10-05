@@ -7,11 +7,13 @@ const FAQ = ({ openContact }) => {
             <section>
                 <div className="container" style={{ padding: '70px 250px', textAlign: 'center' }}>
                     <h1>Got questions?</h1>
-                    <p style={{ marginBottom: 70 }}>There are the most frequently asked questions if you have another thing on mind <a onClick={openContact}>get in touch</a></p>
+                    <p>There are the most frequently asked questions if you have another thing on mind <a onClick={openContact}>get in touch</a></p>
 
-                    <Accordion />
-                    <Accordion />
-                    <Accordion />
+                    <div style={{ marginTop: 70 }}>
+                        <Accordion />
+                        <Accordion />
+                        <Accordion />
+                    </div>
 
                     <h1 style={{ marginTop: 70 }}>Download now</h1>
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 14 }}>
@@ -35,6 +37,18 @@ const FAQ = ({ openContact }) => {
                     color: #fff;
                     text-decoration: underline;
                     cursor: pointer;
+                }
+
+                @media only screen and (max-width: 1439px){
+                    h1 {
+                        font-size: 46px;
+                    }
+
+                    img {
+                        width: 260px;
+                        height: 85px;
+                        object-fit: contain;
+                    }
                 }
             `}</style>
         </>

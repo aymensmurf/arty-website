@@ -34,7 +34,7 @@ const Features = () => {
         <>
             <section style={{ backgroundColor: '##F7F7F7' }}>
                 <div className="container" style={{ padding: 100, display: 'flex' }}>
-                    <div style={{ width: '40%', paddingRight: 20 }}>
+                    <div style={{ width: '40%', paddingRight: 20, display: 'flex', alignItems: 'center' }}>
                         <img src="/img/features/feature-1.png" alt="Mockup" id="feature-img" style={{ width: '100%', objectFit: 'contain' }} />
                     </div>
                     <div style={{ width: '60%' }}>
@@ -76,11 +76,11 @@ const Features = () => {
                     margin-top: 10px;
                 }
 
-                #big-orange-circle {
-                    position: absolute;
-                    top: -12%;
-                    left: -3%;
-                    z-index: 0;
+                @media only screen and (max-width: 1439px){
+                    h1 {
+                        font-size: 30px;
+                        line-height: 40px;
+                    }
                 }
             `}</style>
         </>
@@ -109,8 +109,25 @@ const Item = ({ id, pic, title, content }) => {
                     font-size: 30px;
                 }
 
+                p {
+                    margin-top: 8px;
+                }
+
                 img {
                     margin-right: 14px; 
+                }
+                
+                @media only screen and (max-width: 1439px){
+                    h2 {
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        object-fit: contain;
+                    }
                 }
             `}</style>
         </div>

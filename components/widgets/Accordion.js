@@ -41,6 +41,17 @@ const Accordion = () => {
                     transition: transform 600ms ease;
                 }
 
+                @media only screen and (max-width: 1439px){
+                    p {
+                        font-size: 18px;
+                    }
+
+                    img {
+                        width: 21px;
+                        height: 21px;
+                        object-fit: contain;
+                    }
+                }
             `}</style>
         </>
     )

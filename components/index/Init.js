@@ -8,14 +8,14 @@ const Init = ({ counter }) => {
                 <div className="container">
                     <img src="/img/logo.svg" alt="Jam" style={{ width: 180, height: 57 }} />
 
-                    <div style={{ position: 'relative', overflow: 'hidden' }}>
+                    <div style={{ position: 'relative' }}>
                         <h1>Where everything is music.</h1>
-                        <div className='w' style={{ position: 'absolute', bottom: 0, right: 0, width: '100%', height: `${counter * 15}%`, background: 'linear-gradient(225deg, rgba(237,30,70,1) 0%, rgba(246,137,85,1) 100%)' }} />
-                        {
+                        {/* <div className='w' style={{ position: 'absolute', bottom: 0, right: 0, width: '100%', height: `${counter * 15}%`, background: 'linear-gradient(225deg, rgba(237,30,70,1) 0%, rgba(246,137,85,1) 100%)' }} /> */}
+                        {/* {
                             counter > 10 ?
                                 <div className='w' style={{ position: 'absolute', bottom: 0, right: 0, width: '100%', height: `${(counter - 10) * 4}%`, background: '#151515' }} />
                                 : null
-                        }
+                        } */}
                     </div>
 
 
@@ -58,9 +58,7 @@ const Init = ({ counter }) => {
 
                 <Cookies />
                 {
-                    counter > 15 ?
-                        <div className="w" style={{ position: 'absolute', bottom: 0, right: 0, background: 'linear-gradient(225deg, rgba(237,30,70,1) 0%, rgba(246,137,85,1) 100%)', width: `100vw`, height: `${(counter - 15) * 7}vh` }}></div>
-                        : null
+                    <div className="w" style={{ position: 'absolute', bottom: 0, right: 0, background: 'linear-gradient(225deg, rgba(237,30,70,1) 0%, rgba(246,137,85,1) 100%)', width: `100vw`, height: `${(counter) * 6.2}vh` }}></div>
                 }
             </section>
 
