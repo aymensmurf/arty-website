@@ -1,13 +1,13 @@
 import React from 'react'
 import Accordion from '../widgets/Accordion'
 
-const FAQ = () => {
+const FAQ = ({ openContact }) => {
     return (
         <>
             <section>
                 <div className="container" style={{ padding: '70px 250px', textAlign: 'center' }}>
                     <h1>Got questions?</h1>
-                    <p style={{ marginBottom: 70 }}>There are the most frequently asked questions if you have another thing on mind <a href="#">get in touch</a></p>
+                    <p style={{ marginBottom: 70 }}>There are the most frequently asked questions if you have another thing on mind <a onClick={openContact}>get in touch</a></p>
 
                     <Accordion />
                     <Accordion />
@@ -34,6 +34,7 @@ const FAQ = () => {
                 a {
                     color: #fff;
                     text-decoration: underline;
+                    cursor: pointer;
                 }
             `}</style>
         </>

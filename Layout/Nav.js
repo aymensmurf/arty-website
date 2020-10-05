@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Contact from '../components/widgets/Contact'
 
-const Nav = () => {
-    const [contact, setContact] = useState(false)
+const Nav = ({ contact, openContact, closeContact }) => {
 
     useEffect(() => {
         let doc = document.documentElement;
@@ -64,7 +63,7 @@ const Nav = () => {
                         <a href="#">Features</a>
                         <a href="#">FAQ</a>
                         <a href="#">Download</a>
-                        <a onClick={() => setContact(true)}>Contact</a>
+                        <a onClick={openContact}>Contact</a>
                     </div>
                     <div style={{ width: '33.33%', textAlign: 'center' }}>
                         <a href="/"><img src="/img/logo-black.svg" alt="Jam" /></a>
@@ -76,7 +75,7 @@ const Nav = () => {
                 </div>
             </nav>
 
-            <Contact show={contact} handleClose={() => setContact(false)} />
+            <Contact show={contact} handleClose={closeContact} />
 
             <style jsx>{`
                 #main-nav {

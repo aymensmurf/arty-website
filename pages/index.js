@@ -10,7 +10,8 @@ import FAQ from '../components/index/FAQ'
 
 export default function Index() {
   const [pressed, setPressed] = useState(false);
-  const [counter, setCounter] = useState(0)
+  const [counter, setCounter] = useState(0);
+  const [contact, setContact] = useState(false);
 
   useEffect(() => {
     handleSpaceBarPress()
@@ -26,7 +27,7 @@ export default function Index() {
         setCounter(i)
         if (i > 30) {
           setPressed(true)
-        } 
+        }
       }
     })
 
@@ -56,10 +57,10 @@ export default function Index() {
           </>
           :
           <>
-            <Nav />
+            <Nav contact={contact} openContact={() => setContact(true)} closeContact={() => setContact(false)} />
             <Home />
             <Features />
-            <FAQ />
+            <FAQ openContact={() => setContact(true)} />
             <Footer />
           </>
       }
