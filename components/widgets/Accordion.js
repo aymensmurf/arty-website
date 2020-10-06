@@ -7,7 +7,7 @@ const Accordion = () => {
         <>
             <div style={{ marginTop: 35 }}>
                 <div className="accordion-header" onClick={() => setCollapsed(!collapsed)}>
-                    <p style={{ color: '#fff' }}>Can I make a JAM that will take place online?</p>
+                    <p style={{ color: '#fff', textAlign: 'left' }}>Can I make a JAM that will take place online?</p>
                     <img src="/img/plus.svg" alt="Plus" />
                 </div>
 
@@ -50,6 +50,12 @@ const Accordion = () => {
                         width: 21px;
                         height: 21px;
                         object-fit: contain;
+                    }
+                }
+
+                @media only screen and (max-width: 767px){
+                    .accordion-body {
+                        height: ${collapsed ? '260px' : '0px'};
                     }
                 }
             `}</style>

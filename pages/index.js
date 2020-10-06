@@ -3,13 +3,14 @@ import Head from 'next/head'
 
 import Init from '../components/index/Init'
 import Home from '../components/index/Home'
-import Nav from '../Layout/Nav'
-import Footer from '../Layout/Footer'
 import Features from '../components/index/Features'
 import FAQ from '../components/index/FAQ'
+import HomeTablet from '../components/index/HomeTablet'
+import FeaturesTablet from '../components/index/FeaturesTablet'
+import Layout from '../Layout/Layout'
 
 export default function Index() {
-  const [pressed, setPressed] = useState(false);
+  const [pressed, setPressed] = useState(true);
   const [counter, setCounter] = useState(0);
   const [contact, setContact] = useState(false);
 
@@ -41,29 +42,34 @@ export default function Index() {
     })
   }
 
+  if (!pressed) {
+    return (
+      <>
+        <Head>
+          <title>JAM</title>
+
+          <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet" />
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossOrigin="anonymous"></link>
+        </Head>
+
+        <Init counter={counter} />
+      </>
+    )
+  }
+
   return (
-    <>
-      <Head>
-        <title>JAM</title>
+    <Layout contact={contact} openContact={() => setContact(true)} closeContact={() => setContact(false)}>
+      <div className="visible-desktop">
+        <Home />
+        <Features />
+      </div>
 
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossOrigin="anonymous"></link>
-      </Head>
+      <div className="visible-tablet">
+        <HomeTablet />
+        <FeaturesTablet />
+      </div>
 
-      {
-        !pressed ?
-          <>
-            <Init counter={counter} />
-          </>
-          :
-          <>
-            <Nav contact={contact} openContact={() => setContact(true)} closeContact={() => setContact(false)} />
-            <Home />
-            <Features />
-            <FAQ openContact={() => setContact(true)} />
-            <Footer />
-          </>
-      }
-    </>
+      <FAQ openContact={() => setContact(true)} />
+    </Layout>
   )
 }

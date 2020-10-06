@@ -47,19 +47,19 @@ const Features = () => {
                             <div style={{ position: 'relative', zIndex: 1 }}>
                                 <Item
                                     id='1'
-                                    pic='sprite'
+                                    icon='sprite'
                                     title='Connect, play music and have fun'
                                     content='Don’t miss the opportunity to meet musicians around you. Get JAM and start your own musical adventure.'
                                 />
                                 <Item
                                     id='2'
-                                    pic='grinning-face'
+                                    icon='grinning-face'
                                     title='JAM session'
                                     content='You are looking for a JAM session but it’s difficult to create or join!. JAM gives you the option to find a JAM session and more than that you can create your own by simple steps. So don’t miss the fun.'
                                 />
                                 <Item
                                     id='3'
-                                    pic='collision'
+                                    icon='collision'
                                     title='Workshop'
                                     content='If you have the skill to teach music to people and you want to share it with the world it’s your opportunity to start your own musical workshop on JAM.'
                                 />
@@ -89,11 +89,11 @@ const Features = () => {
 
 export default Features
 
-const Item = ({ id, pic, title, content }) => {
+const Item = ({ id, icon, title, content }) => {
     return (
         <div className="feature-item" id={`feature-${id}`} style={{ display: 'flex', padding: '22px 40px' }}>
             <div>
-                <img src={'/img/' + pic + '.png'} alt={title} />
+                <img src={'/img/' + icon + '.png'} alt={title} />
             </div>
             <div>
                 <h2>{title}</h2>

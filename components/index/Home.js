@@ -83,7 +83,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div>
+                <div style={{ display: 'none' }}>
                     <audio id='drum-audio' autoPlay loop muted> <source src='/audio/drum.mp3' type='audio/mp3' /> </audio>
                     <audio id='guitar-audio' autoPlay loop muted> <source src='/audio/guitar.mp3' type='audio/mp3' /> </audio>
                     <audio id='vocal-audio' autoPlay loop muted> <source src='/audio/vocal.mp3' type='audio/mp3' /> </audio>

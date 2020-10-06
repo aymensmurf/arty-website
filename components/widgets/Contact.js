@@ -4,37 +4,37 @@ const Contact = ({ show, handleClose }) => {
     return (
         <>
 
-            <div className="contact-container">
-                <div className="contact-overlay" />
-                <div className="contact-inner-block">
-                    <div style={{ position: 'relative', zIndex: 102, padding: '50px 140px' }}>
-                        <div onClick={() => handleClose()} style={{ cursor: 'pointer', pointerEvents: 'all' }}>
+            <div id="contact-container">
+                <div id="contact-overlay" />
+                <div id="contact-inner-block">
+                    <div id="contact-text-container">
+                        <div onClick={() => handleClose()} style={{ cursor: 'pointer', pointerEvents: 'all', outline: 'none' }}>
                             <p>Close</p>
                         </div>
-                        <div style={{ marginTop: 175, marginBottom: 175, textAlign: "center" }}>
+                        <div id="contact-text">
                             <p style={{ fontSize: 25 }}>Share your experience with us</p>
                             <h1>Contact@jam.net</h1>
                         </div>
                     </div>
 
                     <div>
-                        <iframe src="https://giphy.com/embed/xT9IgASB1eJiKuZ7fa" width="320" height="240" frameBorder="0" className="giphy-embed" allowFullScreen style={{ position: 'absolute', top: '4%', left: '22%' }}></iframe>
-                        <iframe src="https://giphy.com/embed/EixHusPDkJT5S" width="280" height="180" frameBorder="0" className="giphy-embed" allowFullScreen style={{ position: 'absolute', top: '66%', left: '74%' }}></iframe>
+                        <iframe id="gif-1" src="https://giphy.com/embed/xT9IgASB1eJiKuZ7fa" frameBorder="0" className="giphy-embed"></iframe>
+                        <iframe id="gif-2" src="https://giphy.com/embed/EixHusPDkJT5S" frameBorder="0" className="giphy-embed"></iframe>
                     </div>
 
                     <div className="stars">
-                        <img src="/img/star.svg" alt="Star" style={{ position: 'absolute', top: '15%', left: '6%', width: 66, height: 66 }} />
-                        <img src="/img/star.svg" alt="Star" style={{ position: 'absolute', top: '55%', left: '16%', width: 31, height: 31 }} />
-                        <img src="/img/star.svg" alt="Star" style={{ position: 'absolute', top: '65%', left: '30%', width: 107, height: 107 }} />
-                        <img src="/img/star.svg" alt="Star" style={{ position: 'absolute', top: '23%', left: '80%', width: 51, height: 51 }} />
-                        <img src="/img/star.svg" alt="Star" style={{ position: 'absolute', top: '9%', left: '92%', width: 42, height: 42 }} />
-                        <img src="/img/star.svg" alt="Star" style={{ position: 'absolute', top: '60%', left: '88%', width: 68, height: 68 }} />
+                        <img src="/img/star.svg" alt="Star" />
+                        <img src="/img/star.svg" alt="Star" />
+                        <img src="/img/star.svg" alt="Star" />
+                        <img src="/img/star.svg" alt="Star" />
+                        <img src="/img/star.svg" alt="Star" />
+                        <img src="/img/star.svg" alt="Star" />
                     </div>
                 </div>
             </div>
 
             <style jsx>{`
-                .contact-container {
+                #contact-container {
                     pointer-events: none;
                     position: fixed;
                     top: 0;
@@ -50,7 +50,7 @@ const Contact = ({ show, handleClose }) => {
                     align-content: center;
                 }
 
-                .contact-overlay {
+                #contact-overlay {
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -62,7 +62,7 @@ const Contact = ({ show, handleClose }) => {
                     transition: opacity 300ms ease;
                 }
 
-                .contact-inner-block {
+                #contact-inner-block {
                     position: relative;
                     width: 80%;
                     height: ${show ? '620px' : '0px'};
@@ -72,13 +72,210 @@ const Contact = ({ show, handleClose }) => {
                     transition: height 600ms ease;
                 }
 
+                #contact-text-container {
+                    position: relative; 
+                    z-index: 102; 
+                    padding: 50px 140px;
+                }
+
+                #contact-text {
+                    margin-top: 175px; 
+                    margin-bottom: 175px; 
+                    text-align: center;
+                }
+                
+                h1 {
+                    font-size: 67px;
+                    color: #fff;
+                }
+
                 p {
                     color: #fff;
                 }
 
-                h1 {
-                    font-size: 67px;
-                    color: #fff;
+                #gif-1 {
+                    position: absolute; 
+                    top: 4%; 
+                    left: 22%;
+                    width: 320px;
+                    height: 240px;
+                }
+
+                #gif-1 {
+                    position: absolute; 
+                    top: 4%; 
+                    left: 22%;
+                    width: 320px;
+                    height: 240px;
+                }
+
+                #gif-2 {
+                    position: absolute; 
+                    top: 66%; 
+                    left: 74%;
+                    width: 280px;
+                    height: 180px;
+                }
+
+                .stars img {
+                    position: absolute;
+                }
+
+                .stars img:nth-child(1) {
+                    top: 15%;
+                    left: 6%;
+                    width: 66px;
+                    height: 66px;
+                }
+                
+                .stars img:nth-child(2) {
+                    top: 55%;
+                    left: 16%;
+                    width: 31px;
+                    height: 31px;
+                }
+                
+                .stars img:nth-child(3) {
+                    top: 65%;
+                    left: 30%;
+                    width: 107px;
+                    height: 107px;
+                }
+                
+                .stars img:nth-child(4) {
+                    top: 23%;
+                    left: 80%;
+                    width: 51px;
+                    height: 51px;
+                }
+                
+                .stars img:nth-child(5) {
+                    top: 9%;
+                    left: 92%;
+                    width: 42px;
+                    height: 42px;
+                }
+                
+                .stars img:nth-child(6) {
+                    top: 60%;
+                    left: 88%;
+                    width: 68px;
+                    height: 68px;
+                }
+
+                @media only screen and (max-width: 1439px){
+                    #contact-text-container {
+                        padding: 50px 40px;
+                    }
+
+                    #gif-1 {
+                        top: 6%; 
+                        left: 10%;
+                        width: 300px;
+                        height: 220px;
+                    }
+
+                    #gif-2 {
+                        top: 66%; 
+                        left: 60%;
+                        width: 280px;
+                        height: 180px;
+                    }
+                }
+
+                @media only screen and (max-width: 1023px){
+                    h1 {
+                        font-size: 44px;
+                    }
+
+                    #gif-1 {
+                        top: 6%; 
+                        left: 40%;
+                        width: 300px;
+                        height: 220px;
+                    }
+
+                    #gif-2 {
+                        top: 66%; 
+                        left: 4%;
+                        width: 280px;
+                        height: 180px;
+                    }
+
+                    .stars img:nth-child(3) {
+                        top: 68%;
+                        left: 50%;
+                        width: 107px;
+                        height: 107px;
+                    }
+                }
+
+                @media only screen and (max-width: 767px){
+                    #contact-inner-block {
+                        height: ${show ? '420px' : '0px'};
+                    }
+
+                    #contact-text-container {
+                        padding: 30px 20px;
+                    }
+
+                    #contact-text {
+                        margin-top: 100px; 
+                        margin-bottom: 100px;
+                    }
+
+                    h1 {
+                        font-size: 20px;
+                    }
+
+                    p {
+                        font-size: 14px !important;
+                    }
+
+                    #gif-1 {
+                        top: 50%; 
+                        left: 8%;
+                        width: 260px;
+                        height: 160px;
+                    }
+
+                    #gif-2 {
+                        display: none;
+                    }
+
+                    .stars img:nth-child(1) {
+                        width: 41px;
+                        height: 41px;
+                    }
+
+                    .stars img:nth-child(2) {
+                        width: 30px;
+                        height: 30px;
+                    }
+
+                    .stars img:nth-child(3) {
+                        display: none;
+                    }
+
+                    .stars img:nth-child(4) {
+                        top: 23%;
+                        left: 60%;
+                        width: 36px;
+                        height: 36px;
+                    }
+
+                    .stars img:nth-child(5) {
+                        top: 9%;
+                        left: 82%;
+                    }
+
+                    .stars img:nth-child(6) {
+                        top: 60%;
+                        left: 74%;
+                        width: 48px;
+                        height: 48px;
+                    }
+                    
                 }
             `}</style>
         </>
