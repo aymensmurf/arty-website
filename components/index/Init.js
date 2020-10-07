@@ -1,30 +1,70 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Cookies from '../widgets/Cookies';
 
-const Init = ({ counter }) => {
+const Init = ({ pressed, setPressedTrue }) => {
+    useEffect(() => {
+        handleCick()
+        ballFollowMouse()
+    }, [])
+
+
+    function handleCick() {
+        const ball = document.querySelector('.ball');
+        const longPress = false;
+
+        ball
+            .addEventListener('mousedown', (e) => {
+                const whilePressing = setTimeout(function () {
+                    setPressedTrue()
+                }, 2000);
+
+                ball.addEventListener('mouseup', () => {
+                    clearTimeout(whilePressing)
+                })
+            });
+    }
+
+    function ballFollowMouse() {
+        const init = document.querySelector('.init');
+        const ball = document.querySelector('.ball');
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let ballX = 0;
+        let ballY = 0;
+        let speed = 0.2;
+
+        function animate() {
+            let distX = mouseX - ballX;
+            let distY = mouseY - ballY;
+
+            ballX = ballX + (distX * speed);
+            ballY = ballY + (distY * speed);
+
+            ball.style.left = ballX + 'px';
+            ball.style.top = ballY + 'px';
+
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        init.addEventListener('mousemove', function (e) {
+            mouseX = e.pageX;
+            mouseY = e.pageY;
+        })
+    }
+
     return (
         <>
-            <section style={{ backgroundColor: "#151515" }}>
+            <section className="init" style={{ backgroundColor: "#151515" }}>
                 <div className="container">
                     <img src="/img/logo.svg" alt="Jam" style={{ width: 180, height: 57 }} />
 
-                    <div style={{ position: 'relative' }}>
+                    <div style={{ position: 'relative', marginTop: 20 }}>
                         <h1>Where everything is music.</h1>
-                        {/* <div className='w' style={{ position: 'absolute', bottom: 0, right: 0, width: '100%', height: `${counter * 15}%`, background: 'linear-gradient(225deg, rgba(237,30,70,1) 0%, rgba(246,137,85,1) 100%)' }} /> */}
-                        {/* {
-                            counter > 10 ?
-                                <div className='w' style={{ position: 'absolute', bottom: 0, right: 0, width: '100%', height: `${(counter - 10) * 4}%`, background: '#151515' }} />
-                                : null
-                        } */}
                     </div>
 
-
-                    <div style={{ textAlign: 'center' }}>
-                        <img src="/img/keyboard.svg" alt="Keyboard" style={{ width: 56, height: 51 }} />
-                        <h5>Hold space to start.</h5>
-                    </div>
-
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', marginTop: 20 }}>
                         <div style={{ width: '33.33%', display: 'flex', justifyContent: 'flex-start' }}>
                             <div className="social-media">
                                 <a href="#" target="_blank" rel="noopener noreferrer" className="header-social-box">
@@ -56,10 +96,12 @@ const Init = ({ counter }) => {
 
                 </div>
 
-                <Cookies />
-                {
-                    <div className="w" style={{ position: 'absolute', bottom: 0, right: 0, background: 'linear-gradient(225deg, rgba(237,30,70,1) 0%, rgba(246,137,85,1) 100%)', width: `100vw`, height: `${(counter) * 6.2}vh` }}></div>
-                }
+                <div className="ball">
+                    <h4 style={{ position: 'relative', zIndex: 1 }}>Click & Hold</h4>
+                    <div className="inner-ball"></div>
+                </div>
+
+                {/* <Cookies /> */}
             </section>
 
 
@@ -71,6 +113,8 @@ const Init = ({ counter }) => {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
+                    position: relative;
+                    overflow-y: scroll;
                 }
 
                 .container{
@@ -107,6 +151,56 @@ const Init = ({ counter }) => {
                     color: #fff;
                     font-size: 20px;
                     margin-right: 32px;
+                }
+
+                .ball {
+                    width: 200px;
+                    height: 200px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    mix-blend-mode: difference;
+                    transform: translate(-50%, -50%);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: none;
+                    text-aling: center;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+
+                .ball .inner-ball {
+                    width: 200px;
+                    height: 200px;
+                    background-color: white;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 50% - 100px;
+                    left: 50% - 100px;
+                    transition: all 3000ms ease;
+                }
+
+                .ball:active .inner-ball {
+                    width: 800px;
+                    height: 800px;
+                    background-color: white;
+                }
+
+                .ball h4 {
+                    font-size: 22px;
+                }
+
+                @media only screen and (max-width: 1439px){
+                    .container {
+                        padding: 40px 50px;
+                    }
                 }
             `}</style>
         </>
