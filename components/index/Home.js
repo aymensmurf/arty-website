@@ -1,74 +1,51 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Bass, Drum, Guitar, Keyboard, Vocal } from '../widgets/Instrments.js'
 
 const Home = () => {
+    const [isDrum, setIsDrum] = useState(false);
+    const [isGuitar, setIsGuitar] = useState(false);
+    const [isVocal, setIsVocal] = useState(false);
+    const [isKeyboard, setIsKeyboard] = useState(false);
+    const [isBass, setIsBass] = useState(false);
+
     return (
         <>
             <a name="home"></a>
             <section style={{ minHeight: '100vh', background: 'linear-gradient(225deg, rgba(237,30,70,1) 0%, rgba(246,137,85,1) 100%)' }}>
+                <div className="home-overlay"></div>
                 <div className="container">
                     <h1>Connect, meet and play music with JAM.</h1>
 
                     <div className="inner-container">
                         <div className="grid-5" style={{ marginTop: 40 }}>
-                            <div>
+                            <div className="inst-container" onClick={() => setIsDrum(!isDrum)}>
                                 <img className="instrument" src="/img/drum.png" alt="Drum" />
-                                <img
-                                    className="icon"
-                                    src="/img/icons/drum-w.png"
-                                    alt="Drum icon"
-                                    onClick={(e) => {
-                                        const audioElm = document.getElementById('drum-audio')
-                                        audioElm.muted = !audioElm.muted;
-                                        (audioElm.muted) ? e.target.src = "/img/icons/drum-w.png" : e.target.src = "/img/icons/drum-b.png"
-                                    }} />
+                                <img className="icon" src={`/img/icons/drum-${isDrum ? 'b' : 'w'}.png`} alt="Drum icon" />
+                                <audio autoPlay loop muted={!isDrum}> <source src='/audio/drum.mp3' type='audio/mp3' /> </audio>
                             </div>
-                            <div>
+
+                            <div className="inst-container" onClick={() => setIsGuitar(!isGuitar)}>
                                 <img className="instrument" src="/img/guitar.png" alt="Guitar" />
-                                <img
-                                    className="icon"
-                                    src="/img/icons/guitar-w.png"
-                                    alt="Guitar icon"
-                                    onClick={(e) => {
-                                        const audioElm = document.getElementById('guitar-audio')
-                                        audioElm.muted = !audioElm.muted;
-                                        (audioElm.muted) ? e.target.src = "/img/icons/guitar-w.png" : e.target.src = "/img/icons/guitar-b.png"
-                                    }} />
+                                <img className="icon" src={`/img/icons/guitar-${isGuitar ? 'b' : 'w'}.png`} alt="Guitar icon" />
+                                <audio autoPlay loop muted={!isGuitar}> <source src='/audio/guitar.mp3' type='audio/mp3' /> </audio>
                             </div>
-                            <div>
+
+                            <div className="inst-container" onClick={() => setIsVocal(!isVocal)}>
                                 <img className="instrument" src="/img/vocal.png" alt="Vocal" />
-                                <img
-                                    className="icon"
-                                    src="/img/icons/vocal-w.png"
-                                    alt="Vocal icon"
-                                    onClick={(e) => {
-                                        const audioElm = document.getElementById('vocal-audio')
-                                        audioElm.muted = !audioElm.muted;
-                                        (audioElm.muted) ? e.target.src = "/img/icons/vocal-w.png" : e.target.src = "/img/icons/vocal-b.png"
-                                    }} />
+                                <img className="icon" src={`/img/icons/vocal-${isVocal ? 'b' : 'w'}.png`} alt="Vocal icon" />
+                                <audio autoPlay loop muted={!isVocal}> <source src='/audio/vocal.mp3' type='audio/mp3' /> </audio>
                             </div>
-                            <div>
-                                <img className="instrument" src="/img/piano.png" alt="Keyboard" />
-                                <img
-                                    className="icon"
-                                    src="/img/icons/keyboard-w.png"
-                                    alt="Keyboard icon"
-                                    onClick={(e) => {
-                                        const audioElm = document.getElementById('keyboard-audio')
-                                        audioElm.muted = !audioElm.muted;
-                                        (audioElm.muted) ? e.target.src = "/img/icons/keyboard-w.png" : e.target.src = "/img/icons/keyboard-b.png"
-                                    }} />
+
+                            <div className="inst-container" onClick={() => setIsKeyboard(!isKeyboard)}>
+                                <img className="instrument" src="/img/keyboard.png" alt="Keyboard" />
+                                <img className="icon" src={`/img/icons/keyboard-${isKeyboard ? 'b' : 'w'}.png`} alt="Keyboard icon" />
+                                <audio autoPlay loop muted={!isKeyboard}> <source src='/audio/keyboard.mp3' type='audio/mp3' /> </audio>
                             </div>
-                            <div>
+
+                            <div className="inst-container" onClick={() => setIsBass(!isBass)}>
                                 <img className="instrument" src="/img/bass.png" alt="Bass" />
-                                <img
-                                    className="icon"
-                                    src="/img/icons/bass-w.png"
-                                    alt="Bass icon"
-                                    onClick={(e) => {
-                                        const audioElm = document.getElementById('bass-audio')
-                                        audioElm.muted = !audioElm.muted;
-                                        (audioElm.muted) ? e.target.src = "/img/icons/bass-w.png" : e.target.src = "/img/icons/bass-b.png"
-                                    }} />
+                                <img className="icon" src={`/img/icons/bass-${isBass ? 'b' : 'w'}.png`} alt="Bass icon" />
+                                <audio autoPlay loop muted={!isBass}> <source src='/audio/bass.mp3' type='audio/mp3' /> </audio>
                             </div>
                         </div>
 
@@ -83,17 +60,25 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-
-                <div style={{ display: 'none' }}>
-                    <audio id='drum-audio' autoPlay loop muted> <source src='/audio/drum.mp3' type='audio/mp3' /> </audio>
-                    <audio id='guitar-audio' autoPlay loop muted> <source src='/audio/guitar.mp3' type='audio/mp3' /> </audio>
-                    <audio id='vocal-audio' autoPlay loop muted> <source src='/audio/vocal.mp3' type='audio/mp3' /> </audio>
-                    <audio id='keyboard-audio' autoPlay loop muted> <source src='/audio/keyboard.mp3' type='audio/mp3' /> </audio>
-                    <audio id='bass-audio' autoPlay loop muted> <source src='/audio/bass.mp3' type='audio/mp3' /> </audio>
-                </div>
             </section>
 
             <style jsx>{`
+                .home-overlay{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100vh;
+                    width: 100vw;
+                    background-color: white;
+                    z-index: 100;
+                    transition: all 2000ms ease 5s;
+                    pointer-events: none;
+                }
+
+                .home-overlay {
+                    background-color: transparent;
+                }
+
                 .container {
                     padding-top: 200px;
                     padding-bottom: 200px;
@@ -127,6 +112,10 @@ const Home = () => {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                }
+
+                .instrument, .icon {
+                    cursor: pointer;
                 }
 
                 .icon {
