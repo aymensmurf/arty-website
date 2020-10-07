@@ -32,6 +32,7 @@ const Features = () => {
 
     return (
         <>
+            <a name="features"></a>
             <section style={{ backgroundColor: '##F7F7F7' }}>
                 <div className="container" style={{ padding: 100, display: 'flex' }}>
                     <div style={{ width: '40%', paddingRight: 20, display: 'flex', alignItems: 'center' }}>

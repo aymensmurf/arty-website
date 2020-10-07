@@ -3,6 +3,10 @@
   src: url("/fonts/republica/republica-minor-regular.ttf");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   padding: 0;
@@ -90,7 +94,6 @@ a {
     display: block;
   }
 }
-
 
 @media only screen and (max-width: 767px) {
   p,

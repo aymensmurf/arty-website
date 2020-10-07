@@ -3,6 +3,7 @@ import React from 'react'
 const FeaturesTablet = () => {
     return (
         <>
+            <a name="features-t"></a>
             <section style={{ backgroundColor: '##F7F7F7', padding: '70px 20px', textAlign: 'center' }}>
                 <p>JAM</p>
                 <h1>Host & participate in JAMS & workshops.</h1>

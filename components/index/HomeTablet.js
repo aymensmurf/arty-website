@@ -30,6 +30,7 @@ const HomeTablet = () => {
 
     return (
         <>
+            <a name="home-t"></a>
             <section style={{ minHeight: '100vh', background: 'linear-gradient(225deg, rgba(237,30,70,1) 0%, rgba(246,137,85,1) 100%)' }}>
                 <div style={{ paddingTop: 170, paddingBottom: 100 }}>
                     <div style={{ padding: '0px 30px' }}>

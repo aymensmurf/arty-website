@@ -60,13 +60,13 @@ const Nav = ({ contact, openContact, closeContact }) => {
             <nav id="main-nav">
                 <div className="container grid-3" style={{ padding: '20px 10px' }}>
                     <div>
-                        <a href="#">Features</a>
-                        <a href="#">FAQ</a>
-                        <a href="#">Download</a>
+                        <a href="#features">Features</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="#download">Download</a>
                         <a onClick={openContact}>Contact</a>
                     </div>
                     <div style={{ textAlign: 'center' }}>
-                        <a href="/"><img id="logo" src="/img/logo-black.svg" alt="Jam" /></a>
+                        <a href="#home"><img id="logo" src="/img/logo-black.svg" alt="Jam" /></a>
                     </div>
                     <div id="stores" style={{ textAlign: 'end' }}>
                         <img src="/img/nav-google.png" alt="Google Play" style={{ marginRight: 10 }} />

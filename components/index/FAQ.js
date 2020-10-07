@@ -4,6 +4,7 @@ import Accordion from '../widgets/Accordion'
 const FAQ = ({ openContact }) => {
     return (
         <>
+            <a name="faq"></a>
             <section>
                 <div className="container">
                     <h1>Got questions?</h1>
@@ -15,6 +16,7 @@ const FAQ = ({ openContact }) => {
                         <Accordion />
                     </div>
 
+                    <a name="download"></a>
                     <h1 style={{ marginTop: 70 }}>Download now</h1>
                     <div id="stores" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', marginTop: 25 }}>
                         <img src="/img/app-store.png" alt="App store" style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
