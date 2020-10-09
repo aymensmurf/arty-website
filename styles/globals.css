@@ -76,11 +76,28 @@ a {
   clear: both;
 }
 
+.svg-instrument {
+  width: 276px;
+  height: 271px;
+}
+
+@media only screen and (max-width: 1630px) {
+  .svg-instrument {
+    width: 256px;
+    height: 251px;
+  }
+}
+
 @media only screen and (max-width: 1439px) {
   p,
   a,
   li {
     font-size: 18px;
+  }
+
+  .svg-instrument {
+    width: 200px;
+    height: 200px;
   }
 }
 
@@ -93,6 +110,11 @@ a {
   .visible-tablet {
     display: block;
   }
+
+  .svg-instrument {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -100,5 +122,10 @@ a {
   a,
   li {
     font-size: 16px !important;
+  }
+
+  .svg-instrument {
+    width: 230px;
+    height: 230px;
   }
 }

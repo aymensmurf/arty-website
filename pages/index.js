@@ -11,7 +11,7 @@ import Layout from '../Layout/Layout'
 import InitTablet from '../components/index/InitTablet'
 
 export default function Index() {
-  const [pressed, setPressed] = useState(false);
+  const [pressed, setPressed] = useState(true);
   const [contact, setContact] = useState(false);
 
   if (!pressed) {

@@ -48,31 +48,36 @@ const HomeTablet = () => {
                     <div style={{ marginTop: 60 }}>
                         <Slider {...settings}>
                             <div className="inst-container" onClick={() => setIsDrum(!isDrum)}>
-                                <img className="instrument" src="/img/drum.png" alt="Drum" />
+                                <Drum />
+                                {/* <img className="instrument" src="/img/drum.png" alt="Drum" /> */}
                                 <img className="icon" src={`/img/icons/drum-${isDrum ? 'b' : 'w'}.png`} alt="Drum icon" />
                                 <audio autoPlay loop muted={!isDrum}> <source src='/audio/drum.mp3' type='audio/mp3' /> </audio>
                             </div>
 
                             <div className="inst-container" onClick={() => setIsGuitar(!isGuitar)}>
-                                <img className="instrument" src="/img/guitar.png" alt="Guitar" />
+                                <Guitar />
+                                {/* <img className="instrument" src="/img/guitar.png" alt="Guitar" /> */}
                                 <img className="icon" src={`/img/icons/guitar-${isGuitar ? 'b' : 'w'}.png`} alt="Guitar icon" />
                                 <audio autoPlay loop muted={!isGuitar}> <source src='/audio/guitar.mp3' type='audio/mp3' /> </audio>
                             </div>
 
                             <div className="inst-container" onClick={() => setIsVocal(!isVocal)}>
-                                <img className="instrument" src="/img/vocal.png" alt="Vocal" />
+                                <Vocal />
+                                {/* <img className="instrument" src="/img/vocal.png" alt="Vocal" /> */}
                                 <img className="icon" src={`/img/icons/vocal-${isVocal ? 'b' : 'w'}.png`} alt="Vocal icon" />
                                 <audio autoPlay loop muted={!isVocal}> <source src='/audio/vocal.mp3' type='audio/mp3' /> </audio>
                             </div>
 
                             <div className="inst-container" onClick={() => setIsKeyboard(!isKeyboard)}>
-                                <img className="instrument" src="/img/keyboard.png" alt="Keyboard" />
+                                <Keyboard />
+                                {/* <img className="instrument" src="/img/keyboard.png" alt="Keyboard" /> */}
                                 <img className="icon" src={`/img/icons/keyboard-${isKeyboard ? 'b' : 'w'}.png`} alt="Keyboard icon" />
                                 <audio autoPlay loop muted={!isKeyboard}> <source src='/audio/keyboard.mp3' type='audio/mp3' /> </audio>
                             </div>
 
                             <div className="inst-container" onClick={() => setIsBass(!isBass)}>
-                                <img className="instrument" src="/img/bass.png" alt="Bass" />
+                                <Bass />
+                                {/* <img className="instrument" src="/img/bass.png" alt="Bass" /> */}
                                 <img className="icon" src={`/img/icons/bass-${isBass ? 'b' : 'w'}.png`} alt="Bass icon" />
                                 <audio autoPlay loop muted={!isBass}> <source src='/audio/bass.mp3' type='audio/mp3' /> </audio>
                             </div>
