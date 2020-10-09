@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Contact = ({ show, handleClose }) => {
+const Contact = ({ show, commingSoon, handleClose }) => {
     return (
         <>
 
@@ -12,23 +12,24 @@ const Contact = ({ show, handleClose }) => {
                             <p>Close</p>
                         </div>
                         <div id="contact-text">
-                            <p style={{ fontSize: 25 }}>Share your experience with us</p>
-                            <h1>Contact@jam.net</h1>
+                            <p style={{ fontSize: 25 }}>{commingSoon ? 'We are working on it' : 'Share your experience with us'}</p>
+                            {commingSoon && <p style={{ fontSize: 25 }}>Contact us and we will send you a link</p>}
+                            <h1>hi@jammusic.space</h1>
                         </div>
                     </div>
 
                     <div>
-                        <iframe id="gif-1" src="https://giphy.com/embed/xT9IgASB1eJiKuZ7fa" frameBorder="0" className="giphy-embed"></iframe>
-                        <iframe id="gif-2" src="https://giphy.com/embed/EixHusPDkJT5S" frameBorder="0" className="giphy-embed"></iframe>
+                        <iframe id="gif-1" src={`https://giphy.com/embed/${commingSoon ? 'bAplZhiLAsNnG' : 'xT9IgASB1eJiKuZ7fa'}`} frameBorder="0" className="giphy-embed"></iframe>
+                        <iframe id="gif-2" src={`https://giphy.com/embed/${commingSoon ? 'AhjXalGPAfJg4' : 'EixHusPDkJT5S'}`} frameBorder="0" className="giphy-embed"></iframe>
                     </div>
 
                     <div className="stars">
-                        <img src="/img/star.svg" alt="Star" />
-                        <img src="/img/star.svg" alt="Star" />
-                        <img src="/img/star.svg" alt="Star" />
-                        <img src="/img/star.svg" alt="Star" />
-                        <img src="/img/star.svg" alt="Star" />
-                        <img src="/img/star.svg" alt="Star" />
+                        <img src="/img/star.png" alt="Star" />
+                        <img src="/img/star.png" alt="Star" />
+                        <img src="/img/star.png" alt="Star" />
+                        <img src="/img/star.png" alt="Star" />
+                        <img src="/img/star.png" alt="Star" />
+                        <img src="/img/star.png" alt="Star" />
                     </div>
                 </div>
             </div>

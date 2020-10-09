@@ -1,7 +1,7 @@
 import React from 'react'
 import Accordion from '../widgets/Accordion'
 
-const FAQ = ({ openContact }) => {
+const FAQ = ({ openContact, setCommingSoon }) => {
     return (
         <>
             <a name="faq"></a>
@@ -11,16 +11,25 @@ const FAQ = ({ openContact }) => {
                     <p>There are the most frequently asked questions if you have another thing on mind <a onClick={openContact}>get in touch</a></p>
 
                     <div style={{ marginTop: 70 }}>
-                        <Accordion />
-                        <Accordion />
-                        <Accordion />
+                        <Accordion
+                            q="What is Jam?"
+                            a="Jam is a social network for musicians, music enthusiast, and individuals who are interested in music. Jam provides a centered platform to enhance connectivity between the musical community and fast reliable online way to organize jam sessions and musical workshops."
+                        />
+                        <Accordion
+                            q="Where did Jam came from?"
+                            a="Jam is a product ideated, designed, and developed by Innovant, a Startup that combines both worlds of music, design, Art, and the top notch software development."
+                        />
+                        <Accordion
+                            q="How can I join Jam?"
+                            a="You can joining jam by downloading Jam app through this link and sign up through your Google Profile."
+                        />
                     </div>
 
                     <a name="download"></a>
                     <h1 style={{ marginTop: 70 }}>Download now</h1>
-                    <div id="stores" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', marginTop: 25 }}>
-                        <img src="/img/app-store.png" alt="App store" style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
-                        <img src="/img/google-play.png" alt="Google play" style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
+                    <div id="faq-stores" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', marginTop: 25 }}>
+                        <img src="/img/app-store.png" alt="App store" onClick={setCommingSoon} style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
+                        <img src="/img/google-play.png" alt="Google play" onClick={setCommingSoon} style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
                     </div>
                 </div>
             </section>
@@ -43,6 +52,10 @@ const FAQ = ({ openContact }) => {
                 a {
                     color: #fff;
                     text-decoration: underline;
+                    cursor: pointer;
+                }
+
+                #faq-stores img{
                     cursor: pointer;
                 }
 
@@ -71,13 +84,13 @@ const FAQ = ({ openContact }) => {
                         line-height: 48px;
                     }
 
-                    #stores img:nth-child(1){
+                    #faq-stores img:nth-child(1){
                         width: 200px;
                         height: 66px;
                         object-fit: contain;
                     }
 
-                    #stores img:nth-child(2){
+                    #faq-stores img:nth-child(2){
                         width: 200px;
                         height: 66px;
                         object-fit: contain;

@@ -6,7 +6,7 @@ import NavTablet from './NavTablet'
 import Footer from './Footer'
 import FooterTablet from './FooterTablet'
 
-const Layout = ({ children, contact, openContact, closeContact }) => {
+const Layout = ({ children, contact, commingSoon, openContact, closeContact, setCommingSoon }) => {
     return (
         <>
             <Head>
@@ -18,10 +18,10 @@ const Layout = ({ children, contact, openContact, closeContact }) => {
             </Head>
 
             <div className="visible-desktop">
-                <Nav contact={contact} openContact={openContact} closeContact={closeContact} />
+                <Nav contact={contact} openContact={openContact} closeContact={closeContact} commingSoon={commingSoon} setCommingSoon={setCommingSoon} />
             </div>
             <div className="visible-tablet">
-                <NavTablet contact={contact} openContact={openContact} closeContact={closeContact} />
+                <NavTablet contact={contact} openContact={openContact} closeContact={closeContact} commingSoon={commingSoon} setCommingSoon={setCommingSoon} />
             </div>
 
 

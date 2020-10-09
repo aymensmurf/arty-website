@@ -149,8 +149,8 @@ const Bass = () => {
                 <path id="Rectangle_1782" transform="rotate(-34.415 39.254 79.184)" className="st28" d="M38.3 78.9h1.9v.5h-1.9z" />
                 <path id="Path_3570" className="st28" d="M45.8 74.9c.1-.1 2.5-3.3 5.2-4.3.1 0 .2 0 .3.1s0 .2-.1.3c-2.6 1-5 4.1-5 4.2-.1.1-.2.1-.3 0-.2-.1-.2-.2-.1-.3z" />
                 <linearGradient id="Path_3571_1_" gradientUnits="userSpaceOnUse" x1="-322.022" y1="33.824" x2="-321.022" y2="33.824" gradientTransform="matrix(27.8843 0 0 17.6443 9006.995 -529.63)">
-                    <stop offset="0" stop-color="#a8151f" />
-                    <stop offset="1" stop-color="#bc2933" />
+                    <stop offset="0" stopColor="#a8151f" />
+                    <stop offset="1" stopColor="#bc2933" />
                 </linearGradient>
                 <path id="Path_3571" d="M31 76s6.2-8.7 24.5-5.9c0 0-5.2-11-9.3-11.7s-18.5 4.1-18.5 8S30.3 76 31 76z" fill="url(#Path_3571_1_)" />
                 <path id="Path_3572" className="st2" d="M51.8 77.4s-3.1-4.1-.4-7.2 4.8.9 4.3 4-3.9 3.2-3.9 3.2z" />

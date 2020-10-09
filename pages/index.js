@@ -11,8 +11,9 @@ import Layout from '../Layout/Layout'
 import InitTablet from '../components/index/InitTablet'
 
 export default function Index() {
-  const [pressed, setPressed] = useState(true);
+  const [pressed, setPressed] = useState(false);
   const [contact, setContact] = useState(false);
+  const [commingSoon, setCommingSoon] = useState(false);
 
   if (!pressed) {
     return (
@@ -36,18 +37,26 @@ export default function Index() {
   }
 
   return (
-    <Layout contact={contact} openContact={() => setContact(true)} closeContact={() => setContact(false)}>
+    <Layout
+      contact={contact}
+      openContact={() => { setCommingSoon(false); setContact(true); }}
+      closeContact={() => { setContact(false); }}
+      commingSoon={commingSoon}
+      setCommingSoon={() => { setCommingSoon(true); setContact(true); }}>
+
       <div className="visible-desktop">
         <Home />
         <Features />
       </div>
 
       <div className="visible-tablet">
-        <HomeTablet />
+        <HomeTablet setCommingSoon={() => { setCommingSoon(true); setContact(true); }} />
         <FeaturesTablet />
       </div>
 
-      <FAQ openContact={() => setContact(true)} />
+      <FAQ
+        openContact={() => { setCommingSoon(false); setContact(true); }}
+        setCommingSoon={() => { setCommingSoon(true); setContact(true); }} />
     </Layout>
   )
 }

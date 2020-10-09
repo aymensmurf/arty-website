@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Contact from '../components/widgets/Contact'
 
-const NavTablet = ({ contact, openContact, closeContact }) => {
+const NavTablet = ({ contact, commingSoon, openContact, closeContact, setCommingSoon }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
@@ -64,12 +64,12 @@ const NavTablet = ({ contact, openContact, closeContact }) => {
                 <a href="#features-t"><h3>Features</h3></a>
                 <a href="#faq"><h3>FAQ</h3></a>
                 <h3>Download</h3>
-                <img src="/img/app-store-tablet.png" alt="App store" style={{ marginTop: 12 }} />
-                <img src="/img/google-play-tablet.png" alt="Google play" style={{ marginTop: 12 }} />
+                <img src="/img/app-store-tablet.png" alt="App store" onClick={setCommingSoon} style={{ marginTop: 12 }} />
+                <img src="/img/google-play-tablet.png" alt="Google play" onClick={setCommingSoon} style={{ marginTop: 12 }} />
                 <h3 style={{ marginBottom: 30 }} onClick={openContact}>Contact</h3>
             </div>
 
-            <Contact show={contact} handleClose={closeContact} />
+            <Contact show={contact} handleClose={closeContact} commingSoon={commingSoon} />
 
             <style jsx>{`
                 #main-nav-tablet {

@@ -3,12 +3,12 @@ import React from 'react'
 const InitTablet = ({ pressed, setPressedTrue }) => {
     return (
         <>
-            <section className="init-tablet" style={{ backgroundColor: "#151515" }}>
+            <section className="init-tablet" style={{ backgroundColor: "#151515" }} onClick={setPressedTrue}>
                 <img className="logo" src="/img/logo.svg" alt="Jam" />
 
                 <h1 style={{ marginTop: 20 }}>Where everything is music.</h1>
 
-                <div style={{ textAlign: 'center', marginTop: 20 }} onClick={setPressedTrue}>
+                <div style={{ textAlign: 'center', marginTop: 20 }}>
                     <img src="/img/press-icon.svg" alt="Click to start icon" />
                     <p style={{ marginTop: 8 }}>Click to start.</p>
                 </div>

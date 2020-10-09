@@ -16,7 +16,7 @@ const Init = ({ pressed, setPressedTrue }) => {
             .addEventListener('mousedown', (e) => {
                 const whilePressing = setTimeout(function () {
                     setPressedTrue()
-                }, 2000);
+                }, 500);
 
                 ball.addEventListener('mouseup', () => {
                     clearTimeout(whilePressing)
@@ -56,7 +56,7 @@ const Init = ({ pressed, setPressedTrue }) => {
 
     return (
         <>
-            <section className="init" style={{ backgroundColor: "#151515" }}>
+            <section className="init">
                 <div className="container">
                     <img src="/img/logo.svg" alt="Jam" style={{ width: 180, height: 57 }} />
 
@@ -107,19 +107,26 @@ const Init = ({ pressed, setPressedTrue }) => {
 
             <style jsx>{`
                 section {
+                    position: relative;
+                    background-color: #151515;
                     min-height: 100vh;
                     height: 100vh;
-                    width: 100%;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-                    position: relative;
-                    overflow-y: scroll;
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;   
+                    overflow-y: auto;
+                    overflow-x: hidden;
                 }
+
+                section::-webkit-scrollbar {
+                    display: none;
+                  }
 
                 .container{
                     height: 100%;
-                    padding: 40px 100px;
+                    padding: 20px 100px;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -184,12 +191,12 @@ const Init = ({ pressed, setPressedTrue }) => {
                     position: absolute;
                     top: 50% - 100px;
                     left: 50% - 100px;
-                    transition: all 3000ms ease;
+                    transition: all 1000ms ease;
                 }
 
                 .ball:active .inner-ball {
-                    width: 800px;
-                    height: 800px;
+                    width: 2800px;
+                    height: 2800px;
                     background-color: white;
                 }
 

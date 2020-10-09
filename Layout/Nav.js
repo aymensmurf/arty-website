@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Contact from '../components/widgets/Contact'
 
-const Nav = ({ contact, openContact, closeContact }) => {
+const Nav = ({ contact, openContact, closeContact, commingSoon, setCommingSoon }) => {
 
     useEffect(() => {
         let doc = document.documentElement;
@@ -66,16 +66,16 @@ const Nav = ({ contact, openContact, closeContact }) => {
                         <a onClick={openContact}>Contact</a>
                     </div>
                     <div style={{ textAlign: 'center' }}>
-                        <a href="#home"><img id="logo" src="/img/logo-black.svg" alt="Jam" /></a>
+                        <a href="#home" style={{ marginRight: 0 }}><img id="logo" src="/img/logo-black.svg" alt="Jam" /></a>
                     </div>
                     <div id="stores" style={{ textAlign: 'end' }}>
-                        <img src="/img/nav-google.png" alt="Google Play" style={{ marginRight: 10 }} />
-                        <img src="/img/nav-apple.png" alt="App store" />
+                        <img src="/img/nav-google.png" alt="Google Play" onClick={setCommingSoon} style={{ marginRight: 10 }} />
+                        <img src="/img/nav-apple.png" alt="App store" onClick={setCommingSoon} />
                     </div>
                 </div>
             </nav>
 
-            <Contact show={contact} handleClose={closeContact} />
+            <Contact show={contact} handleClose={closeContact} commingSoon={commingSoon} />
 
             <style jsx>{`
                 #main-nav {
@@ -103,6 +103,16 @@ const Nav = ({ contact, openContact, closeContact }) => {
 
                 a {
                     margin-right: 40px;
+                    cursor: pointer;
+                }
+
+                #logo {
+                    width: 180px;
+                    height: 57px;
+                    object-fit: contain;
+                }
+
+                #stores img {
                     cursor: pointer;
                 }
 

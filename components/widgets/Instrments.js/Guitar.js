@@ -138,7 +138,7 @@ const Guitar = () => {
             </svg>
 
             
-            <style>{`
+            <style jsx>{`
                 .st0{fill:#fff}
                 .st2{fill:#653870}
                 .st3{fill:#1c1c1c}
