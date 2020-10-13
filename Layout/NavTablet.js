@@ -53,7 +53,7 @@ const NavTablet = ({ contact, commingSoon, openContact, closeContact, setComming
     return (
         <>
             <nav id="main-nav-tablet">
-                <a href="#home-t"><img id="logo" src="/img/logo-black.svg" alt="Jam" /></a>
+                <a href="/#home-t"><img id="logo" src="/img/logo-black.svg" alt="Jam" /></a>
                 <div style={{ display: 'flex' }} onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <img src={`/img/${isMenuOpen ? 'menu-close' : 'menu'}.svg`} alt="Menu icon" style={{ marginRight: 5 }} />
                     <p>Menu</p>
@@ -61,8 +61,8 @@ const NavTablet = ({ contact, commingSoon, openContact, closeContact, setComming
             </nav>
 
             <div id="menu">
-                <a href="#features-t"><h3>Features</h3></a>
-                <a href="#faq"><h3>FAQ</h3></a>
+                <a href="/#features-t"><h3>Features</h3></a>
+                <a href="/#faq"><h3>FAQ</h3></a>
                 <h3>Download</h3>
                 <img src="/img/app-store-tablet.png" alt="App store" onClick={setCommingSoon} style={{ marginTop: 12 }} />
                 <img src="/img/google-play-tablet.png" alt="Google play" onClick={setCommingSoon} style={{ marginTop: 12 }} />

@@ -4,6 +4,7 @@ import Layout from '../Layout/Layout'
 
 const Index = () => {
     const [contact, setContact] = useState(false);
+    const [commingSoon, setCommingSoon] = useState(false);
 
     return (
         <>
@@ -11,7 +12,12 @@ const Index = () => {
                 <title>JAM - Privacy policy</title>
             </Head>
 
-            <Layout contact={contact} openContact={() => setContact(true)} closeContact={() => setContact(false)}>
+            <Layout
+                contact={contact}
+                openContact={() => { setCommingSoon(false); setContact(true); }}
+                closeContact={() => { setContact(false); }}
+                commingSoon={commingSoon}
+                setCommingSoon={() => { setCommingSoon(true); setContact(true); }}>
                 <section>
                     <h1>Privacy Policy</h1>
 
