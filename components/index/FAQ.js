@@ -32,7 +32,7 @@ const FAQ = ({ openContact, setCommingSoon }) => {
                             a={
                                 <>
                                     <p>You can join us by downloading Jam app through <a href="https://play.google.com/store/apps/details?id=com.innovant.jam" target="_blank" rel="noopener noreferrer"> Google Play</a>.</p>
-                                    <p style={{marginTop: 8}}>For the iPhone users out there, contact us and we will send you a TestFlight link.</p>
+                                    <p style={{ marginTop: 8 }}>For the iPhone users out there, contact us and we will send you a TestFlight link.</p>
                                 </>
                             }
                         />
@@ -41,11 +41,11 @@ const FAQ = ({ openContact, setCommingSoon }) => {
                     <a name="download"></a>
                     <h1 style={{ marginTop: 70 }}>Download now</h1>
                     <div id="faq-stores" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', marginTop: 25 }}>
-                        <a>
-                            <img src="/img/app-store.png" alt="App store" onClick={setCommingSoon} style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
-                        </a>
                         <a href="https://play.google.com/store/apps/details?id=com.innovant.jam" target="_blank" rel="noopener noreferrer">
                             <img src="/img/google-play.png" alt="Google play" style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
+                        </a>
+                        <a>
+                            <img src="/img/app-store.png" alt="App store" onClick={setCommingSoon} style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
                         </a>
                     </div>
                 </div>

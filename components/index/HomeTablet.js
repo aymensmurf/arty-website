@@ -88,8 +88,12 @@ const HomeTablet = ({ setCommingSoon }) => {
                         <p>Play your music and navigate our website to get more about JAM.</p>
 
                         <div id="stores" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', marginTop: 25 }}>
-                            <img src="/img/app-store.png" alt="App store" style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} onClick={setCommingSoon} />
-                            <img src="/img/google-play.png" alt="Google play" style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} onClick={setCommingSoon} />
+                            <a href="https://play.google.com/store/apps/details?id=com.innovant.jam" target="_blank" rel="noopener noreferrer">
+                                <img src="/img/google-play.png" alt="Google play" style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
+                            </a>
+                            <a>
+                                <img src="/img/app-store.png" alt="App store" style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} onClick={setCommingSoon} />
+                            </a>
                         </div>
                     </div>
                 </div>

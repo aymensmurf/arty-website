@@ -12,16 +12,13 @@ const FooterTablet = () => {
                 </div>
 
                 <div className="social-media">
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                    <a href="https://www.facebook.com/jammusic.space" target="_blank" rel="noopener noreferrer" className="header-social-box">
                         <i className="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="header-social-box">
-                        <i className="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                    <a href="https://www.instagram.com/jam_music_space" target="_blank" rel="noopener noreferrer" className="header-social-box">
                         <i className="fab fa-instagram"></i>
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                    <a href="https://www.linkedin.com/company/jammusicspace" target="_blank" rel="noopener noreferrer" className="header-social-box">
                         <i className="fab fa-linkedin" style={{ marginRight: 0 }}></i>
                     </a>
                 </div>
@@ -31,7 +28,6 @@ const FooterTablet = () => {
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 30 }}>
                     <p>Made with </p>
                     <img src="/img/heart.svg" alt="Love" style={{ marginRight: 5, marginLeft: 5 }} />
-                    <p>by <a href="https://innovant.studio" target="_blank" rel="noopener noreferrer">InnovAnt.studio</a></p>
                 </div>
             </footer>
 
