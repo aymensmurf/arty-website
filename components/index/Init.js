@@ -66,20 +66,17 @@ const Init = ({ pressed, setPressedTrue }) => {
 
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', marginTop: 20 }}>
                         <div style={{ width: '33.33%', display: 'flex', justifyContent: 'flex-start' }}>
-                            <div className="social-media">
-                                <a href="#" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                            {/* <div className="social-media">
+                                <a href="https://www.facebook.com/jammusic.space" target="_blank" rel="noopener noreferrer" className="header-social-box">
                                     <i className="fab fa-facebook-f"></i>
                                 </a>
-                                <a href="#" target="_blank" rel="noopener noreferrer" className="header-social-box">
-                                    <i className="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                                <a href="https://www.instagram.com/jam_music_space/" target="_blank" rel="noopener noreferrer" className="header-social-box">
                                     <i className="fab fa-instagram"></i>
                                 </a>
-                                <a href="#" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                                <a href="https://www.linkedin.com/company/jammusicspace/" target="_blank" rel="noopener noreferrer" className="header-social-box">
                                     <i className="fab fa-linkedin"></i>
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
 
                         <div style={{ width: '33.33%', display: 'flex', justifyContent: 'center' }}>
@@ -90,7 +87,7 @@ const Init = ({ pressed, setPressedTrue }) => {
                         </div>
 
                         <div style={{ width: '33.33%', display: 'flex', justifyContent: 'flex-end' }}>
-                            <p><a href="#" style={{ textDecoration: 'underline' }}>Privacy policy</a></p>
+                            {/* <p><a href="#" style={{ textDecoration: 'underline' }}>Privacy policy</a></p> */}
                         </div>
                     </div>
 
@@ -159,6 +156,11 @@ const Init = ({ pressed, setPressedTrue }) => {
                     font-size: 20px;
                     margin-right: 32px;
                 }
+                .social-media i:hover {
+                    color: red;
+                    font-size: 20px;
+                    margin-right: 32px;
+                }
 
                 .ball {
                     width: 200px;
@@ -174,12 +176,7 @@ const Init = ({ pressed, setPressedTrue }) => {
                     justify-content: center;
                     align-items: center;
                     cursor: none;
-                    text-aling: center;
-                    -webkit-touch-callout: none;
-                    -webkit-user-select: none;
-                    -khtml-user-select: none;
-                    -moz-user-select: none;
-                    -ms-user-select: none;
+                    text-align: center;
                     user-select: none;
                 }
 

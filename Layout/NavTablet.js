@@ -64,8 +64,12 @@ const NavTablet = ({ contact, commingSoon, openContact, closeContact, setComming
                 <a href="/#features-t"><h3>Features</h3></a>
                 <a href="/#faq"><h3>FAQ</h3></a>
                 <h3>Download</h3>
-                <img src="/img/app-store-tablet.png" alt="App store" onClick={setCommingSoon} style={{ marginTop: 12 }} />
-                <img src="/img/google-play-tablet.png" alt="Google play" onClick={setCommingSoon} style={{ marginTop: 12 }} />
+                <a href="https://play.google.com/store/apps/details?id=com.innovant.jam" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/google-play-tablet.png" alt="Google play" style={{ marginTop: 12 }} />
+                </a>
+                <a>
+                    <img src="/img/app-store-tablet.png" alt="App store" onClick={setCommingSoon} style={{ marginTop: 12 }} />
+                </a>
                 <h3 style={{ marginBottom: 30 }} onClick={openContact}>Contact</h3>
             </div>
 

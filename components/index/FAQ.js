@@ -13,23 +13,40 @@ const FAQ = ({ openContact, setCommingSoon }) => {
                     <div style={{ marginTop: 70 }}>
                         <Accordion
                             q="What is Jam?"
-                            a="Jam is a social network for musicians, music enthusiast, and individuals who are interested in music. Jam provides a centered platform to enhance connectivity between the musical community and fast reliable online way to organize jam sessions and musical workshops."
+                            a={
+                                <p>
+                                    Jam is a social network for musicians, music enthusiast, and individuals who are interested in music. Jam provides a centered platform to enhance connectivity between the musical community and fast reliable online way to organize jam sessions and musical workshops.
+                                </p>
+                            }
                         />
                         <Accordion
                             q="Where did Jam came from?"
-                            a="Jam is a product ideated, designed, and developed by Innovant, a Startup that combines both worlds of music, design, Art, and the top notch software development."
+                            a={
+                                <p>
+                                    Jam is a product ideated, designed, and developed by Innovant, a Startup that combines both worlds of music, design, Art, and the top notch software development.
+                                </p>
+                            }
                         />
                         <Accordion
                             q="How can I join Jam?"
-                            a="You can joining jam by downloading Jam app through this link and sign up through your Google Profile."
+                            a={
+                                <>
+                                    <p>You can join us by downloading Jam app through <a href="https://play.google.com/store/apps/details?id=com.innovant.jam" target="_blank" rel="noopener noreferrer"> Google Play</a>.</p>
+                                    <p style={{marginTop: 8}}>For the iPhone users out there, contact us and we will send you a TestFlight link.</p>
+                                </>
+                            }
                         />
                     </div>
 
                     <a name="download"></a>
                     <h1 style={{ marginTop: 70 }}>Download now</h1>
                     <div id="faq-stores" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', marginTop: 25 }}>
-                        <img src="/img/app-store.png" alt="App store" onClick={setCommingSoon} style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
-                        <img src="/img/google-play.png" alt="Google play" onClick={setCommingSoon} style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
+                        <a>
+                            <img src="/img/app-store.png" alt="App store" onClick={setCommingSoon} style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.innovant.jam" target="_blank" rel="noopener noreferrer">
+                            <img src="/img/google-play.png" alt="Google play" style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
+                        </a>
                     </div>
                 </div>
             </section>

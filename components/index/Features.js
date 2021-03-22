@@ -92,7 +92,7 @@ export default Features
 
 const Item = ({ id, icon, title, content }) => {
     return (
-        <div className="feature-item" id={`feature-${id}`} style={{ display: 'flex', padding: '22px 40px' }}>
+        <div className="feature-item" id={`feature-${id}`} style={{ display: 'flex', padding: '22px 40px', cursor: 'pointer' }}>
             <div>
                 <img src={'/img/' + icon + '.png'} alt={title} />
             </div>

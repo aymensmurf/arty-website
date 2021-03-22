@@ -11,8 +11,8 @@ const Accordion = ({ q, a }) => {
                     <img src="/img/plus.svg" alt="Plus" />
                 </div>
 
-                <div className="accordion-body">
-                    <p style={{ textAlign: 'left' }}>{a}</p>
+                <div className="accordion-body" style={{ textAlign: 'left' }}>
+                    {a}
                 </div>
             </div>
 

@@ -60,17 +60,21 @@ const Nav = ({ contact, openContact, closeContact, commingSoon, setCommingSoon }
             <nav id="main-nav">
                 <div className="container grid-3" style={{ padding: '20px 10px' }}>
                     <div>
-                        <a href="/#features">Features</a>
-                        <a href="/#faq">FAQ</a>
-                        <a href="/#download">Download</a>
-                        <a onClick={openContact}>Contact</a>
+                        <a className="nav-link" href="/#features">Features</a>
+                        <a className="nav-link" href="/#faq">FAQ</a>
+                        <a className="nav-link" href="/#download">Download</a>
+                        <a className="nav-link" onClick={openContact}>Contact</a>
                     </div>
                     <div style={{ textAlign: 'center' }}>
                         <a href="/#home" style={{ marginRight: 0 }}><img id="logo" src="/img/logo-black.svg" alt="Jam" /></a>
                     </div>
                     <div id="stores" style={{ textAlign: 'end' }}>
-                        <img src="/img/nav-google.png" alt="Google Play" onClick={setCommingSoon} style={{ marginRight: 10 }} />
-                        <img src="/img/nav-apple.png" alt="App store" onClick={setCommingSoon} />
+                        <a href="https://play.google.com/store/apps/details?id=com.innovant.jam" target="_blank" rel="noopener noreferrer">
+                            <img src="/img/nav-google.png" alt="Google Play" style={{ marginRight: 10 }} />
+                        </a>
+                        <a>
+                            <img src="/img/nav-apple.png" alt="App store" onClick={setCommingSoon} />
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -101,7 +105,7 @@ const Nav = ({ contact, openContact, closeContact, commingSoon, setCommingSoon }
                     align-items: center;
                 }
 
-                a {
+                .nav-link {
                     margin-right: 40px;
                     cursor: pointer;
                 }
@@ -117,7 +121,7 @@ const Nav = ({ contact, openContact, closeContact, commingSoon, setCommingSoon }
                 }
 
                 @media only screen and (max-width: 1439px){
-                    a {
+                    .nav-link {
                         margin-right: 20px;
                         font-size: 17px;
                     }

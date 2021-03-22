@@ -12,8 +12,8 @@ const Contact = ({ show, commingSoon, handleClose }) => {
                             <p>Close</p>
                         </div>
                         <div id="contact-text">
-                            <p style={{ fontSize: 25 }}>{commingSoon ? 'We are working on it' : 'Share your experience with us'}</p>
-                            {commingSoon && <p style={{ fontSize: 25 }}>Contact us and we will send you a link</p>}
+                            <p style={{ fontSize: 25 }}>{commingSoon ? 'A beta version is here' : 'Share your experience with us'}</p>
+                            {commingSoon && <p style={{ fontSize: 25 }}>Contact us and we will send you a TestFlight link</p>}
                             <h1>hi@jammusic.space</h1>
                         </div>
                     </div>

@@ -63,7 +63,7 @@ const Index = () => {
 
                     <h2>Contact Us</h2>
                     <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:</p>
-                    <p style={{ textDecoration: 'underline' }}>contact@jammusic.space</p>
+                    <p style={{ textDecoration: 'underline' }}>hi@jammusic.space</p>
                 </section>
             </Layout>
 
