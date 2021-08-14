@@ -1,12 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { WORDS } from '../../utils/consts'
 
 const InitTablet = ({ pressed, setPressedTrue }) => {
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (index > WORDS.length - 2) {
+                setIndex(0)
+            } else {
+                setIndex(index + 1);
+            }
+        }, 2000);
+
+        return () => { clearInterval(interval); };
+    }, [index]);
+
     return (
         <>
             <section className="init-tablet" style={{ backgroundColor: "#151515" }} onClick={setPressedTrue}>
                 <img className="logo" src="/img/logo.svg" alt="Jam" />
 
-                <h1 style={{ marginTop: 20 }}>Where everything is music.</h1>
+                <div style={{ position: 'relative', marginTop: 20, overflow: 'hidden' }}>
+                    <h1 style={{ backgroundColor: '#151515', position: 'relative', zIndex: 2 }}>Where everything is</h1>
+                    <h1 className="word-container" style={{ zIndex: 1 }}>{WORDS[index]}</h1>
+                </div>
 
                 <div style={{ textAlign: 'center', marginTop: 20 }}>
                     <img src="/img/press-icon.svg" alt="Click to start icon" />

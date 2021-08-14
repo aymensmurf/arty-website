@@ -12,18 +12,18 @@ const Footer = () => {
                             {/* <p>by <a href="https://innovant.studio" target="_blank" rel="noopener noreferrer">InnovAnt.studio</a></p> */}
                         </div>
                         <div style={{ width: '33.33%', textAlign: 'center' }}>
-                            <img src="/img/logo.svg" alt="Jam" />
+                            <img src="/img/logo.svg" alt="Jam" style={{ width: 200, height: 87 }} />
                         </div>
                         <div style={{ width: '33.33%', textAlign: 'right' }}>
                             <div className="social-media">
-                                <a href="https://www.facebook.com/jammusic.space" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                                <a href="https://www.facebook.com/arty.land" target="_blank" rel="noopener noreferrer" className="header-social-box">
                                     <i className="fab fa-facebook-f"></i>
                                 </a>
                                 <a href="https://www.instagram.com/jam_music_space" target="_blank" rel="noopener noreferrer" className="header-social-box">
                                     <i className="fab fa-instagram"></i>
                                 </a>
-                                <a href="https://www.linkedin.com/company/jammusicspace" target="_blank" rel="noopener noreferrer" className="header-social-box">
-                                    <i className="fab fa-linkedin" style={{marginRight: 0}}></i>
+                                <a href="https://www.linkedin.com/company/artylandspace" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                                    <i className="fab fa-linkedin" style={{ marginRight: 0 }}></i>
                                 </a>
                             </div>
                         </div>
@@ -34,13 +34,13 @@ const Footer = () => {
                         <a href="/terms-and-conditions">Terms & conditions</a>
                     </div>
 
-                    <p style={{ marginTop: 30 }}>© All rights reserved for JAM 2020</p>
+                    <p style={{ marginTop: 30 }}>© All rights reserved for ARTY 2021</p>
                 </div>
             </footer>
 
             <style jsx>{`
                 footer {
-                    background-color: #0F0F0F;
+                    background-color: #151515;
                     padding: 70px 10px;
                 }
 

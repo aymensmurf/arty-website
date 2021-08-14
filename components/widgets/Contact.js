@@ -5,7 +5,7 @@ const Contact = ({ show, commingSoon, handleClose }) => {
         <>
 
             <div id="contact-container">
-                <div id="contact-overlay" />
+                <div id="contact-overlay" onClick={() => handleClose()} />
                 <div id="contact-inner-block">
                     <div id="contact-text-container">
                         <div onClick={() => handleClose()} style={{ cursor: 'pointer', pointerEvents: 'all', outline: 'none' }}>
@@ -14,7 +14,7 @@ const Contact = ({ show, commingSoon, handleClose }) => {
                         <div id="contact-text">
                             <p style={{ fontSize: 25 }}>{commingSoon ? 'A beta version is here' : 'Share your experience with us'}</p>
                             {commingSoon && <p style={{ fontSize: 25 }}>Contact us and we will send you a TestFlight link</p>}
-                            <h1>hi@jammusic.space</h1>
+                            <h1>hi@arty.land</h1>
                         </div>
                     </div>
 
@@ -57,20 +57,20 @@ const Contact = ({ show, commingSoon, handleClose }) => {
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    background-color: #d0d8e8;
+                    background-color: #d0d8e8f7;
                     visibility: inherit;
-                    opacity: ${show ? '1' : '0'};
                     transition: opacity 300ms ease;
+                    opacity: ${show ? '1' : '0'};
                 }
 
                 #contact-inner-block {
                     position: relative;
                     width: 80%;
-                    height: ${show ? '620px' : '0px'};
                     margin: 0 auto;
                     background-color: #151515;
                     overflow: hidden;
                     transition: height 600ms ease;
+                    height: ${show ? '620px' : '0px'};
                 }
 
                 #contact-text-container {

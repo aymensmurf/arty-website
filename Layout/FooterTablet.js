@@ -4,7 +4,7 @@ const FooterTablet = () => {
     return (
         <>
             <footer>
-                <img src="/img/logo.svg" alt="Jam" />
+                <img src="/img/logo.svg" alt="Jam" style={{ width: 200, height: 87 }} />
 
                 <div style={{ marginTop: 40, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <a href="/privacy-policy">Privacy policy</a>
@@ -12,18 +12,18 @@ const FooterTablet = () => {
                 </div>
 
                 <div className="social-media">
-                    <a href="https://www.facebook.com/jammusic.space" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                    <a href="https://www.facebook.com/arty.land" target="_blank" rel="noopener noreferrer" className="header-social-box">
                         <i className="fab fa-facebook-f"></i>
                     </a>
                     <a href="https://www.instagram.com/jam_music_space" target="_blank" rel="noopener noreferrer" className="header-social-box">
                         <i className="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.linkedin.com/company/jammusicspace" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                    <a href="https://www.linkedin.com/company/artylandspace" target="_blank" rel="noopener noreferrer" className="header-social-box">
                         <i className="fab fa-linkedin" style={{ marginRight: 0 }}></i>
                     </a>
                 </div>
 
-                <p style={{ marginTop: 44 }}>© All rights reserved for JAM 2020</p>
+                <p style={{ marginTop: 44 }}>© All rights reserved for ARTY 2020</p>
 
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 30 }}>
                     <p>Made with </p>
@@ -33,7 +33,7 @@ const FooterTablet = () => {
 
             <style jsx>{`
                 footer {
-                    background-color: #0F0F0F;
+                    background-color: #151515;
                     padding: 70px 30px;
                     text-align: center;
                 }

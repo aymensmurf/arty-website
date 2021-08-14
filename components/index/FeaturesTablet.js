@@ -5,27 +5,28 @@ const FeaturesTablet = () => {
         <>
             <a name="features-t"></a>
             <section style={{ backgroundColor: '##F7F7F7', padding: '70px 20px', textAlign: 'center' }}>
-                <p>JAM</p>
-                <h1>Host & participate in JAMS & workshops.</h1>
+                <p>ARTY</p>
+                <h1>Host & participate in ARTY & workshops.</h1>
 
 
                 <Item
                     icon='sprite'
                     pic='feature-1'
-                    title='Connect, play music and have fun'
-                    content='Don’t miss the opportunity to meet musicians around you. Get JAM and start your own musical adventure.'
+                    title='Connect, meet, play, sign, draw, dance and have fun!'
+                    content='Don’t miss the opportunity to meet artists around you. Get ARTY and start your own spectacle.'
                 />
                 <Item
                     icon='grinning-face'
                     pic='feature-2'
-                    title='JAM session'
-                    content='You are looking for a JAM session but it’s difficult to create or join!. JAM gives you the option to find a JAM session and more than that you can create your own by simple steps. So don’t miss the fun.'
+                    title='ARTY Workshops'
+                    content='If you are looking for an art workshop but it’s difficult to find, create or join!
+                    ARTY offers you the opportunity to have an interactive workshop, physically or online a by simple steps and friendly design!'
                 />
                 <Item
                     icon='collision'
                     pic='feature-3'
                     title='Workshop'
-                    content='If you have the skill to teach music to people and you want to share it with the world it’s your opportunity to start your own musical workshop on JAM.'
+                    content='For ethusiatstic artists who have the skill to teach, tutor or train art to people and want to share it with the world, ARTY is the solution to start your own workshops now.'
                 />
             </section>
 

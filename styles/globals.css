@@ -83,7 +83,7 @@ a {
   transition: all 600ms ease;
 }
 
-.svg-instrument:hover  {
+.svg-instrument:hover {
   transform: scale(1.02);
 }
 
@@ -101,12 +101,60 @@ a {
   animation: audio-icon 500ms ease-in-out infinite alternate;
 }
 
+.word-container {
+  position: relative;
+  top: 0px;
+  animation: word 2000ms ease-in-out infinite;
+}
+
+.word-container-bottom {
+  position: relative;
+  top: 0px;
+  animation: word-bottom 2000ms ease-in-out infinite;
+}
+
 @keyframes audio-icon {
   0% {
     transform: scale(1);
   }
   100% {
     transform: scale(1.1);
+  }
+}
+
+@keyframes word {
+  0% {
+    top: -140px;
+  }
+
+  10% {
+    top: 0px;
+  }
+
+  90% {
+    top: 0px;
+  }
+
+  100% {
+    top: 140px;
+  }
+}
+
+@keyframes word-bottom {
+  0% {
+    top: 140px;
+  }
+
+  10% {
+    top: 0px;
+  }
+
+  90% {
+    top: 0px;
+  }
+
+  100% {
+    top: 140px;
   }
 }
 

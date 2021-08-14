@@ -66,11 +66,11 @@ const Nav = ({ contact, openContact, closeContact, commingSoon, setCommingSoon }
                         <a className="nav-link" onClick={openContact}>Contact</a>
                     </div>
                     <div style={{ textAlign: 'center' }}>
-                        <a href="/#home" style={{ marginRight: 0 }}><img id="logo" src="/img/logo-black.svg" alt="Jam" /></a>
+                        <a href="/#home" style={{ marginRight: 0 }}><img id="logo" src="/img/logo.svg" alt="Jam" style={{ width: 200, height: 87 }} /></a>
                     </div>
                     <div id="stores" style={{ textAlign: 'end' }}>
-                        <a href="https://play.google.com/store/apps/details?id=com.innovant.jam" target="_blank" rel="noopener noreferrer">
-                            <img src="/img/nav-google.png" alt="Google Play" style={{ marginRight: 10 }} />
+                        <a>
+                            <img src="/img/nav-google.png" alt="Google Play" onClick={setCommingSoon} style={{ marginRight: 10 }} />
                         </a>
                         <a>
                             <img src="/img/nav-apple.png" alt="App store" onClick={setCommingSoon} />

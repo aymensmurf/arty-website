@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Slider from "react-slick"
+import { WORDS } from '../../utils/consts.js';
 
 import { Bass, Drum, Guitar, Keyboard, Vocal } from '../widgets/Instrments.js'
 
@@ -30,11 +31,25 @@ const HomeTablet = ({ setCommingSoon }) => {
         ]
     };
 
-    const [isDrum, setIsDrum] = useState(false);
-    const [isGuitar, setIsGuitar] = useState(false);
-    const [isVocal, setIsVocal] = useState(false);
-    const [isKeyboard, setIsKeyboard] = useState(false);
-    const [isBass, setIsBass] = useState(false);
+
+    const [isMusic, setIsMusic] = useState(false);
+    const [isPaint, setIsPaint] = useState(false);
+    const [isPhoto, setIsPhoto] = useState(false);
+    const [isDance, setIsDance] = useState(false);
+    const [isTheatre, setIsTheatre] = useState(false);
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (index > WORDS.length - 2) {
+                setIndex(0)
+            } else {
+                setIndex(index + 1);
+            }
+        }, 2000);
+
+        return () => { clearInterval(interval); };
+    }, [index]);
 
     return (
         <>
@@ -42,54 +57,49 @@ const HomeTablet = ({ setCommingSoon }) => {
             <section style={{ minHeight: '100vh', background: 'linear-gradient(225deg, rgba(237,30,70,1) 0%, rgba(246,137,85,1) 100%)' }}>
                 <div style={{ paddingTop: 170, paddingBottom: 100 }}>
                     <div style={{ padding: '0px 30px' }}>
-                        <h1>Connect, meet and play music with JAM.</h1>
+                        <h1 style={{ overflow: 'hidden' }}>Connect, aspire and inspire to do <span className="word-container-bottom" style={{ zIndex: 1, color: '#000' }}>{WORDS[index]}</span> with Arty!</h1>
                     </div>
 
                     <div style={{ marginTop: 60 }}>
                         <Slider {...settings}>
-                            <div className="inst-container" onClick={() => setIsDrum(!isDrum)}>
-                                <Drum />
-                                {/* <img className="instrument" src="/img/drum.png" alt="Drum" /> */}
-                                <img className={`icon ${isDrum ? 'active' : ''}`} src={`/img/icons/drum-${isDrum ? 'b' : 'w'}.png`} alt="Drum icon" />
-                                <audio autoPlay loop muted={!isDrum}> <source src='/audio/drum.mp3' type='audio/mp3' /> </audio>
+                            <div className="inst-container" onClick={() => setIsMusic(!isMusic)}>
+                                <img className="instrument" src="/img/music.png" alt="Music" />
+                                <img className={`icon ${isMusic ? 'active' : ''}`} src={`/img/icons/music-${isMusic ? 'b' : 'w'}.svg`} alt="Music icon" />
+                                <audio autoPlay loop muted={!isMusic}> <source src='/audio/drum.mp3' type='audio/mp3' /> </audio>
                             </div>
 
-                            <div className="inst-container" onClick={() => setIsGuitar(!isGuitar)}>
-                                <Guitar />
-                                {/* <img className="instrument" src="/img/guitar.png" alt="Guitar" /> */}
-                                <img className={`icon ${isGuitar ? 'active' : ''}`} src={`/img/icons/guitar-${isGuitar ? 'b' : 'w'}.png`} alt="Guitar icon" />
-                                <audio autoPlay loop muted={!isGuitar}> <source src='/audio/guitar.mp3' type='audio/mp3' /> </audio>
+                            <div className="inst-container" onClick={() => setIsPaint(!isPaint)}>
+                                <img className="instrument" src="/img/paint.png" alt="Paint" />
+                                <img className={`icon ${isPaint ? 'active' : ''}`} src={`/img/icons/paint-${isPaint ? 'b' : 'w'}.svg`} alt="Paint icon" />
+                                <audio autoPlay loop muted={!isPaint}> <source src='/audio/guitar.mp3' type='audio/mp3' /> </audio>
                             </div>
 
-                            <div className="inst-container" onClick={() => setIsVocal(!isVocal)}>
-                                <Vocal />
-                                {/* <img className="instrument" src="/img/vocal.png" alt="Vocal" /> */}
-                                <img className={`icon ${isVocal ? 'active' : ''}`} src={`/img/icons/vocal-${isVocal ? 'b' : 'w'}.png`} alt="Vocal icon" />
-                                <audio autoPlay loop muted={!isVocal}> <source src='/audio/vocal.mp3' type='audio/mp3' /> </audio>
+                            <div className="inst-container" onClick={() => setIsPhoto(!isPhoto)}>
+                                <img className="instrument" src="/img/photo.png" alt="Photo" />
+                                <img className={`icon ${isPhoto ? 'active' : ''}`} src={`/img/icons/photo-${isPhoto ? 'b' : 'w'}.svg`} alt="Photo icon" />
+                                <audio autoPlay loop muted={!isPhoto}> <source src='/audio/vocal.mp3' type='audio/mp3' /> </audio>
                             </div>
 
-                            <div className="inst-container" onClick={() => setIsKeyboard(!isKeyboard)}>
-                                <Keyboard />
-                                {/* <img className="instrument" src="/img/keyboard.png" alt="Keyboard" /> */}
-                                <img className={`icon ${isKeyboard ? 'active' : ''}`} src={`/img/icons/keyboard-${isKeyboard ? 'b' : 'w'}.png`} alt="Keyboard icon" />
-                                <audio autoPlay loop muted={!isKeyboard}> <source src='/audio/keyboard.mp3' type='audio/mp3' /> </audio>
+                            <div className="inst-container" onClick={() => setIsDance(!isDance)}>
+                                <img className="instrument" src="/img/dance.png" alt="Dance" />
+                                <img className={`icon ${isDance ? 'active' : ''}`} src={`/img/icons/dance-${isDance ? 'b' : 'w'}.svg`} alt="Dance icon" />
+                                <audio autoPlay loop muted={!isDance}> <source src='/audio/keyboard.mp3' type='audio/mp3' /> </audio>
                             </div>
 
-                            <div className="inst-container" onClick={() => setIsBass(!isBass)}>
-                                <Bass />
-                                {/* <img className="instrument" src="/img/bass.png" alt="Bass" /> */}
-                                <img className={`icon ${isBass ? 'active' : ''}`} src={`/img/icons/bass-${isBass ? 'b' : 'w'}.png`} alt="Bass icon" />
-                                <audio autoPlay loop muted={!isBass}> <source src='/audio/bass.mp3' type='audio/mp3' /> </audio>
+                            <div className="inst-container" onClick={() => setIsTheatre(!isTheatre)}>
+                                <img className="instrument" src="/img/theatre.png" alt="Theatre" />
+                                <img className={`icon ${isTheatre ? 'active' : ''}`} src={`/img/icons/theatre-${isTheatre ? 'b' : 'w'}.svg`} alt="Theatre icon" />
+                                <audio autoPlay loop muted={!isTheatre}> <source src='/audio/bass.mp3' type='audio/mp3' /> </audio>
                             </div>
                         </Slider>
                     </div>
 
                     <div style={{ padding: '0px 30px', marginTop: 60 }}>
-                        <p>Play your music and navigate our website to get more about JAM.</p>
+                        <p>Play, sing, draw, dance and perform by navigating our workshopsin ARTY.</p>
 
                         <div id="stores" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', marginTop: 25 }}>
-                            <a href="https://play.google.com/store/apps/details?id=com.innovant.jam" target="_blank" rel="noopener noreferrer">
-                                <img src="/img/google-play.png" alt="Google play" style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
+                            <a>
+                                <img src="/img/google-play.png" alt="Google play" style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} onClick={setCommingSoon} />
                             </a>
                             <a>
                                 <img src="/img/app-store.png" alt="App store" style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} onClick={setCommingSoon} />
@@ -120,6 +130,12 @@ const HomeTablet = ({ setCommingSoon }) => {
                     align-items: center;
                     justify-content: center;
                     outline: none;
+                }
+
+                .instrument {
+                    width: 264px;
+                    height: 264px;
+                    object-fit: contain;
                 }
 
                 .icon {

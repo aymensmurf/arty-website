@@ -19,7 +19,7 @@ export default function Index() {
     return (
       <>
         <Head>
-          <title>JAM</title>
+          <title>ARTY</title>
 
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />
 

@@ -1,0 +1,1 @@
+export const WORDS = ["Music", "Paiting", "Dance", "Theater", "Photography", "Sculpture", "Architecture", "Literature", "Calligraphy", "Hand Crafts", "Sand Art"]

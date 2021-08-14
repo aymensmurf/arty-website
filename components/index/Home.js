@@ -1,12 +1,25 @@
-import React, { useState } from 'react'
-import { Bass, Drum, Guitar, Keyboard, Vocal } from '../widgets/Instrments.js'
+import React, { useState, useEffect } from 'react'
+import { WORDS } from '../../utils/consts';
 
 const Home = () => {
-    const [isDrum, setIsDrum] = useState(false);
-    const [isGuitar, setIsGuitar] = useState(false);
-    const [isVocal, setIsVocal] = useState(false);
-    const [isKeyboard, setIsKeyboard] = useState(false);
-    const [isBass, setIsBass] = useState(false);
+    const [isMusic, setIsMusic] = useState(false);
+    const [isPaint, setIsPaint] = useState(false);
+    const [isPhoto, setIsPhoto] = useState(false);
+    const [isDance, setIsDance] = useState(false);
+    const [isTheatre, setIsTheatre] = useState(false);
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (index > WORDS.length - 2) {
+                setIndex(0)
+            } else {
+                setIndex(index + 1);
+            }
+        }, 2000);
+
+        return () => { clearInterval(interval); };
+    }, [index]);
 
     return (
         <>
@@ -14,43 +27,38 @@ const Home = () => {
             <section style={{ minHeight: '100vh', background: 'linear-gradient(225deg, rgba(237,30,70,1) 0%, rgba(246,137,85,1) 100%)' }}>
                 <div className="home-overlay"></div>
                 <div className="container">
-                    <h1>Connect, meet and play music with JAM.</h1>
+                    <h1 style={{ overflow: 'hidden' }}>Connect, aspire and inspire to do <span className="word-container-bottom" style={{ zIndex: 1, color: '#000' }}>{WORDS[index]}</span> with Arty!</h1>
 
                     <div className="inner-container">
                         <div className="grid-5" style={{ marginTop: 40 }}>
-                            <div className="inst-container" onClick={() => setIsDrum(!isDrum)}>
-                                <Drum />
-                                {/* <img className="instrument" src="/img/drum.png" alt="Drum" /> */}
-                                <img className={`icon ${isDrum ? 'active' : ''}`} src={`/img/icons/drum-${isDrum ? 'b' : 'w'}.png`} alt="Drum icon" />
-                                <audio autoPlay loop muted={!isDrum}> <source src='/audio/drum.mp3' type='audio/mp3' /> </audio>
+                            <div className="inst-container" onClick={() => setIsMusic(!isMusic)}>
+                                <img className="instrument" src="/img/music.png" alt="Music" />
+                                <img className={`icon ${isMusic ? 'active' : ''}`} src={`/img/icons/music-${isMusic ? 'b' : 'w'}.svg`} alt="Music icon" />
+                                <audio autoPlay loop muted={!isMusic}> <source src='/audio/drum.mp3' type='audio/mp3' /> </audio>
                             </div>
 
-                            <div className="inst-container" onClick={() => setIsGuitar(!isGuitar)}>
-                                <Guitar />
-                                {/* <img className="instrument" src="/img/guitar.png" alt="Guitar" /> */}
-                                <img className={`icon ${isGuitar ? 'active' : ''}`} src={`/img/icons/guitar-${isGuitar ? 'b' : 'w'}.png`} alt="Guitar icon" />
-                                <audio autoPlay loop muted={!isGuitar}> <source src='/audio/guitar.mp3' type='audio/mp3' /> </audio>
+                            <div className="inst-container" onClick={() => setIsPaint(!isPaint)}>
+                                <img className="instrument" src="/img/paint.png" alt="Paint" />
+                                <img className={`icon ${isPaint ? 'active' : ''}`} src={`/img/icons/paint-${isPaint ? 'b' : 'w'}.svg`} alt="Paint icon" />
+                                <audio autoPlay loop muted={!isPaint}> <source src='/audio/guitar.mp3' type='audio/mp3' /> </audio>
                             </div>
 
-                            <div className="inst-container" onClick={() => setIsVocal(!isVocal)}>
-                                <Vocal />
-                                {/* <img className="instrument" src="/img/vocal.png" alt="Vocal" /> */}
-                                <img className={`icon ${isVocal ? 'active' : ''}`} src={`/img/icons/vocal-${isVocal ? 'b' : 'w'}.png`} alt="Vocal icon" />
-                                <audio autoPlay loop muted={!isVocal}> <source src='/audio/vocal.mp3' type='audio/mp3' /> </audio>
+                            <div className="inst-container" onClick={() => setIsPhoto(!isPhoto)}>
+                                <img className="instrument" src="/img/photo.png" alt="Photography" />
+                                <img className={`icon ${isPhoto ? 'active' : ''}`} src={`/img/icons/photo-${isPhoto ? 'b' : 'w'}.svg`} alt="Photo icon" />
+                                <audio autoPlay loop muted={!isPhoto}> <source src='/audio/vocal.mp3' type='audio/mp3' /> </audio>
                             </div>
 
-                            <div className="inst-container" onClick={() => setIsKeyboard(!isKeyboard)}>
-                                <Keyboard />
-                                {/* <img className="instrument" src="/img/keyboard.png" alt="Keyboard" /> */}
-                                <img className={`icon ${isKeyboard ? 'active' : ''}`} src={`/img/icons/keyboard-${isKeyboard ? 'b' : 'w'}.png`} alt="Keyboard icon" />
-                                <audio autoPlay loop muted={!isKeyboard}> <source src='/audio/keyboard.mp3' type='audio/mp3' /> </audio>
+                            <div className="inst-container" onClick={() => setIsDance(!isDance)}>
+                                <img className="instrument" src="/img/dance.png" alt="Dance" />
+                                <img className={`icon ${isDance ? 'active' : ''}`} src={`/img/icons/dance-${isDance ? 'b' : 'w'}.svg`} alt="Dance icon" />
+                                <audio autoPlay loop muted={!isDance}> <source src='/audio/keyboard.mp3' type='audio/mp3' /> </audio>
                             </div>
 
-                            <div className="inst-container" onClick={() => setIsBass(!isBass)}>
-                                <Bass />
-                                {/* <img className="instrument" src="/img/bass.png" alt="Bass" /> */}
-                                <img className={`icon ${isBass ? 'active' : ''}`} src={`/img/icons/bass-${isBass ? 'b' : 'w'}.png`} alt="Bass icon" />
-                                <audio autoPlay loop muted={!isBass}> <source src='/audio/bass.mp3' type='audio/mp3' /> </audio>
+                            <div className="inst-container" onClick={() => setIsTheatre(!isTheatre)}>
+                                <img className="instrument" src="/img/theatre.png" alt="Theatre" />
+                                <img className={`icon ${isTheatre ? 'active' : ''}`} src={`/img/icons/theatre-${isTheatre ? 'b' : 'w'}.svg`} alt="Theatre icon" />
+                                <audio autoPlay loop muted={!isTheatre}> <source src='/audio/bass.mp3' type='audio/mp3' /> </audio>
                             </div>
                         </div>
 
@@ -60,8 +68,8 @@ const Home = () => {
                         </div>
 
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 10 }}>
-                            <p>Filter by instrument and find people <br /> sharing with you your passion. <br /><br /> Click on an instrument to start playing.</p>
-                            <p style={{ textAlign: 'right' }}>Find all sort of musicians in JAM and <br /> get to know, meet them and play <br /> music with them too.</p>
+                            <p>Filter by art themes and instrument and find people <br />who share your passion. <br /><br /> Click on an art theme to start playing.</p>
+                            <p style={{ textAlign: 'right' }}>Find all sort of artists in ARTY and <br /> get to know, meet and<br />perform with them.</p>
                         </div>
                     </div>
                 </div>
@@ -117,6 +125,12 @@ const Home = () => {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                }
+
+                .instrument {
+                    width: 264px;
+                    height: 264px;
+                    object-fit: contain;
                 }
 
                 .icon {

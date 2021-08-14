@@ -53,7 +53,7 @@ const NavTablet = ({ contact, commingSoon, openContact, closeContact, setComming
     return (
         <>
             <nav id="main-nav-tablet">
-                <a href="/#home-t"><img id="logo" src="/img/logo-black.svg" alt="Jam" /></a>
+                <a href="/#home-t"><img id="logo" src="/img/logo.svg" alt="Jam" style={{ width: 200, height: 87 }} /></a>
                 <div style={{ display: 'flex' }} onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <img src={`/img/${isMenuOpen ? 'menu-close' : 'menu'}.svg`} alt="Menu icon" style={{ marginRight: 5 }} />
                     <p>Menu</p>
@@ -64,8 +64,8 @@ const NavTablet = ({ contact, commingSoon, openContact, closeContact, setComming
                 <a href="/#features-t"><h3>Features</h3></a>
                 <a href="/#faq"><h3>FAQ</h3></a>
                 <h3>Download</h3>
-                <a href="https://play.google.com/store/apps/details?id=com.innovant.jam" target="_blank" rel="noopener noreferrer">
-                    <img src="/img/google-play-tablet.png" alt="Google play" style={{ marginTop: 12 }} />
+                <a>
+                    <img src="/img/google-play-tablet.png" alt="Google play" onClick={setCommingSoon}  style={{ marginTop: 12 }} />
                 </a>
                 <a>
                     <img src="/img/app-store-tablet.png" alt="App store" onClick={setCommingSoon} style={{ marginTop: 12 }} />

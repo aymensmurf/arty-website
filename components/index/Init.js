@@ -1,14 +1,28 @@
 import { useEffect, useState } from 'react'
-import Cookies from '../widgets/Cookies';
+import { WORDS } from '../../utils/consts'
 
 const Init = ({ pressed, setPressedTrue }) => {
+    const [index, setIndex] = useState(0);
+
     useEffect(() => {
         handleCick()
         ballFollowMouse()
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (index > WORDS.length - 2) {
+                setIndex(0)
+            } else {
+                setIndex(index + 1);
+            }
+        }, 2000);
+
+        return () => { clearInterval(interval); };
+    }, [index]);
 
 
-    function handleCick() {
+    const handleCick = () => {
         const ball = document.querySelector('.ball');
         const longPress = false;
 
@@ -24,7 +38,7 @@ const Init = ({ pressed, setPressedTrue }) => {
             });
     }
 
-    function ballFollowMouse() {
+    const ballFollowMouse = () => {
         const init = document.querySelector('.init');
         const ball = document.querySelector('.ball');
 
@@ -58,26 +72,15 @@ const Init = ({ pressed, setPressedTrue }) => {
         <>
             <section className="init">
                 <div className="container">
-                    <img src="/img/logo.svg" alt="Jam" style={{ width: 180, height: 57 }} />
+                    <img src="/img/logo.svg" alt="Jam" style={{ width: 200, height: 87, objectFit: 'contain' }} />
 
-                    <div style={{ position: 'relative', marginTop: 20 }}>
-                        <h1>Where everything is music.</h1>
+                    <div style={{ position: 'relative', marginTop: 20, overflow: 'hidden' }}>
+                        <h1 style={{ backgroundColor: '#151515', position: 'relative', zIndex: 2 }}>Where everything is</h1>
+                        <h1 className="word-container" style={{ zIndex: 1, color: '#fff' }}>{WORDS[index]}</h1>
                     </div>
 
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', marginTop: 20 }}>
-                        <div style={{ width: '33.33%', display: 'flex', justifyContent: 'flex-start' }}>
-                            {/* <div className="social-media">
-                                <a href="https://www.facebook.com/jammusic.space" target="_blank" rel="noopener noreferrer" className="header-social-box">
-                                    <i className="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="https://www.instagram.com/jam_music_space/" target="_blank" rel="noopener noreferrer" className="header-social-box">
-                                    <i className="fab fa-instagram"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/company/jammusicspace/" target="_blank" rel="noopener noreferrer" className="header-social-box">
-                                    <i className="fab fa-linkedin"></i>
-                                </a>
-                            </div> */}
-                        </div>
+                        <div style={{ width: '33.33%', display: 'flex', justifyContent: 'flex-start' }}></div>
 
                         <div style={{ width: '33.33%', display: 'flex', justifyContent: 'center' }}>
                             <div style={{ padding: 24, border: '1px solid #fff', borderRadius: '50%', width: 210, height: 210, textAlign: 'center', overflow: 'hidden' }}>
@@ -87,7 +90,6 @@ const Init = ({ pressed, setPressedTrue }) => {
                         </div>
 
                         <div style={{ width: '33.33%', display: 'flex', justifyContent: 'flex-end' }}>
-                            {/* <p><a href="#" style={{ textDecoration: 'underline' }}>Privacy policy</a></p> */}
                         </div>
                     </div>
 
@@ -97,8 +99,6 @@ const Init = ({ pressed, setPressedTrue }) => {
                     <h4 style={{ position: 'relative', zIndex: 1 }}>Click & Hold</h4>
                     <div className="inner-ball"></div>
                 </div>
-
-                {/* <Cookies /> */}
             </section>
 
 
@@ -136,7 +136,7 @@ const Init = ({ pressed, setPressedTrue }) => {
                     -webkit-text-stroke-width: 1px;
                     color: transparent;
                     font-family: Republica;
-                    font-size: 121px;
+                    font-size: 110px;
                     line-height: 147px;
                     text-align: center;
                 }
@@ -178,6 +178,7 @@ const Init = ({ pressed, setPressedTrue }) => {
                     cursor: none;
                     text-align: center;
                     user-select: none;
+                    z-index: 99;
                 }
 
                 .ball .inner-ball {

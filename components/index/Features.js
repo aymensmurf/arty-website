@@ -40,8 +40,8 @@ const Features = () => {
                     </div>
                     <div style={{ width: '60%' }}>
                         <div style={{ padding: '22px 40px' }}>
-                            <p>JAM</p>
-                            <h1>Host & participate in JAMS & workshops.</h1>
+                            <p>ARTY</p>
+                            <h1>Host & participate in ARTY & workshops.</h1>
                         </div>
 
                         <div style={{ position: 'relative' }}>
@@ -49,20 +49,21 @@ const Features = () => {
                                 <Item
                                     id='1'
                                     icon='sprite'
-                                    title='Connect, play music and have fun'
-                                    content='Don’t miss the opportunity to meet musicians around you. Get JAM and start your own musical adventure.'
+                                    title='Connect, meet, play, sign, draw, dance and have fun!'
+                                    content='Don’t miss the opportunity to meet artists around you. Get ARTY and start your own spectacle.'
                                 />
                                 <Item
                                     id='2'
                                     icon='grinning-face'
-                                    title='JAM session'
-                                    content='You are looking for a JAM session but it’s difficult to create or join!. JAM gives you the option to find a JAM session and more than that you can create your own by simple steps. So don’t miss the fun.'
+                                    title='ARTY Workshops'
+                                    content='If you are looking for an art workshop but it’s difficult to find, create or join!
+                                    ARTY offers you the opportunity to have an interactive workshop, physically or online a by simple steps and friendly design!'
                                 />
                                 <Item
                                     id='3'
                                     icon='collision'
                                     title='Workshop'
-                                    content='If you have the skill to teach music to people and you want to share it with the world it’s your opportunity to start your own musical workshop on JAM.'
+                                    content='For ethusiatstic artists who have the skill to teach, tutor or train art to people and want to share it with the world, ARTY is the solution to start your own workshops now.'
                                 />
                             </div>
                         </div>
@@ -108,6 +109,7 @@ const Item = ({ id, icon, title, content }) => {
 
                 h2 {
                     font-size: 30px;
+                    line-height: 40px;
                 }
 
                 p {
