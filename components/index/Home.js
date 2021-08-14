@@ -34,31 +34,31 @@ const Home = () => {
                             <div className="inst-container" onClick={() => setIsMusic(!isMusic)}>
                                 <img className="instrument" src="/img/music.png" alt="Music" />
                                 <img className={`icon ${isMusic ? 'active' : ''}`} src={`/img/icons/music-${isMusic ? 'b' : 'w'}.svg`} alt="Music icon" />
-                                <audio autoPlay loop muted={!isMusic}> <source src='/audio/drum.mp3' type='audio/mp3' /> </audio>
+                                {/* <audio autoPlay loop muted={!isMusic}> <source src='/audio/drum.mp3' type='audio/mp3' /> </audio> */}
                             </div>
 
                             <div className="inst-container" onClick={() => setIsPaint(!isPaint)}>
                                 <img className="instrument" src="/img/paint.png" alt="Paint" />
                                 <img className={`icon ${isPaint ? 'active' : ''}`} src={`/img/icons/paint-${isPaint ? 'b' : 'w'}.svg`} alt="Paint icon" />
-                                <audio autoPlay loop muted={!isPaint}> <source src='/audio/guitar.mp3' type='audio/mp3' /> </audio>
+                                {/* <audio autoPlay loop muted={!isPaint}> <source src='/audio/guitar.mp3' type='audio/mp3' /> </audio> */}
                             </div>
 
                             <div className="inst-container" onClick={() => setIsPhoto(!isPhoto)}>
                                 <img className="instrument" src="/img/photo.png" alt="Photography" />
                                 <img className={`icon ${isPhoto ? 'active' : ''}`} src={`/img/icons/photo-${isPhoto ? 'b' : 'w'}.svg`} alt="Photo icon" />
-                                <audio autoPlay loop muted={!isPhoto}> <source src='/audio/vocal.mp3' type='audio/mp3' /> </audio>
+                                {/* <audio autoPlay loop muted={!isPhoto}> <source src='/audio/vocal.mp3' type='audio/mp3' /> </audio> */}
                             </div>
 
                             <div className="inst-container" onClick={() => setIsDance(!isDance)}>
                                 <img className="instrument" src="/img/dance.png" alt="Dance" />
                                 <img className={`icon ${isDance ? 'active' : ''}`} src={`/img/icons/dance-${isDance ? 'b' : 'w'}.svg`} alt="Dance icon" />
-                                <audio autoPlay loop muted={!isDance}> <source src='/audio/keyboard.mp3' type='audio/mp3' /> </audio>
+                                {/* <audio autoPlay loop muted={!isDance}> <source src='/audio/keyboard.mp3' type='audio/mp3' /> </audio> */}
                             </div>
 
                             <div className="inst-container" onClick={() => setIsTheatre(!isTheatre)}>
                                 <img className="instrument" src="/img/theatre.png" alt="Theatre" />
                                 <img className={`icon ${isTheatre ? 'active' : ''}`} src={`/img/icons/theatre-${isTheatre ? 'b' : 'w'}.svg`} alt="Theatre icon" />
-                                <audio autoPlay loop muted={!isTheatre}> <source src='/audio/bass.mp3' type='audio/mp3' /> </audio>
+                                {/* <audio autoPlay loop muted={!isTheatre}> <source src='/audio/bass.mp3' type='audio/mp3' /> </audio> */}
                             </div>
                         </div>
 
@@ -131,6 +131,11 @@ const Home = () => {
                     width: 264px;
                     height: 264px;
                     object-fit: contain;
+                    transition: all 600ms ease;
+                }
+
+                .instrument:hover {
+                    transform: scale(1.02);
                 }
 
                 .icon {

@@ -12,14 +12,20 @@ const FooterTablet = () => {
                 </div>
 
                 <div className="social-media">
-                    <a href="https://www.facebook.com/arty.land" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                    <a href="https://www.facebook.com/the.arty.land" target="_blank" rel="noopener noreferrer" className="header-social-box">
                         <i className="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://www.instagram.com/jam_music_space" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                    <a href="https://www.instagram.com/the.arty.land" target="_blank" rel="noopener noreferrer" className="header-social-box">
                         <i className="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.linkedin.com/company/artylandspace" target="_blank" rel="noopener noreferrer" className="header-social-box">
-                        <i className="fab fa-linkedin" style={{ marginRight: 0 }}></i>
+                    <a href="https://www.linkedin.com/company/the-arty-land" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                        <i className="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/the_arty_land" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                        <i className="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC7am7GDTYOBjF5-eP6-vsaw" target="_blank" rel="noopener noreferrer" className="header-social-box">
+                        <i className="fab fa-youtube" style={{ marginRight: 0 }}></i>
                     </a>
                 </div>
 
