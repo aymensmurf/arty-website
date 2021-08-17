@@ -74,22 +74,15 @@ const Init = ({ pressed, setPressedTrue }) => {
                 <div className="container">
                     <img src="/img/logo.svg" alt="Jam" style={{ width: 200, height: 87, objectFit: 'contain' }} />
 
-                    <div style={{ position: 'relative', marginTop: 20, overflow: 'hidden' }}>
+                    <div className="" style={{ position: 'relative', marginTop: 20, overflow: 'hidden', paddingBottom: 20 }}>
                         <h1 style={{ backgroundColor: '#151515', position: 'relative', zIndex: 2 }}>Where everything is</h1>
                         <h1 className="word-container" style={{ zIndex: 1, color: '#fff' }}>{WORDS[index]}</h1>
                     </div>
 
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', marginTop: 20 }}>
-                        <div style={{ width: '33.33%', display: 'flex', justifyContent: 'flex-start' }}></div>
-
-                        <div style={{ width: '33.33%', display: 'flex', justifyContent: 'center' }}>
-                            <div style={{ padding: 24, border: '1px solid #fff', borderRadius: '50%', width: 210, height: 210, textAlign: 'center', overflow: 'hidden' }}>
-                                <img src="/img/audio.svg" alt="Audio" style={{ width: 47, height: 47 }} />
-                                <p>Put your headphones on for a better experience.</p>
-                            </div>
-                        </div>
-
-                        <div style={{ width: '33.33%', display: 'flex', justifyContent: 'flex-end' }}>
+                    <div className="instruction">
+                        <div style={{ padding: 24, border: '1px solid #fff', borderRadius: '50%', width: 210, height: 210, textAlign: 'center', overflow: 'hidden' }}>
+                            <img src="/img/audio.svg" alt="Audio" style={{ width: 47, height: 47 }} />
+                            <p>Put your headphones on for a better experience.</p>
                         </div>
                     </div>
 
@@ -202,9 +195,31 @@ const Init = ({ pressed, setPressedTrue }) => {
                     font-size: 22px;
                 }
 
+                .instruction {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    margin-top: 20;
+                }
+
                 @media only screen and (max-width: 1439px){
                     .container {
                         padding: 40px 50px;
+                    }
+                }
+
+                @media only screen and (max-width: 1040px){
+                    h1 {
+                        font-size: 75px;
+                        line-height: 85px;
+                    }
+                }
+
+                @media only screen and (max-height: 844px){
+                    .instruction {
+                        display: none;
+                        clear: both;
                     }
                 }
             `}</style>

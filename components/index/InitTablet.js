@@ -23,7 +23,7 @@ const InitTablet = ({ pressed, setPressedTrue }) => {
 
                 <div style={{ position: 'relative', marginTop: 20, overflow: 'hidden' }}>
                     <h1 style={{ backgroundColor: '#151515', position: 'relative', zIndex: 2 }}>Where everything is</h1>
-                    <h1 className="word-container" style={{ zIndex: 1 }}>{WORDS[index]}</h1>
+                    <h1 className="word-container" style={{ zIndex: 1, color: '#fff' }}>{WORDS[index]}</h1>
                 </div>
 
                 <div style={{ textAlign: 'center', marginTop: 20 }}>
