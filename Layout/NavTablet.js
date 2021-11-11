@@ -65,7 +65,7 @@ const NavTablet = ({ contact, commingSoon, openContact, closeContact, setComming
                 <a href="/#faq"><h3>FAQ</h3></a>
                 <h3>Download</h3>
                 <a>
-                    <img src="/img/google-play-tablet.png" alt="Google play" onClick={setCommingSoon}  style={{ marginTop: 12 }} />
+                    <img src="/img/google-play-tablet.png" alt="Google play" onClick={setCommingSoon} style={{ marginTop: 12 }} />
                 </a>
                 <a>
                     <img src="/img/app-store-tablet.png" alt="App store" onClick={setCommingSoon} style={{ marginTop: 12 }} />

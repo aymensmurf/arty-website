@@ -1,0 +1,6 @@
+<svg id="Button" xmlns="http://www.w3.org/2000/svg" width="280" height="84" viewBox="0 0 280 84">
+  <rect id="Backgound" width="280" height="84" rx="3" fill="#151515"/>
+  <text id="Android_app_on" data-name="Android app on" transform="translate(84 30)" fill="#fff" font-size="16" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">Android app on</tspan></text>
+  <text id="Google_Play" data-name="Google Play" transform="translate(84 63)" fill="#fff" font-size="28" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">Google Play</tspan></text>
+  <path id="Google_Play_Logo" data-name="Google Play Logo" d="M-1392.846-5657.422v-49.3l24.651,24.651-24.65,24.649Zm4.894-2.453h0l20.977-20.978,5.675,5.674Zm28.2-16.194h0l-6-6,6.478-6.479,10.584,6.133Zm-7.225-7.225-23.106-23.105,29.259,16.953-6.152,6.152Z" transform="translate(1414.596 5723.596)" fill="#fff"/>
+</svg>

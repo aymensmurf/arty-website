@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import Slider from "react-slick"
+import React, { useState, useEffect } from 'react';
+import Slider from "react-slick";
 import { WORDS } from '../../utils/consts.js';
-
-import { Bass, Drum, Guitar, Keyboard, Vocal } from '../widgets/Instrments.js'
 
 const HomeTablet = ({ setCommingSoon }) => {
     const settings = {

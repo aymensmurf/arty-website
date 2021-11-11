@@ -66,7 +66,7 @@ const Nav = ({ contact, openContact, closeContact, commingSoon, setCommingSoon }
                         <a className="nav-link" onClick={openContact}>Contact</a>
                     </div>
                     <div style={{ textAlign: 'center' }}>
-                        <a href="/#home" style={{ marginRight: 0 }}><img id="logo" src="/img/logo.svg" alt="Jam" style={{ width: 200, height: 87 }} /></a>
+                        <a href="/#home" style={{ marginRight: 0 }}><img id="logo" src="/img/logo-white.svg" alt="Jam" style={{ width: 200, height: 87 }} /></a>
                     </div>
                     <div id="stores" style={{ textAlign: 'end' }}>
                         <a>
@@ -96,7 +96,7 @@ const Nav = ({ contact, openContact, closeContact, commingSoon, setCommingSoon }
                 }
 
                 #main-nav.bg-color {
-                    background-color: #fff;
+                    background-color: #ED1E46;
                 }
 
                 .grid-3 {
@@ -107,6 +107,7 @@ const Nav = ({ contact, openContact, closeContact, commingSoon, setCommingSoon }
 
                 .nav-link {
                     margin-right: 40px;
+                    color: #fff;
                     cursor: pointer;
                 }
 

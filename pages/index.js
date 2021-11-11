@@ -1,14 +1,7 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
-
-import Init from '../components/index/Init'
-import Home from '../components/index/Home'
-import Features from '../components/index/Features'
-import FAQ from '../components/index/FAQ'
-import HomeTablet from '../components/index/HomeTablet'
-import FeaturesTablet from '../components/index/FeaturesTablet'
 import Layout from '../Layout/Layout'
-import InitTablet from '../components/index/InitTablet'
+import { Init, Home, Features, FAQ, InitTablet, Download, Workshops, Artists } from '../components/index'
 
 export default function Index() {
   const [pressed, setPressed] = useState(false);
@@ -46,15 +39,11 @@ export default function Index() {
       commingSoon={commingSoon}
       setCommingSoon={() => { setCommingSoon(true); setContact(true); }}>
 
-      <div className="visible-desktop">
-        <Home />
-        <Features />
-      </div>
-
-      <div className="visible-tablet">
-        <HomeTablet setCommingSoon={() => { setCommingSoon(true); setContact(true); }} />
-        <FeaturesTablet />
-      </div>
+      <Home />
+      <Download />
+      <Workshops />
+      <Artists />
+      <Features />
 
       <FAQ
         openContact={() => { setCommingSoon(false); setContact(true); }}

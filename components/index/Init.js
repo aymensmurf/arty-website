@@ -24,7 +24,6 @@ const Init = ({ pressed, setPressedTrue }) => {
 
     const handleCick = () => {
         const ball = document.querySelector('.ball');
-        const longPress = false;
 
         ball
             .addEventListener('mousedown', (e) => {
@@ -72,7 +71,7 @@ const Init = ({ pressed, setPressedTrue }) => {
         <>
             <section className="init">
                 <div className="container">
-                    <img src="/img/logo.svg" alt="Jam" style={{ width: 200, height: 87, objectFit: 'contain' }} />
+                    <img src="/img/logo-white.svg" alt="Jam" style={{ width: 200, height: 87, objectFit: 'contain' }} />
 
                     <div className="" style={{ position: 'relative', marginTop: 20, overflow: 'hidden', paddingBottom: 20 }}>
                         <h1 style={{ backgroundColor: '#151515', position: 'relative', zIndex: 2 }}>Where everything is</h1>
