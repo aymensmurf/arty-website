@@ -10,7 +10,7 @@ const Workshop = () => {
 
             <style jsx>{`
                 .workshop-card {
-                    width: 486px;
+                    width: 94%;
                     height: 320px;
                     background: url("https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg");
                     background-repeat: no-repeat;

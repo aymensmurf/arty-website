@@ -3,12 +3,14 @@ import Workshop from "../widgets/Workshop";
 
 const Workshops = () => {
     const settings = {
+        center: true,
         infinite: true,
-        slidesToShow: 3.1,
+        slidesToShow: 3.65,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
         pauseOnHover: true,
+        arrows: false
     };
 
     return (
@@ -20,16 +22,20 @@ const Workshops = () => {
                     <h3>Last added workshops</h3>
                 </div>
 
-                <div style={{ paddingLeft: 140, marginTop: 50 }}>
-                    <Slider {...settings}>
-                        <Workshop />
-                        <Workshop />
-                        <Workshop />
-                        <Workshop />
-                        <Workshop />
-                        <Workshop />
-                        <Workshop />
-                    </Slider>
+                <div className="container" style={{ marginTop: 50, position: 'relative' }}>
+                    <div className="overlay"></div>
+
+                    <div style={{ zIndex: 1, position: 'relative' }}>
+                        <Slider {...settings}>
+                            <Workshop />
+                            <Workshop />
+                            <Workshop />
+                            <Workshop />
+                            <Workshop />
+                            <Workshop />
+                            <Workshop />
+                        </Slider>
+                    </div>
                 </div>
 
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 70 }}>
@@ -87,6 +93,17 @@ const Workshops = () => {
                     color: #fff;
                     border-radius: 37.5px;
                     cursor: pointer;
+                }
+
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 2;
+                    box-shadow: inset 10px 0px 10px rgb(246 246 246), inset -10px 0px 10px rgb(246 246 246);
+                    pointer-events: none;
                 }
             `}</style>
         </>
