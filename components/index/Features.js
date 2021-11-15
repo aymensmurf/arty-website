@@ -48,20 +48,17 @@ const Features = () => {
                             <div style={{ position: 'relative', zIndex: 1 }}>
                                 <Item
                                     id='1'
-                                    icon='sprite'
                                     title='Connect, meet, play, sign, draw, dance and have fun!'
                                     content='Don’t miss the opportunity to meet artists around you. Get ARTY and start your own spectacle.'
                                 />
                                 <Item
                                     id='2'
-                                    icon='grinning-face'
                                     title='ARTY Workshops'
                                     content='If you are looking for an art workshop but it’s difficult to find, create or join!
                                     ARTY offers you the opportunity to have an interactive workshop, physically or online a by simple steps and friendly design!'
                                 />
                                 <Item
                                     id='3'
-                                    icon='collision'
                                     title='Workshop'
                                     content='For ethusiatstic artists who have the skill to teach, tutor or train art to people and want to share it with the world, ARTY is the solution to start your own workshops now.'
                                 />
@@ -73,16 +70,20 @@ const Features = () => {
 
             <style jsx>{`
                 h1 {
-                    font-size: 50px;
-                    line-height: 60px;
+                    font-family: Poppins;
+                    font-weight: 500;
+                    font-size: 48px;
+                    line-height: 50px;
                     margin-top: 10px;
+                    color: #0f0f0f;
                 }
 
-                @media only screen and (max-width: 1439px){
-                    h1 {
-                        font-size: 30px;
-                        line-height: 40px;
-                    }
+                p {
+                    font-family: Poppins;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 22px;
+                    color: #151515;
                 }
             `}</style>
         </>
@@ -91,11 +92,11 @@ const Features = () => {
 
 export default Features
 
-const Item = ({ id, icon, title, content }) => {
+const Item = ({ id, title, content }) => {
     return (
         <div className="feature-item" id={`feature-${id}`} style={{ display: 'flex', padding: '22px 40px', cursor: 'pointer' }}>
             <div>
-                <img src={'/img/' + icon + '.png'} alt={title} />
+                <img src={`/img/features/feature-${id}-icon.svg`} alt={title} />
             </div>
             <div>
                 <h2>{title}</h2>
@@ -108,29 +109,26 @@ const Item = ({ id, icon, title, content }) => {
                 }
 
                 h2 {
-                    font-size: 30px;
-                    line-height: 40px;
+                    font-family: "Poppins";
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 24px;
+                    color: #0f0f0f;
                 }
 
                 p {
+                    font-family: "Poppins";
+                    font-weight: normal;
+                    font-size: 18px;
+                    line-height: 20px;
+                    color: #151515;
                     margin-top: 8px;
                 }
 
                 img {
+                    width: 55px;
+                    object-fit: contain;
                     margin-right: 14px; 
-                }
-                
-                @media only screen and (max-width: 1439px){
-                    h2 {
-                        font-size: 24px;
-                        line-height: 30px;
-                    }
-
-                    img {
-                        width: 40px;
-                        height: 40px;
-                        object-fit: contain;
-                    }
                 }
             `}</style>
         </div>

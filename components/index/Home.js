@@ -30,7 +30,7 @@ const Home = () => {
                 <div className="container" style={{ paddingTop: 200 }}>
                     <h1 style={{ overflow: 'hidden' }}>
                         Connect, aspire and inspire to do <br />
-                        <span className="word-container-bottom" style={{ zIndex: 1, color: '#ED1E46' }}>{WORDS[wordIndex]}</span>
+                        <span className="word-container-bottom" style={{ zIndex: 1, color: '#ED1E46' }}>{WORDS[wordIndex]}</span>&nbsp;
                         with Arty!
                     </h1>
                 </div>

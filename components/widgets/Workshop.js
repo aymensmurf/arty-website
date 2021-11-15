@@ -1,4 +1,4 @@
-const Workshop = () => {
+const Workshop = ({ isFullWidth = false }) => {
     return (
         <>
             <div className="workshop-card hi">
@@ -10,18 +10,18 @@ const Workshop = () => {
 
             <style jsx>{`
                 .workshop-card {
-                    width: 94%;
                     height: 320px;
                     background: url("https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg");
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: cover;
-                    border-radius: 25px;
+                    border-radius: 10px;
                     cursor: pointer;
                     transition: all .5s ease;
                     overflow: hidden;
                     display: flex;
                     align-items: flex-end;
+                    width: ${isFullWidth ? '100%' : '94%'};
                 }
 
                 .workshop-card:hover {

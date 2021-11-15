@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
 import Layout from '../Layout/Layout'
 import { Init, Home, Features, FAQ, InitTablet, Download, Workshops, Artists } from '../components/index'
@@ -44,10 +44,10 @@ export default function Index() {
       <Workshops />
       <Artists />
       <Features />
-
       <FAQ
         openContact={() => { setCommingSoon(false); setContact(true); }}
-        setCommingSoon={() => { setCommingSoon(true); setContact(true); }} />
+        setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
+      />
     </Layout>
   )
 }

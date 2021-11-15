@@ -28,7 +28,7 @@ const Accordion = ({ q, a }) => {
                     margin-top: 14px;
                     padding-right: 50px;
                     overflow: hidden;
-                    height: ${collapsed ? '200px' : '0px'};
+                    height: ${collapsed ? '90px' : '0px'};
                     transition: height 600ms ease;
                 }
 

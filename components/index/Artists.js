@@ -29,7 +29,7 @@ const Artists = () => {
                     display: grid;
                     grid-template-columns: repeat(4, 1fr);
                     align-items: center;
-                    gap: 75px;
+                    gap: 30px;
                 }
 
                 .see-more-card {

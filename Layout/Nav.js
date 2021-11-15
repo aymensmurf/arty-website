@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Contact from '../components/widgets/Contact'
 
-const Nav = ({ contact, openContact, closeContact, commingSoon, setCommingSoon }) => {
+const Nav = ({ contact, isStaticNav = false, openContact, closeContact, commingSoon, setCommingSoon }) => {
 
     useEffect(() => {
         let doc = document.documentElement;
@@ -83,12 +83,12 @@ const Nav = ({ contact, openContact, closeContact, commingSoon, setCommingSoon }
 
             <style jsx>{`
                 #main-nav {
-                    background-color: transparent;
-                    position: fixed;
                     top: 0;
                     width: 100%;
                     transition: all .5s ease;
                     z-index: 99;
+                    background-color: ${isStaticNav ? '#ED1E46' : 'transparent'};
+                    position: ${isStaticNav ? 'relative' : 'fixed'} ;
                 }
 
                 #main-nav.hide {

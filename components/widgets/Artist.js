@@ -10,12 +10,12 @@ const Artist = () => {
             <style jsx>{`
                 .artis-card {
                     width: 100%;
-                    height: 320px;
+                    height: 300px;
                     background: url("https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg");
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: cover;
-                    border-radius: 25px;
+                    border-radius: 10px;
                     cursor: pointer;
                     transition: all .5s ease;
                     overflow: hidden;

@@ -20,14 +20,16 @@ const ArtistsSeeMoreCard = () => {
                     background-position: center;
                     background-size: cover;
                     padding: 44px 96px;
-                    box-shadow: inset  0px 320px 0px 0 rgb(0, 0, 0, .2);
                     border-radius: 25px;
                     cursor: pointer;
                     transition: all .5s ease;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                 }
 
                 .artists-card:hover {
-                    box-shadow: inset  0px 320px 0px 0 rgb(0, 0, 0, .3);
+                    box-shadow: inset  0px 320px 0px 0 rgb(0, 0, 0, .2);
                 }
 
                 h2 {

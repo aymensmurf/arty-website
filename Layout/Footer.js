@@ -12,7 +12,7 @@ const Footer = () => {
                             {/* <p>by <a href="https://innovant.studio" target="_blank" rel="noopener noreferrer">InnovAnt.studio</a></p> */}
                         </div>
                         <div style={{ width: '33.33%', textAlign: 'center' }}>
-                            <img src="/img/logo.svg" alt="Jam" style={{ width: 200, height: 87 }} />
+                            <img src="/img/logo-white.svg" alt="Jam" style={{ width: 200, height: 87 }} />
                         </div>
                         <div style={{ width: '33.33%', textAlign: 'right' }}>
                             <div className="social-media">

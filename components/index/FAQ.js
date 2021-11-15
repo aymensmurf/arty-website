@@ -1,117 +1,130 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { WORDS } from '../../utils/consts';
 import Accordion from '../widgets/Accordion'
 
 const FAQ = ({ openContact, setCommingSoon }) => {
+    const [wordIndex, setWordIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (wordIndex > WORDS.length - 2) {
+                setWordIndex(0)
+            } else {
+                setWordIndex(wordIndex + 1);
+            }
+        }, 2000);
+
+        return () => { clearInterval(interval); };
+    }, [wordIndex]);
+
     return (
         <>
             <a name="faq"></a>
             <section>
                 <div className="container">
-                    <h1>Got questions?</h1>
-                    <p>These are the most frequently asked questions, if you have another thing on mind <a onClick={openContact}>get in touch</a></p>
+                    <div className="faq-container">
+                        <h1>Got questions?</h1>
+                        <p className="description">These are the most frequently asked questions, if you have another thing on mind <a onClick={openContact}>get in touch</a></p>
 
-                    <div style={{ marginTop: 70 }}>
-                        <Accordion
-                            q="What is ARTY?"
-                            a={
-                                <p>ARTY is a social network for artists, art enthusiast, and amateurs, designed to enhance connectivity between the creative arts communities and offers fast reliable online solutions to organize events and workshops.</p>
-                            }
-                        />
-                        <Accordion
-                            q="Where did ARTY came from?"
-                            a={
-                                <p>ARTY is a product ideated, designed, and developed by Innovant, a Startup that combines both worlds of arts, design and the top notch software development.</p>
-                            }
-                        />
-                        <Accordion
-                            q="How can I join ARTY?"
-                            a={
-                                <>
+                        <div style={{ marginTop: 70 }}>
+                            <Accordion
+                                q="What is ARTY?"
+                                a={
+                                    <p>ARTY is a social network for artists, art enthusiast, and amateurs, designed to enhance connectivity between the creative arts communities and offers fast reliable online solutions to organize events and workshops.</p>
+                                }
+                            />
+                            <Accordion
+                                q="Where did ARTY came from?"
+                                a={
+                                    <p>ARTY is a product ideated, designed, and developed by Innovant, a Startup that combines both worlds of arts, design and the top notch software development.</p>
+                                }
+                            />
+                            <Accordion
+                                q="How can I join ARTY?"
+                                a={
                                     <p>Contact us and we will send you a TestFlight link.</p>
-                                    {/* <p>You can join us by downloading Arty app through <a href="https://play.google.com/store/apps/details?id=com.innovant.jam" target="_blank" rel="noopener noreferrer"> Google Play</a>.</p>
-                                    <p style={{ marginTop: 8 }}>For the iPhone users out there, contact us and we will send you a TestFlight link.</p> */}
-                                </>
-                            }
-                        />
+                                }
+                            />
+                        </div>
+                        <a name="download"></a>
+                        <h1 style={{ marginTop: 70 }}>Download now</h1>
+                        <div id="faq-stores" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', marginTop: 25 }}>
+                            <img src="/img/google-play-white.svg" alt="Google play" onClick={setCommingSoon} style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
+                            <img src="/img/app-store-white.svg" alt="App store" onClick={setCommingSoon} style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
+                        </div>
                     </div>
 
-                    <a name="download"></a>
-                    <h1 style={{ marginTop: 70 }}>Download now</h1>
-                    <div id="faq-stores" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', marginTop: 25 }}>
-                        <img src="/img/google-play.png" alt="Google play" onClick={setCommingSoon} style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
-                        <img src="/img/app-store.png" alt="App store" onClick={setCommingSoon} style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
-                    </div>
+                    <h1 className="slogan" style={{ overflow: 'hidden', marginTop: 180 }}>
+                        Connect, aspire and inspire to do <br />
+                        <span className="word-container-bottom" style={{ zIndex: 1 }}>{WORDS[wordIndex]}</span>&nbsp;
+                        with Arty!
+                    </h1>
+
+                    <img src="/img/singers.svg" alt="Arty Land" className="singers" />
                 </div>
+
             </section>
 
             <style jsx>{`
                 section {
-                    background: linear-gradient(27deg, #F05990 0%, #9F6CA7 100%);
+                    background: linear-gradient(#fff 0%, #fff 20%, #f3637f 43%, #ed1e46 60%, #f68955 100%);
                 }
 
                 .container {
+                    padding: 0px 50px;
+                }
+
+                .faq-container {
+                    background: url('/img/bg-faq.png');
+                    background-attachment: fixed;
+                    background-repeat: no-repeat;
+                    box-shadow: inset  0px 2000px 0px 0 rgb(0, 0, 0, .2);
                     padding: 70px 250px;
+                    border-radius: 25px;
                     text-align: center;
                 }
 
+                h1, p {
+                    color: #fff;
+                }
+
                 h1 {
+                    font-family: Poppins;
+                    font-weight: 600;
                     font-size: 67px;
+                }
+
+                h1.slogan {
+                    font-family: "Republica";
+                    font-weight: normal;
+                    font-size: 48px;
+                    line-height: 60px;
+                    text-align: center;
                     color: #fff;
                 }
 
                 a {
-                    color: #fff;
+                    color: #F68955;                    
                     text-decoration: underline;
                     cursor: pointer;
                 }
 
+                .description {
+                    padding: 0px 200px;
+                }
+
                 #faq-stores img{
+                    width: 280px;
+                    height: 84px;
+                    object-fit: contain;
                     cursor: pointer;
                 }
 
-                @media only screen and (max-width: 1439px){
-                    h1 {
-                        font-size: 46px;
-                    }
-
-                    img {
-                        width: 260px;
-                        height: 85px;
-                        object-fit: contain;
-                    }
-                }
-
-                @media only screen and (max-width: 1023px){
-                    .container {
-                        padding: 70px 30px;
-                        text-align: center;
-                    }
-                }
-
-                @media only screen and (max-width: 767px){
-                    h1 {
-                        font-size: 36px;
-                        line-height: 48px;
-                    }
-
-                    #faq-stores img:nth-child(1){
-                        width: 200px;
-                        height: 66px;
-                        object-fit: contain;
-                    }
-
-                    #faq-stores img:nth-child(2){
-                        width: 200px;
-                        height: 66px;
-                        object-fit: contain;
-                    }
-                }
-
-                @media only screen and (max-width: 424px){
-                    h1 {
-                        font-size: 26px;
-                        line-height: 38px;
-                    }
+                .singers {
+                    width: 100%;
+                    object-fit: contain;
+                    margin-top: 50px;
+                    margin-bottom: -4px;
                 }
             `}</style>
         </>
