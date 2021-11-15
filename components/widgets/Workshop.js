@@ -1,12 +1,14 @@
 const Workshop = ({ isFullWidth = false }) => {
     return (
         <>
-            <div className="workshop-card hi">
-                <div className="glass">
-                    <p className="title">Workshop Name</p>
-                    <p className="artist">Owner</p>
+            <a href="/workshops/thisid">
+                <div className="workshop-card hi">
+                    <div className="glass">
+                        <p className="title">Workshop Name</p>
+                        <p className="artist">Owner</p>
+                    </div>
                 </div>
-            </div>
+            </a>
 
             <style jsx>{`
                 .workshop-card {
