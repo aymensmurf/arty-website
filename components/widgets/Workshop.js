@@ -2,7 +2,7 @@ const Workshop = ({ isFullWidth = false }) => {
     return (
         <>
             <a href="/workshops/thisid">
-                <div className="workshop-card hi">
+                <div className="workshop-card">
                     <div className="glass">
                         <p className="title">Workshop Name</p>
                         <p className="artist">Owner</p>

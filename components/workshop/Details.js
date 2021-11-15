@@ -13,6 +13,8 @@ const Details = () => {
                         <h3 style={{ marginTop: 11 }}>End : 22 Nov 2021 at 18:00</h3>
                         <h4 style={{ marginTop: 31 }}>Discription</h4>
                         <p style={{ marginTop: 10 }}>consectetur adipiscing elit. Suspendisse turpis purus, molestie vitae semper dapibus, consectetur quis ligula. Aliquam nec elit odio. Aenean mauris nunc, maximus tempus tortor in, bibendum dapibus tortor</p>
+
+                        <h4 style={{ marginTop: 31 }}>Theme</h4>
                     </div>
 
                     <div className="participents">

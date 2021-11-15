@@ -113,6 +113,10 @@ a {
   animation: word-bottom 2000ms ease-in-out infinite;
 }
 
+.slick-dots li.slick-active button:before {
+  color: #C8FF0E !important;
+}
+
 @keyframes audio-icon {
   0% {
     transform: scale(1);

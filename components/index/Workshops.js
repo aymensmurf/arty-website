@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Slider from "react-slick";
 import Workshop from "../widgets/Workshop";
 
@@ -8,7 +7,6 @@ const Workshops = () => {
         infinite: true,
         slidesToShow: 3.65,
         slidesToScroll: 1,
-        pauseOnHover: true,
         arrows: false
     };
 
