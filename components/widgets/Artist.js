@@ -1,11 +1,13 @@
 const Artist = () => {
     return (
         <>
-            <div className="artis-card hi">
-                <div className="glass">
-                    <p className="title">Artist Name</p>
+            <a href="/artist">
+                <div className="artis-card hi">
+                    <div className="glass">
+                        <p className="title">Artist Name</p>
+                    </div>
                 </div>
-            </div>
+            </a>
 
             <style jsx>{`
                 .artis-card {
