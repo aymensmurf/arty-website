@@ -8,7 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.4.17",
     "animate.css": "^4.1.1",
+    "graphql": "^16.0.1",
     "next": "^11.1.2",
     "react": "^17.0.2",
     "react-animate-on-scroll": "^2.1.5",

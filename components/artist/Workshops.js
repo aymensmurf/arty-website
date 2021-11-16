@@ -1,20 +1,19 @@
 import Workshop from "../widgets/Workshop";
 
-const Workshops = () => {
+const Workshops = ({ data }) => {
     return (
         <>
             <div className="workshops">
-                <Workshop isFullWidth />
-                <Workshop isFullWidth />
-                <Workshop isFullWidth />
-                <Workshop isFullWidth />
-                <Workshop isFullWidth />
-                <Workshop isFullWidth />
-                <Workshop isFullWidth />
-                <Workshop isFullWidth />
-                <Workshop isFullWidth />
-                <Workshop isFullWidth />
-                <Workshop isFullWidth />
+                {data.map(({ _id, title, slug, banner }) => (
+                    <Workshop
+                        key={_id}
+                        title={title}
+                        banner={banner}
+                        slug={slug}
+                        isOwner
+                        isFullWidth
+                    />
+                ))}
             </div>
 
             <style jsx>{`

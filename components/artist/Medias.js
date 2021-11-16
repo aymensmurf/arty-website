@@ -1,20 +1,19 @@
 import Media from "../widgets/Media";
 
-const Medias = () => {
+const Medias = ({ data }) => {
     return (
         <>
             <div className="medias">
-                <Media isFullWidth />
-                <Media isFullWidth />
-                <Media isFullWidth />
-                <Media isFullWidth />
-                <Media isFullWidth />
-                <Media isFullWidth />
-                <Media isFullWidth />
-                <Media isFullWidth />
-                <Media isFullWidth />
-                <Media isFullWidth />
-                <Media isFullWidth />
+                {data.map(({ _id, url, type, createdAt }) => (
+                    <Media
+                        key={_id}
+                        id={_id}
+                        url={url}
+                        type={type}
+                        createdAt={createdAt}
+                        isFullWidth
+                    />
+                ))}
             </div>
 
             <style jsx>{`

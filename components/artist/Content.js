@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { getImageUri } from "../../utils/funcs";
 import Medias from "./Medias";
 import MoreArtists from "./MoreArtists";
 import Workshops from "./Workshops";
 
-const Content = () => {
+const Content = ({ data }) => {
     const [tabIndex, setTabIndex] = useState(0);
 
     return (
@@ -12,12 +13,12 @@ const Content = () => {
                 <div className="content">
                     <div className="avatar-container">
                         <div className="circle">
-                            <img src="https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg" alt="Artist Name" className="avatar" />
+                            <img src={getImageUri(data.avatar)} alt="Artist Name" className="avatar" />
                         </div>
                     </div>
 
-                    <h1>Artist Name</h1>
-                    <p>@UserName</p>
+                    <h1>{data.name}</h1>
+                    <p>@{data.username}</p>
                     <div className="media">
                         <img src="/img/spotify.svg" alt="Spotify" />
                         <img src="/img/youtube.svg" alt="YouTube" />
@@ -38,9 +39,15 @@ const Content = () => {
                     <div className="tab-content" style={{ width: '100%' }}>
                         {
                             (tabIndex === 0) ? (
-                                <Medias />
+                                data.media && data.media.length > 0 ?
+                                    <Medias data={data.media} />
+                                    :
+                                    <h1>Nth to c here</h1>
                             ) : (tabIndex === 1) ? (
-                                <Workshops />
+                                data.workshops && data.workshops.length > 0 ?
+                                    <Workshops data={data.workshops} />
+                                    :
+                                    <h1>Nth to c here</h1>
                             ) : (
                                 <h1>About</h1>
                             )

@@ -1,11 +1,13 @@
-const Workshop = ({ isFullWidth = false }) => {
+import { getImageUri } from "../../utils/funcs";
+
+const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = false }) => {
     return (
         <>
-            <a href="/workshops/thisid">
+            <a href={`/workshops/${slug}`}>
                 <div className="workshop-card">
                     <div className="glass">
-                        <p className="title">Workshop Name</p>
-                        <p className="artist">Owner</p>
+                        <p className="title">{title}</p>
+                        {(!isOwner || host) && (<p className="artist">{host}</p>)}
                     </div>
                 </div>
             </a>
@@ -13,7 +15,7 @@ const Workshop = ({ isFullWidth = false }) => {
             <style jsx>{`
                 .workshop-card {
                     height: 320px;
-                    background: url("https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg");
+                    background: url(${getImageUri(banner)});
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: cover;
