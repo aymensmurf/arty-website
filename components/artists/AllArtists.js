@@ -1,46 +1,23 @@
 import Masonry from 'react-masonry-css'
 import Artist from "../widgets/Artist";
 
-const AllArtists = () => {
+const AllArtists = ({ data }) => {
     return (
         <>
             <section className="container" style={{ marginTop: 100 }}>
-                <Masonry
-                    breakpointCols={4}
-                    className="my-masonry-grid"
-                    columnClassName="my-masonry-grid_column">
-                    <div style={{ marginBottom: 20 }}>
-                        <Artist />
-                    </div>
-                    <div style={{ marginBottom: 20 }}>
-                        <h2>Arty</h2>
-                        <Artist />
-                    </div>
-                    <div style={{ marginBottom: 20 }}>
-                        <Artist />
-                    </div>
-                    <div style={{ marginBottom: 20 }}>
-                        <h2>Artists</h2>
-                        <Artist />
-                    </div>
-                    <div style={{ marginBottom: 20 }}>
-                        <Artist />
-                    </div>
-                    <div style={{ marginBottom: 20 }}>
-                        <Artist />
-                    </div>
-                    <div style={{ marginBottom: 20 }}>
-                        <Artist />
-                    </div>
-                    <div style={{ marginBottom: 20 }}>
-                        <Artist />
-                    </div>
-                    <div style={{ marginBottom: 20 }}>
-                        <Artist />
-                    </div>
-                    <div style={{ marginBottom: 20 }}>
-                        <Artist />
-                    </div>
+                <Masonry breakpointCols={4} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
+                    {data.map(({ _id, name, avatar, username }, i) => (
+                        <div key={_id} style={{ marginBottom: 20 }}>
+                            {(i === 1) && <h2>Arty</h2>}
+                            {(i === 3) && <h2>Artists</h2>}
+                            <Artist
+                                name={name}
+                                avatar={avatar}
+                                username={username}
+                                scaleOnHover
+                            />
+                        </div>
+                    ))}
                 </Masonry>
             </section>
 

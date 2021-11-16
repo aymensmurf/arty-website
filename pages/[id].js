@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Layout from "../Layout/Layout";
 import { Content } from "../components/artist";
-import client from '../graphql'
+import client from '../graphql';
 import { GET_USER_BY_USERNAME } from '../graphql/queries/user';
 
 const Artist = ({ data }) => {
@@ -41,7 +41,7 @@ export async function getServerSideProps({ query }) {
 
             return { props: {}, };
         } catch (error) {
-            console.log(`--- error`, error.networkError.response)
+            console.log(`error`, error)
             return { props: {}, };
         }
     }

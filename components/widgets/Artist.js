@@ -1,10 +1,12 @@
-const Artist = ({ isFullWidth = true }) => {
+import { getImageUri } from "../../utils/funcs";
+
+const Artist = ({ name, avatar, username, isFullWidth = true, scaleOnHover = false }) => {
     return (
         <>
-            <a href="/artist">
+            <a href={`/${username}`}>
                 <div className="artis-card">
                     <div className="glass">
-                        <p className="title">Artist Name</p>
+                        <p className="title">{name}</p>
                     </div>
                 </div>
             </a>
@@ -13,7 +15,6 @@ const Artist = ({ isFullWidth = true }) => {
                 .artis-card {
                     width: 100%;
                     height: 300px;
-                    background: url("https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg");
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: cover;
@@ -23,11 +24,12 @@ const Artist = ({ isFullWidth = true }) => {
                     overflow: hidden;
                     display: flex;
                     align-items: flex-end;
+                    background: url(${getImageUri(avatar)});
                     width: ${isFullWidth ? '100%' : '94%'};
                 }
 
                 .artis-card:hover {
-                    // transform: scale(1.05);
+                    transform: scale(${scaleOnHover ? 1.05 : 1});
                 }
 
                 .artis-card:hover .glass {

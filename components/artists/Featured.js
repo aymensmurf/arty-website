@@ -22,7 +22,7 @@ const Featured = () => {
 
             <style jsx>{`
                 section {
-                    padding: 125px 0px 100px;
+                    padding: 125px 0px;
                 }
 
                 .grid {
