@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Medias from "./Medias";
+import MoreArtists from "./MoreArtists";
 import Workshops from "./Workshops";
 
 const Content = () => {
@@ -46,13 +47,12 @@ const Content = () => {
                         }
                     </div>
                 </div>
+
+                <MoreArtists />
             </section>
 
-            <style jsx>{`
-                section {
-                    padding: 0px 100px;
-                }
 
+            <style jsx>{`
                 .content {
                     border-radius: 50px;
                     background: #f6f6f6;

@@ -1,4 +1,4 @@
-const Artist = () => {
+const Artist = ({ isFullWidth = true }) => {
     return (
         <>
             <a href="/artist">
@@ -23,6 +23,7 @@ const Artist = () => {
                     overflow: hidden;
                     display: flex;
                     align-items: flex-end;
+                    width: ${isFullWidth ? '100%' : '94%'};
                 }
 
                 .artis-card:hover {
