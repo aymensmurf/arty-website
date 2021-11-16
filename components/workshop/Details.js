@@ -1,3 +1,5 @@
+import Pill from "../widgets/Pill";
+
 const Details = ({ setCommingSoon }) => {
     return (
         <>
@@ -15,6 +17,11 @@ const Details = ({ setCommingSoon }) => {
                         <p style={{ marginTop: 10 }}>consectetur adipiscing elit. Suspendisse turpis purus, molestie vitae semper dapibus, consectetur quis ligula. Aliquam nec elit odio. Aenean mauris nunc, maximus tempus tortor in, bibendum dapibus tortor</p>
 
                         <h4 style={{ marginTop: 31 }}>Theme</h4>
+                        <div className="theme">
+                            <Pill title="pop" isActive />
+                            <Pill title="rap" isActive />
+                            <Pill title="guitar" isActive />
+                        </div>
                     </div>
 
                     <div className="participents">
@@ -171,6 +178,12 @@ const Details = ({ setCommingSoon }) => {
                     line-height: 50px;
                     color: #fff;
                     text-align: center;
+                }
+
+                .theme {
+                    display: flex;
+                    gap: 10px;
+                    margin-top: 10px;
                 }
             `}</style>
         </>

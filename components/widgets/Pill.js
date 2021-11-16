@@ -23,6 +23,7 @@ const Pill = ({ title, isActive }) => {
                     font-size: 13px;
                     text-align: center;
                     color: #797979;
+                    text-transform: uppercase;
                 }
 
                 p.active {
