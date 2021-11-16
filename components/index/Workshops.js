@@ -1,12 +1,12 @@
 import Slider from "react-slick";
 import Workshop from "../widgets/Workshop";
 
-const Workshops = () => {
+const Workshops = ({ data }) => {
     const settings = {
         center: true,
         infinite: true,
         slidesToShow: 3.65,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
         arrows: false
     };
 
@@ -20,13 +20,15 @@ const Workshops = () => {
 
                 <div className="container" style={{ marginTop: 50, position: 'relative' }}>
                     <Slider {...settings}>
-                        <Workshop />
-                        <Workshop />
-                        <Workshop />
-                        <Workshop />
-                        <Workshop />
-                        <Workshop />
-                        <Workshop />
+                        {data.map(({ _id, title, slug, banner, host }) => (
+                            <Workshop
+                                key={_id}
+                                title={title}
+                                banner={banner}
+                                slug={slug}
+                                host={host.username}
+                            />
+                        ))}
                     </Slider>
                 </div>
 

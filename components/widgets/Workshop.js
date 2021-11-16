@@ -1,13 +1,13 @@
 import { getImageUri } from "../../utils/funcs";
 
-const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = false }) => {
+const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = false, scaleOnHover = false }) => {
     return (
         <>
             <a href={`/workshops/${slug}`}>
                 <div className="workshop-card">
                     <div className="glass">
                         <p className="title">{title}</p>
-                        {(!isOwner || host) && (<p className="artist">{host}</p>)}
+                        {(!isOwner || host) && (<p className="artist">@{host}</p>)}
                     </div>
                 </div>
             </a>
@@ -29,7 +29,7 @@ const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = false }) =
                 }
 
                 .workshop-card:hover {
-                    // transform: scale(1.05);
+                    transform: scale(${scaleOnHover ? 1.05 : 1});
                 }
 
                 .workshop-card:hover .glass {

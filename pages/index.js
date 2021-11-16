@@ -4,8 +4,9 @@ import Layout from '../Layout/Layout'
 import { Init, Home, Features, FAQ, InitTablet, Download, Workshops, Artists } from '../components/index'
 import client from '../graphql';
 import { GET_FEATURED_USERS } from '../graphql/queries/user';
+import { GET_FEATURED_WORKSHOPS } from '../graphql/queries/workshop';
 
-const Index = ({ artists }) => {
+const Index = ({ artists, workshops }) => {
   const [pressed, setPressed] = useState(false);
   const [contact, setContact] = useState(false);
   const [commingSoon, setCommingSoon] = useState(false);
@@ -56,8 +57,10 @@ const Index = ({ artists }) => {
       <Download
         setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
       />
-      <Workshops />
-      <Artists data={artists} />
+      {workshops.length > 0 && <Workshops data={workshops} />}
+      {artists.length > 0 && <Artists data={artists} />}
+
+
       <Features />
       <FAQ
         openContact={() => { setCommingSoon(false); setContact(true); }}
@@ -69,17 +72,16 @@ const Index = ({ artists }) => {
 
 export async function getServerSideProps() {
   try {
-    const { data } = await client.query({ query: GET_FEATURED_USERS });
+    const { data: usersData } = await client.query({ query: GET_FEATURED_USERS });
+    const { data: workshopsData } = await client.query({ query: GET_FEATURED_WORKSHOPS });
 
-    if (data.getFeaturedUsers) {
-      return {
-        props: {
-          artists: data.getFeaturedUsers
-        },
-      };
-    }
+    return {
+      props: {
+        artists: usersData.getFeaturedUsers || [],
+        workshops: workshopsData.getFeaturedWorkshops || [],
+      },
+    };
 
-    return { props: {}, };
   } catch (error) {
     console.log(`error`, error)
     return { props: {}, };
