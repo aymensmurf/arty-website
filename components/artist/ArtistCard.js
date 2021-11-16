@@ -1,22 +1,15 @@
-const ArtistsSeeMoreCard = () => {
+const ArtistCard = () => {
     return (
         <>
-            <a href="/artists">
-                <div className="artists-card">
-                    <h2>Artists</h2>
-                    <p className="description">consectetur adipiscing elit. Cras ac ante quis est consequat tristique sed ac purus. Quisque semper sem cursus velit vulputate aliquam</p>
-
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 25, marginTop: 14 }}>
-                        <div style={{ width: 150, height: 3, backgroundColor: '#fff' }} />
-                        <p className="see-more">see more</p>
-                    </div>
-                </div>
-            </a>
+            <div className="artists-card">
+                <h2>Arty artists</h2>
+                <p className="description">consectetur adipiscing elit. Cras ac ante quis est consequat tristique sed ac purus. Quisque semper sem cursus velit vulputate aliquam</p>
+            </div>
 
             <style jsx>{`
                 .artists-card {
                     width: 100%;
-                    height: 320px;
+                    height: 100%;
                     background: url("/img/bg-artist-card.png");
                     background-repeat: no-repeat;
                     background-position: center;
@@ -30,14 +23,10 @@ const ArtistsSeeMoreCard = () => {
                     justify-content: center;
                 }
 
-                .artists-card:hover {
-                    box-shadow: inset  0px 320px 0px 0 rgb(0, 0, 0, .2);
-                }
-
                 h2 {
                     font-family: Poppins;
                     font-weight: 600;
-                    font-size: 68px;
+                    font-size: 51px;
                     line-height: 52px;
                     color: #fff;
                 }
@@ -50,17 +39,9 @@ const ArtistsSeeMoreCard = () => {
                     color: #fff;
                     margin-top: 10px;
                 }
-
-                .see-more {
-                    font-family: Poppins;
-                    font-weight: 600;
-                    font-size: 28px;
-                    line-height: 52px;
-                    color: #fff;
-                }
             `}</style>
         </>
     )
 }
 
-export default ArtistsSeeMoreCard;
+export default ArtistCard;

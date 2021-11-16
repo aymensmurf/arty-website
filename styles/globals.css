@@ -114,7 +114,15 @@ a {
 }
 
 .slick-dots li.slick-active button:before {
-  color: #C8FF0E !important;
+  color: #c8ff0e !important;
+}
+
+.my-masonry-grid {
+  display: flex;
+}
+.my-masonry-grid_column {
+  background-clip: padding-box;
+  margin: 10px;
 }
 
 @keyframes audio-icon {

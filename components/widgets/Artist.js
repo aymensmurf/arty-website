@@ -2,7 +2,7 @@ const Artist = ({ isFullWidth = true }) => {
     return (
         <>
             <a href="/artist">
-                <div className="artis-card hi">
+                <div className="artis-card">
                     <div className="glass">
                         <p className="title">Artist Name</p>
                     </div>
