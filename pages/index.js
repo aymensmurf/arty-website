@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Layout from '../Layout/Layout'
 import { Init, Home, Features, FAQ, InitTablet, Download, Workshops, Artists } from '../components/index'
@@ -7,6 +7,14 @@ export default function Index() {
   const [pressed, setPressed] = useState(false);
   const [contact, setContact] = useState(false);
   const [commingSoon, setCommingSoon] = useState(false);
+
+  useEffect(() => {
+    if (!document.referrer) {
+      setPressed(false);
+    } else {
+      setPressed(true);
+    }
+  }, [])
 
   if (!pressed) {
     return (
