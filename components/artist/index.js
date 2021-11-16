@@ -1,4 +1,3 @@
-import Featured from './Featured';
-import AllArtists from './AllArtists';
+import Content from './Content';
 
-export { Featured, AllArtists };
+export { Content }

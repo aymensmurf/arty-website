@@ -4,7 +4,7 @@ import Artist from "../widgets/Artist";
 const AllArtists = () => {
     return (
         <>
-            <section className="container">
+            <section className="container" style={{ marginTop: 100 }}>
                 <Masonry
                     breakpointCols={4}
                     className="my-masonry-grid"

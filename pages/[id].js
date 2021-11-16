@@ -1,5 +1,5 @@
 import Layout from "../Layout/Layout";
-import { Content } from "../components/artist.js";
+import { Content } from "../components/artist";
 
 const Artist = () => {
     return (

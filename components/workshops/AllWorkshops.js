@@ -1,12 +1,15 @@
+import Filters from "../widgets/Filters";
 import Workshop from "../widgets/Workshop";
 
 const AllWorkshops = () => {
     return (
         <>
             <section className="container">
-                <div className="header">
+                <div className="header" style={{ marginBottom: 100 }}>
                     <h1>Our Workshops</h1>
                 </div>
+
+                <Filters />
 
                 <div className="grid" style={{ marginTop: 100, marginBottom: 100 }}>
                     <Workshop isFullWidth />
