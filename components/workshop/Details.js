@@ -1,4 +1,4 @@
-const Details = () => {
+const Details = ({ setCommingSoon }) => {
     return (
         <>
             <section className="container">
@@ -43,10 +43,10 @@ const Details = () => {
 
                         <div className="flex" style={{ gap: 24, marginTop: 35 }}>
                             <a>
-                                <img src="/img/nav-google.png" alt="Google Play" style={{ marginRight: 10 }} />
+                                <img src="/img/nav-google.png" alt="Google Play" onClick={setCommingSoon} style={{ marginRight: 10, cursor: 'pointer' }} />
                             </a>
                             <a>
-                                <img src="/img/nav-apple.png" alt="App store" />
+                                <img src="/img/nav-apple.png" alt="App store" onClick={setCommingSoon} style={{ cursor: 'pointer' }} />
                             </a>
                         </div>
 

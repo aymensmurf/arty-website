@@ -14,11 +14,13 @@ const Index = () => {
             </Head>
 
             <Layout
+                isStaticNav
                 contact={contact}
                 openContact={() => { setCommingSoon(false); setContact(true); }}
                 closeContact={() => { setContact(false); }}
                 commingSoon={commingSoon}
-                setCommingSoon={() => { setCommingSoon(true); setContact(true); }}>
+                setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
+            >
                 <section>
                     <div className="container">
                         <h1>Terms & Conditions</h1>
@@ -50,7 +52,7 @@ const Index = () => {
             <style jsx>{`
                 section {
                     text-align: center;
-                    padding: 200px 30px;
+                    padding: 100px 30px 200px;
                 }
 
                 h1 {

@@ -34,13 +34,16 @@ export default function Index() {
   return (
     <Layout
       contact={contact}
+      commingSoon={commingSoon}
       openContact={() => { setCommingSoon(false); setContact(true); }}
       closeContact={() => { setContact(false); }}
-      commingSoon={commingSoon}
-      setCommingSoon={() => { setCommingSoon(true); setContact(true); }}>
+      setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
+    >
 
       <Home />
-      <Download />
+      <Download
+        setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
+      />
       <Workshops />
       <Artists />
       <Features />

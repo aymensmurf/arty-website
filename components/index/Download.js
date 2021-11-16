@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-const Download = () => {
+const Download = ({ setCommingSoon }) => {
     return (
         <>
             <section>
@@ -17,8 +17,8 @@ const Download = () => {
                         <p>Find all sort of Artist in ARTY and get to know, meet them and play music, dance, paint with them and much more.</p>
 
                         <div className="icons-container">
-                            <img src="/img/app-store-white.svg" alt="App store" />
-                            <img src="/img/google-play-white.svg" alt="Google play" />
+                            <img src="/img/app-store-white.svg" alt="App store" onClick={setCommingSoon} />
+                            <img src="/img/google-play-white.svg" alt="Google play" onClick={setCommingSoon} />
                         </div>
                     </div>
                 </div>

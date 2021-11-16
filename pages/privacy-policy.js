@@ -13,11 +13,13 @@ const Index = () => {
             </Head>
 
             <Layout
+                isStaticNav
                 contact={contact}
+                commingSoon={commingSoon}
                 openContact={() => { setCommingSoon(false); setContact(true); }}
                 closeContact={() => { setContact(false); }}
-                commingSoon={commingSoon}
-                setCommingSoon={() => { setCommingSoon(true); setContact(true); }}>
+                setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
+            >
                 <section>
                     <h1>Privacy Policy</h1>
 
@@ -73,7 +75,7 @@ const Index = () => {
                     margin-right: auto;
                     margin-left: auto;
                     text-align: center;
-                    padding: 200px 30px;
+                    padding: 100px 30px 200px;
                 }
 
                 h1 {

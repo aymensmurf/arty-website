@@ -3,10 +3,22 @@ import Layout from "../../Layout/Layout";
 import { Details, Header, MoreWorkshops } from "../../components/workshop";
 
 const Workshop = () => {
+    const [contact, setContact] = useState(false);
+    const [commingSoon, setCommingSoon] = useState(false);
+
     return (
-        <Layout isStaticNav>
+        <Layout
+            isStaticNav
+            contact={contact}
+            commingSoon={commingSoon}
+            openContact={() => { setCommingSoon(false); setContact(true); }}
+            closeContact={() => { setContact(false); }}
+            setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
+        >
             <Header />
-            <Details />
+            <Details
+                setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
+            />
             <MoreWorkshops />
         </Layout>
     )
