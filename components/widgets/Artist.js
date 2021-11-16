@@ -13,7 +13,6 @@ const Artist = ({ name, avatar, username, isFullWidth = true, scaleOnHover = fal
 
             <style jsx>{`
                 .artis-card {
-                    width: 100%;
                     height: 300px;
                     background-repeat: no-repeat;
                     background-position: center;

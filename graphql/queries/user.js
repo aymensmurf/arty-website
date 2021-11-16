@@ -45,7 +45,7 @@ export const GET_USER_BY_USERNAME = gql`
 `
 
 export const SEARCH_USERS = gql`
-  query Query(
+  query SearchForUser(
     $genres: [String],
     $instruments: [String],
     $paintings: [String],
@@ -90,4 +90,15 @@ export const SEARCH_USERS = gql`
         username
     }
   }
+`
+
+export const GET_FEATURED_USERS = gql`
+    query GetFeaturedUsers {
+        getFeaturedUsers {
+            _id
+            name
+            avatar
+            username
+        }
+    }
 `

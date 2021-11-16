@@ -16,7 +16,7 @@ const ArtistsSeeMoreCard = () => {
             <style jsx>{`
                 .artists-card {
                     width: 100%;
-                    height: 320px;
+                    height: 300px;
                     background: url("/img/bg-artist-card.png");
                     background-repeat: no-repeat;
                     background-position: center;

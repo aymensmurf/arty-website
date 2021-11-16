@@ -1,20 +1,28 @@
 import Artist from "../widgets/Artist";
 import ArtistsSeeMoreCard from "../widgets/ArtistsSeeMoreCard";
 
-const Artists = () => {
+const Artists = ({ data }) => {
     return (
         <>
             <section>
                 <div className="container artists-container">
-                    <Artist />
-                    <Artist />
-                    <div className="see-more-card">
-                        <ArtistsSeeMoreCard />
-                    </div>
-                    <Artist />
-                    <Artist />
-                    <Artist />
-                    <Artist />
+                    {data.map(({ _id, name, avatar, username }, i) => (
+                        <>
+                            <Artist
+                                key={_id}
+                                name={name}
+                                avatar={avatar}
+                                username={username}
+                                scaleOnHover
+                            />
+
+                            {(i === 1) && (
+                                <div className="see-more-card">
+                                    <ArtistsSeeMoreCard />
+                                </div>
+                            )}
+                        </>
+                    ))}
                 </div>
             </section>
 

@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Layout from '../Layout/Layout'
 import { Init, Home, Features, FAQ, InitTablet, Download, Workshops, Artists } from '../components/index'
+import client from '../graphql';
+import { GET_FEATURED_USERS } from '../graphql/queries/user';
 
-export default function Index() {
+const Index = ({ artists }) => {
   const [pressed, setPressed] = useState(false);
   const [contact, setContact] = useState(false);
   const [commingSoon, setCommingSoon] = useState(false);
@@ -14,7 +16,7 @@ export default function Index() {
     } else {
       setPressed(true);
     }
-  }, [])
+  }, []);
 
   if (!pressed) {
     return (
@@ -39,6 +41,8 @@ export default function Index() {
     )
   }
 
+  console.log(`artists`, artists)
+
   return (
     <Layout
       contact={contact}
@@ -53,7 +57,7 @@ export default function Index() {
         setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
       />
       <Workshops />
-      <Artists />
+      <Artists data={artists} />
       <Features />
       <FAQ
         openContact={() => { setCommingSoon(false); setContact(true); }}
@@ -62,3 +66,24 @@ export default function Index() {
     </Layout>
   )
 }
+
+export async function getServerSideProps() {
+  try {
+    const { data } = await client.query({ query: GET_FEATURED_USERS });
+
+    if (data.getFeaturedUsers) {
+      return {
+        props: {
+          artists: data.getFeaturedUsers
+        },
+      };
+    }
+
+    return { props: {}, };
+  } catch (error) {
+    console.log(`error`, error)
+    return { props: {}, };
+  }
+}
+
+export default Index;
