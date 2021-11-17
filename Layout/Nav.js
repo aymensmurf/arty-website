@@ -15,8 +15,6 @@ const Nav = ({ contact, isStaticNav = false, openContact, closeContact, commingS
         let header = document.getElementById('main-nav');
         // header.classList.remove('bg-color');
 
-        console.log(`curScroll`, curScroll)
-
         if (w.scrollY <= 150 || doc.scrollTop) {
             header.classList.remove('bg-color');
         }

@@ -1,48 +1,67 @@
+import { useState, useEffect } from "react";
+import { getImageUri } from "../../utils/funcs";
 import Pill from "../widgets/Pill";
 
-const Details = ({ setCommingSoon }) => {
+const Details = ({ data, setCommingSoon }) => {
+    const [theme, setTheme] = useState([]);
+
+    useEffect(() => {
+        console.log(`data`, data)
+        const { architectures, calligraphy, dances, genres, handcrafts, instruments, literatures, paintings, paintingtools, photographies, photographytools, sandarts, sculptures, skills, theatres } = data;
+        const _theme = architectures.concat(calligraphy, dances, genres, handcrafts, instruments, literatures, paintings, paintingtools, photographies, photographytools, sandarts, sculptures, skills, theatres);
+
+        setTheme(_theme);
+    }, []);
+
     return (
         <>
             <section className="container">
                 <div className="flex">
                     <div className="details">
                         <div className="flex" style={{ alignItems: 'center', gap: 20 }}>
-                            <img src="https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg" alt="Owner" className="avatar" />
-                            <h1>Woner</h1>
+                            <img src={getImageUri(data.host.avatar)} alt={data.host.name} className="avatar" />
+                            <h1>{data.host.name}</h1>
                         </div>
-                        <h2 style={{ marginTop: 35 }}>Workshop Names</h2>
-                        <h3 style={{ marginTop: 13 }}>Start : 22 Nov 2021 at 08:00</h3>
-                        <h3 style={{ marginTop: 11 }}>End : 22 Nov 2021 at 18:00</h3>
+                        <h2 style={{ marginTop: 35 }}>{data.title}</h2>
+                        <h3 style={{ marginTop: 13 }}>Start : {new Date(data.start).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'medium' })}</h3>
+                        <h3 style={{ marginTop: 11 }}>End : {new Date(data.start).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'medium' })}</h3>
                         <h4 style={{ marginTop: 31 }}>Discription</h4>
-                        <p style={{ marginTop: 10 }}>consectetur adipiscing elit. Suspendisse turpis purus, molestie vitae semper dapibus, consectetur quis ligula. Aliquam nec elit odio. Aenean mauris nunc, maximus tempus tortor in, bibendum dapibus tortor</p>
+                        <p style={{ marginTop: 10 }}>{data.description}</p>
 
-                        <h4 style={{ marginTop: 31 }}>Theme</h4>
-                        <div className="theme">
-                            <Pill title="pop" isActive />
-                            <Pill title="rap" isActive />
-                            <Pill title="guitar" isActive />
-                        </div>
+                        {theme.length > 0 && (
+                            <>
+                                <h4 style={{ marginTop: 31 }}>Theme</h4>
+                                <div className="theme">
+                                    {theme.map((elm, i) => (
+                                        <Pill key={i} title={elm} isActive />
+                                    ))}
+                                </div>
+                            </>
+                        )}
                     </div>
 
                     <div className="participents">
                         <div>
-                            <h2 style={{ color: '#222' }}>Particpents <span style={{ marginLeft: 25, color: '#80CC72' }}>10 People</span></h2>
+                            <h2 style={{ color: '#222' }}>Particpents <span style={{ marginLeft: 25, color: '#80CC72' }}>{data.participants.length} People</span></h2>
 
-                            <div className="participents-container" style={{ marginTop: 38 }}>
-                                <img src="https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg" alt="Owner" className="avatar" />
-                                <img src="https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg" alt="Owner" className="avatar" />
-                                <img src="https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg" alt="Owner" className="avatar" />
-                                <img src="https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg" alt="Owner" className="avatar" />
-                                <img src="https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg" alt="Owner" className="avatar" />
-                                <img src="https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg" alt="Owner" className="avatar" />
-                                <img src="https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg" alt="Owner" className="avatar" />
-                                <img src="https://www.careergirls.org/wp-content/uploads/2018/05/Artist_1920x1080.jpg" alt="Owner" className="avatar" />
+                            {(data.participants.length > 0) && (
+                                <div className="participents-container" style={{ marginTop: 38 }}>
+                                    {data.participants.map(({ user }, i) => (
+                                        (data.participants.length === 8 || i <= 8) && (
+                                            <img key={user.username} src={getImageUri(user.avatar)} alt={user.username} className="avatar" />
+                                        )
+                                    ))}
 
-                                <div className="more">+10</div>
-                            </div>
+                                    {(data.participants.length > 9) && (
+                                        <div className="more">+{data.participants.length - 8}</div>
+                                    )}
+                                </div>
+                            )}
                         </div>
 
-                        <p style={{ marginTop: 30 }}>Only 10 Places left</p>
+                        {(data.participants.length < data.nbrparticipants) && (
+                            <p style={{ marginTop: 30 }}>Only {data.nbrparticipants - data.participants.length} Places left</p>
+                        )}
                     </div>
 
                     <div className="join-arty">
