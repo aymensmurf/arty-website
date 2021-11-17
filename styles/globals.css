@@ -97,9 +97,9 @@ a {
   transform: scale(1.1);
 }
 
-/* .active {
+.active-audio {
   animation: audio-icon 500ms ease-in-out infinite alternate;
-} */
+}
 
 .word-container {
   position: relative;
@@ -130,7 +130,7 @@ a {
     transform: scale(1);
   }
   100% {
-    transform: scale(1.1);
+    transform: scale(1.04);
   }
 }
 

@@ -40,29 +40,29 @@ const Home = () => {
                 <div className="container" style={{ paddingBottom: 140 }}>
                     <div className="grid-5" style={{ marginTop: -6 }}>
                         <Skill
-                            skillImg="skill-1"
+                            title="skill-1"
                             isActive={isSkill1}
-                            handleClick={setIsSkill1}
+                            setIsActive={setIsSkill1}
                         />
                         <Skill
-                            skillImg="skill-2"
+                            title="skill-2"
                             isActive={isSkill2}
-                            handleClick={setIsSkill2}
+                            setIsActive={setIsSkill2}
                         />
                         <Skill
-                            skillImg="skill-3"
+                            title="skill-3"
                             isActive={isSkill3}
-                            handleClick={setIsSkill3}
+                            setIsActive={setIsSkill3}
                         />
                         <Skill
-                            skillImg="skill-4"
+                            title="skill-4"
                             isActive={isSkill4}
-                            handleClick={setIsSkill4}
+                            setIsActive={setIsSkill4}
                         />
                         <Skill
-                            skillImg="skill-5"
+                            title="skill-5"
                             isActive={isSkill5}
-                            handleClick={setIsSkill5}
+                            setIsActive={setIsSkill5}
                         />
                     </div>
                 </div>

@@ -15,13 +15,19 @@ const Nav = ({ contact, isStaticNav = false, openContact, closeContact, commingS
         let header = document.getElementById('main-nav');
         // header.classList.remove('bg-color');
 
+        console.log(`curScroll`, curScroll)
+
+        if (w.scrollY <= 150 || doc.scrollTop) {
+            header.classList.remove('bg-color');
+        }
+
         let checkScroll = function () {
+            curScroll = w.scrollY || doc.scrollTop;
             /*
             ** Find the direction of scroll
             ** 0 - initial, 1 - up, 2 - down
             */
 
-            curScroll = w.scrollY || doc.scrollTop;
 
             if (curScroll <= 150) {
                 header.classList.remove('bg-color');

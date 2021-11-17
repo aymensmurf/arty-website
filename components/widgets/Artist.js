@@ -5,6 +5,8 @@ const Artist = ({ name, avatar, username, isFullWidth = true, scaleOnHover = fal
         <>
             <a href={`/${username}`}>
                 <div className="artis-card">
+                    <img src={getImageUri(avatar)} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+
                     <div className="glass">
                         <p className="title">{name}</p>
                     </div>
@@ -14,16 +16,13 @@ const Artist = ({ name, avatar, username, isFullWidth = true, scaleOnHover = fal
             <style jsx>{`
                 .artis-card {
                     height: 300px;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
                     border-radius: 10px;
                     cursor: pointer;
                     transition: all .5s ease;
                     overflow: hidden;
                     display: flex;
                     align-items: flex-end;
-                    background: url(${getImageUri(avatar)});
+                    position: relative;
                     width: ${isFullWidth ? '100%' : '94%'};
                 }
 
@@ -39,7 +38,7 @@ const Artist = ({ name, avatar, username, isFullWidth = true, scaleOnHover = fal
                     width: 100%;
                     height: 74px;
                     padding: 20px;
-                    position: relative;
+                    position: absolute;
                     bottom: -114px;
                     z-index: 1;
                     background: inherit;

@@ -1,16 +1,36 @@
-const Skill = ({ skillImg, isActive, handleClick }) => {
+const Skill = ({ title, isActive, setIsActive }) => {
+    const handleClick = () => {
+        setIsActive(!isActive);
+
+        const audioSkill1 = document.getElementById(`audio-skill-1`);
+        const audioSkill2 = document.getElementById(`audio-skill-2`);
+        const audioSkill3 = document.getElementById(`audio-skill-3`);
+        const audioSkill4 = document.getElementById(`audio-skill-4`);
+        const audioSkill5 = document.getElementById(`audio-skill-5`);
+
+        audioSkill1.currentTime = 0;
+        audioSkill2.currentTime = 0;
+        audioSkill3.currentTime = 0;
+        audioSkill4.currentTime = 0;
+        audioSkill5.currentTime = 0;
+
+        audioSkill1.play();
+        audioSkill2.play();
+        audioSkill3.play();
+        audioSkill4.play();
+        audioSkill5.play();
+    }
+
     return (
         <>
             <div className="skill-container">
                 <div className="stage" style={{ opacity: isActive ? 1 : .25 }}>
                     <img src="/img/skills/light-bulb.svg" alt="Light bulb" className="light-bulb" />
-
-                    <img src={`/img/skills/${skillImg}.svg`} alt="Skill" className="skill" />
-
+                    <img src={`/img/skills/${title}.svg`} alt={title} className="skill" />
                     <div className="box" style={{ opacity: isActive ? 1 : 0 }} />
                 </div>
 
-                <div onClick={() => handleClick(!isActive)}>
+                <div className={isActive && "active-audio"} onClick={handleClick}>
                     {isActive ? (
                         <img src="/img/skills/btn-pause.svg" alt="Play" className="btn-action" />
                     ) : (
@@ -21,6 +41,10 @@ const Skill = ({ skillImg, isActive, handleClick }) => {
                 <div className="light-container" style={{ opacity: isActive ? 1 : 0 }}>
                     <img src="/img/skills/light.svg" alt="Light" className="light" />
                 </div>
+
+                <audio loop muted={!isActive} id={`audio-${title}`}>
+                    <source src={`/audio/${title}.mp3`} type='audio/mp3' />
+                </audio>
             </div>
 
             <style jsx>{`

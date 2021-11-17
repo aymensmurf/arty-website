@@ -15,7 +15,6 @@ const Artists = () => {
     }, []);
 
     const getUsers = async () => {
-        console.log("HERE")
         try {
             const { data } = await client.query({ query: SEARCH_USERS });
 

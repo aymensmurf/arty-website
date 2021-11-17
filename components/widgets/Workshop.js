@@ -5,6 +5,8 @@ const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = false, sca
         <>
             <a href={`/workshops/${slug}`}>
                 <div className="workshop-card">
+                    <img src={getImageUri(banner)} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+
                     <div className="glass">
                         <p className="title">{title}</p>
                         {(!isOwner || host) && (<p className="artist">@{host}</p>)}
@@ -15,16 +17,13 @@ const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = false, sca
             <style jsx>{`
                 .workshop-card {
                     height: 320px;
-                    background: url(${getImageUri(banner)});
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
                     border-radius: 10px;
                     cursor: pointer;
                     transition: all .5s ease;
                     overflow: hidden;
                     display: flex;
                     align-items: flex-end;
+                    position: relative;
                     width: ${isFullWidth ? '100%' : '94%'};
                 }
 
@@ -40,7 +39,7 @@ const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = false, sca
                     width: 100%;
                     height: 100px;
                     padding: 20px;
-                    position: relative;
+                    position: absolute;
                     bottom: -140px;
                     z-index: 1;
                     background: inherit;

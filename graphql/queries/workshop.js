@@ -16,3 +16,20 @@ export const GET_FEATURED_WORKSHOPS = gql`
         }
     }
 `
+
+export const GET_WORKSHOP_BY_SLUG = gql`
+    query GetWorkshopBySlug($slug: String!) {
+        getWorkshopBySlug(slug: $slug) {
+            _id
+            title
+            banner
+            slug
+            host {
+                _id
+                name
+                avatar
+                username
+            }
+        }
+    }
+`

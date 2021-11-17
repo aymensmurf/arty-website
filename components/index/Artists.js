@@ -1,3 +1,4 @@
+import React from "react";
 import Artist from "../widgets/Artist";
 import ArtistsSeeMoreCard from "../widgets/ArtistsSeeMoreCard";
 
@@ -7,9 +8,8 @@ const Artists = ({ data }) => {
             <section>
                 <div className="container artists-container">
                     {data.map(({ _id, name, avatar, username }, i) => (
-                        <>
+                        <React.Fragment key={_id}>
                             <Artist
-                                key={_id}
                                 name={name}
                                 avatar={avatar}
                                 username={username}
@@ -21,7 +21,7 @@ const Artists = ({ data }) => {
                                     <ArtistsSeeMoreCard />
                                 </div>
                             )}
-                        </>
+                        </React.Fragment>
                     ))}
                 </div>
             </section>
