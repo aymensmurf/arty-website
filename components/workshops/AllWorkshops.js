@@ -1,26 +1,19 @@
-import Filters from "../widgets/Filters";
 import Workshop from "../widgets/Workshop";
 
-const AllWorkshops = () => {
+const AllWorkshops = ({ data }) => {
     return (
         <>
             <section className="container">
                 <div className="grid" style={{ marginTop: 100, marginBottom: 100 }}>
-                    <Workshop isFullWidth />
-                    <Workshop isFullWidth />
-                    <Workshop isFullWidth />
-                    <Workshop isFullWidth />
-                    <Workshop isFullWidth />
-                    <Workshop isFullWidth />
-                    <Workshop isFullWidth />
-                    <Workshop isFullWidth />
-                    <Workshop isFullWidth />
-                    <Workshop isFullWidth />
-                    <Workshop isFullWidth />
-                    <Workshop isFullWidth />
-                    <Workshop isFullWidth />
-                    <Workshop isFullWidth />
-                    <Workshop isFullWidth />
+                    {data.map(({ _id, title, slug, banner, host }) => (
+                        <Workshop
+                            key={_id}
+                            title={title}
+                            banner={banner}
+                            slug={slug}
+                            host={host.username}
+                        />
+                    ))}
                 </div>
             </section>
 

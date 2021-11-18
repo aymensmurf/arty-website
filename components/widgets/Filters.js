@@ -4,7 +4,6 @@ import Filter from "./Filter";
 const Filters = ({ filters, setFilters }) => {
     const toggleElm = (title, value) => {
         const _key = title.toLowerCase().replace('_', '');
-        console.log(`_key`, _key)
         const _filters = { ...filters };
         const _filtersElm = [..._filters[_key]];
 

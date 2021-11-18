@@ -41,7 +41,7 @@ export async function getServerSideProps({ query }) {
 
             return { props: {}, };
         } catch (error) {
-            console.log(`error`, error)
+            console.error(`error`, error)
             return { props: {}, };
         }
     }

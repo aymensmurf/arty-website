@@ -18,7 +18,7 @@ const Artists = () => {
         theatres: [],
         photographies: [],
         photographytools: [],
-        
+
         sculptures: [],
         architectures: [],
         literatures: [],
@@ -43,7 +43,7 @@ const Artists = () => {
                 setUsers(data.searchForUser);
             }
         } catch (error) {
-            console.log(`error`, error)
+            console.error(`error`, error)
         }
     }
 

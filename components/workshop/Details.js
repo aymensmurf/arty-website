@@ -6,7 +6,6 @@ const Details = ({ data, setCommingSoon }) => {
     const [theme, setTheme] = useState([]);
 
     useEffect(() => {
-        console.log(`data`, data)
         const { architectures, calligraphy, dances, genres, handcrafts, instruments, literatures, paintings, paintingtools, photographies, photographytools, sandarts, sculptures, skills, theatres } = data;
         const _theme = architectures.concat(calligraphy, dances, genres, handcrafts, instruments, literatures, paintings, paintingtools, photographies, photographytools, sandarts, sculptures, skills, theatres);
 

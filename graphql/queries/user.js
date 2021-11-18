@@ -61,8 +61,6 @@ export const SEARCH_USERS = gql`
     $calligraphy: [String],
     $handcrafts: [String],
     $sandarts: [String],
-    $location: String,
-    $keyword: String
   )
   {
     searchForUser(
@@ -81,8 +79,6 @@ export const SEARCH_USERS = gql`
         calligraphy: $calligraphy
         handcrafts: $handcrafts
         sandarts: $sandarts
-        location: $location
-        keyword: $keyword
     ) {
         _id
         name

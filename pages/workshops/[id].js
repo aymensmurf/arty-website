@@ -22,6 +22,7 @@ const Workshop = ({ data }) => {
                 data={data}
                 setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
             />
+            
             <MoreWorkshops />
         </Layout>
     )
@@ -42,7 +43,7 @@ export async function getServerSideProps({ query }) {
 
             return { props: {}, };
         } catch (error) {
-            console.log(`error`, error)
+            console.error(`error`, error)
             return { props: {}, };
         }
     }
