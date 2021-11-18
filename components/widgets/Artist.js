@@ -33,7 +33,7 @@ const Artist = ({ name, avatar, username, isFullWidth = true, scaleOnHover = tru
                 .content {
                     width: 100%;
                     height: 100%;
-                    background-color: rgb(0, 0, 0, .2);
+                    background-color: rgb(0, 0, 0, .7);
                     border-radius: 10px;
                     display: flex;
                     flex-direction: column;
@@ -41,13 +41,14 @@ const Artist = ({ name, avatar, username, isFullWidth = true, scaleOnHover = tru
                     justify-content: flex-end;
                     padding: 12px 60px 33px;
                     position: absolute;
-                    bottom: -100%;
+                    bottom: 0;
                     left: 0;
+                    opacity: 0;
                     transition: all .5s ease;
                 }
 
                 .artist-card:hover .content {
-                    bottom: 0;
+                    opacity: 1;
                 }
 
                 .artis {

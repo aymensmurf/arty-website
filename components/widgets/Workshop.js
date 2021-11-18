@@ -36,7 +36,7 @@ const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = true, scal
                 .content {
                     width: 100%;
                     height: 100%;
-                    background-color: rgb(0, 0, 0, .2);
+                    background-color: rgb(0, 0, 0, .7);
                     border-radius: 10px;
                     display: flex;
                     flex-direction: column;
@@ -44,13 +44,14 @@ const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = true, scal
                     justify-content: flex-end;
                     padding: 12px 60px 33px;
                     position: absolute;
-                    bottom: -100%;
+                    bottom: 0;
                     left: 0;
+                    opacity: 0;
                     transition: all .5s ease;
                 }
 
                 .workshop-card:hover .content {
-                    bottom: 0;
+                    opacity: 1;
                 }
 
                 .title {

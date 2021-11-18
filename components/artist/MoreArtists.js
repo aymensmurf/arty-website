@@ -18,15 +18,15 @@ const MoreArtists = () => {
 
                 <div className="glass">
                     <Slider {...settings}>
-                        <Artist isFullWidth={false} />
-                        <Artist isFullWidth={false} />
-                        <Artist isFullWidth={false} />
-                        <Artist isFullWidth={false} />
-                        <Artist isFullWidth={false} />
-                        <Artist isFullWidth={false} />
-                        <Artist isFullWidth={false} />
-                        <Artist isFullWidth={false} />
-                        <Artist isFullWidth={false} />
+                        <Artist isFullWidth={false} scaleOnHover={false} />
+                        <Artist isFullWidth={false} scaleOnHover={false} />
+                        <Artist isFullWidth={false} scaleOnHover={false} />
+                        <Artist isFullWidth={false} scaleOnHover={false} />
+                        <Artist isFullWidth={false} scaleOnHover={false} />
+                        <Artist isFullWidth={false} scaleOnHover={false} />
+                        <Artist isFullWidth={false} scaleOnHover={false} />
+                        <Artist isFullWidth={false} scaleOnHover={false} />
+                        <Artist isFullWidth={false} scaleOnHover={false} />
                     </Slider>
                 </div>
             </section>

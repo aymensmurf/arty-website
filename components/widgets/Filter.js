@@ -54,7 +54,7 @@ const Filter = ({ title, options, isActive, selectedFilters, handleOptionClick }
                     padding-top: 10px;
                     position: absolute;
                     top: 40px;
-                    left: 0;
+                    left: 0px;
                     z-index: 2;
                     overflow: hidden;
                     transition: all .5s ease;
@@ -64,10 +64,10 @@ const Filter = ({ title, options, isActive, selectedFilters, handleOptionClick }
                     width: 100%;
                     height: 100%;
                     background-color: #fff;
-                    padding: 30px 10px;
+                    padding: 30px 20px;
                     overflow-y: scroll;
                     border-radius: 9px;
-                    border: 1px solid #000;
+                    border: 1px solid #707070;
                 }
 
                 .options-content::-webkit-scrollbar {
