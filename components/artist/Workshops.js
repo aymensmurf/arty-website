@@ -20,7 +20,7 @@ const Workshops = ({ data }) => {
                 .workshops {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
-                    gap: 30px;
+                    gap: 16px;
                 }                
             `}</style>
         </>

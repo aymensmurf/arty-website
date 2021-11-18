@@ -1,29 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getImageUri } from "../../utils/funcs";
-import Medias from "./Medias";
 import MoreArtists from "./MoreArtists";
+import Medias from "./Medias";
 import Workshops from "./Workshops";
+import About from "./About";
 
 const Content = ({ data }) => {
     const [tabIndex, setTabIndex] = useState(0);
+    const [skills, setSkills] = useState([]);
+
+    useEffect(() => {
+        const { architectures, calligraphy, dances, genres, handcrafts, instruments, literatures, paintings, paintingtools, photographies, photographytools, sandarts, sculptures, skills, theatres } = data;
+        const _skills = architectures.concat(calligraphy, dances, genres, handcrafts, instruments, literatures, paintings, paintingtools, photographies, photographytools, sandarts, sculptures, skills, theatres);
+
+        setSkills(_skills);
+    }, []);
 
     return (
         <>
             <section className="container">
-                <div className="content">
-                    <div className="avatar-container">
-                        <div className="circle">
-                            <img src={getImageUri(data.avatar)} alt="Artist Name" className="avatar" />
-                        </div>
+                <div style={{ display: "flex", flexDirection: 'column', alignItems: 'center' }}>
+                    <div className="circle">
+                        <img src={getImageUri(data.avatar)} alt="Artist Name" className="avatar" />
                     </div>
 
                     <h1>{data.name}</h1>
                     <p>@{data.username}</p>
-                    <div className="media">
-                        <img src="/img/spotify.svg" alt="Spotify" />
-                        <img src="/img/youtube.svg" alt="YouTube" />
-                    </div>
 
+                </div>
+
+                <div className="tab-header">
                     <div className="tabs">
                         <div className="tab" onClick={() => setTabIndex(0)}>
                             <h2 className={tabIndex === 0 && 'active'}>Media</h2>
@@ -36,23 +42,41 @@ const Content = ({ data }) => {
                         </div>
                     </div>
 
-                    <div className="tab-content" style={{ width: '100%' }}>
-                        {
-                            (tabIndex === 0) ? (
-                                data.media && data.media.length > 0 ?
-                                    <Medias data={data.media} />
-                                    :
-                                    <h1>Nth to c here</h1>
-                            ) : (tabIndex === 1) ? (
-                                data.workshops && data.workshops.length > 0 ?
-                                    <Workshops data={data.workshops} />
-                                    :
-                                    <h1>Nth to c here</h1>
-                            ) : (
-                                <h1>About</h1>
-                            )
-                        }
+                    <div className="media">
+                        {data.spotify && (
+                            <a href={data.spotify} target="_blank" rel="noopener noreferrer">
+                                <img src="/img/spotify.svg" alt="Spotify" />
+                            </a>
+                        )}
+                        {data.youtube && (
+                            <a href={data.youtube} target="_blank" rel="noopener noreferrer">
+                                <img src="/img/youtube.svg" alt="YouTube" />
+                            </a>
+                        )}
+                        {data.soundcloud && (
+                            <a href={data.soundcloud} target="_blank" rel="noopener noreferrer" style={{ marginRight: 16 }}>
+                                <img src="/img/soundcloud.svg" alt="YouTube" />
+                            </a>
+                        )}
                     </div>
+                </div>
+
+                <div className="tab-body">
+                    {
+                        (tabIndex === 0) ? (
+                            data.media && data.media.length > 0 ?
+                                <Medias data={data.media} />
+                                :
+                                <h1>Nth to c here</h1>
+                        ) : (tabIndex === 1) ? (
+                            data.workshops && data.workshops.length > 0 ?
+                                <Workshops data={data.workshops} />
+                                :
+                                <h1>Nth to c here</h1>
+                        ) : (
+                            <About description={data.description} skills={skills} />
+                        )
+                    }
                 </div>
 
                 <MoreArtists />
@@ -60,25 +84,15 @@ const Content = ({ data }) => {
 
 
             <style jsx>{`
+                section {
+                    padding-top: 50px;
+                }
+
                 .content {
                     border-radius: 50px;
                     background: #f6f6f6;
-                    padding: 0px 130px 92px 130px;
                     margin-top: 120px;
                     margin-bottom: 40px;
-                    position: relative;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-
-                .avatar-container {
-                    width: 100%;
-                    position: absolute;
-                    top: -85px;
-                    left: 0px;
-                    display: flex;
-                    justify-content: center;
                 }
 
                 .circle {
@@ -106,28 +120,30 @@ const Content = ({ data }) => {
                     font-size: 32px;
                     letter-spacing: -0.02em;
                     color: #08080;
-                    margin-top: 97px;
+                    margin-top: 10px;
                 }
 
                 p {
                     font-family: "Poppins";
                     font-weight: 300;
                     font-size: 18px;
-                    letter-spacing: -0.02em;
                     color: #9c9c9c;
                 }
 
-                .media {
+                .tab-header {
                     display: flex;
-                    gap: 15px;
-                    cursor: pointer;
-                    margin-top: 20px;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 50px;
+                    background-color: #F2F2F2;
+                    padding: 24px 138px;
+                    margin-top: 25px;
+                    border-top-right-radius: 10px;
+                    border-top-left-radius: 10px;
                 }
 
                 .tabs {
                     display: flex;
-                    margin-top: 22px;
-                    margin-bottom: 52px;
                 }
 
                 .tab {
@@ -145,6 +161,21 @@ const Content = ({ data }) => {
 
                 h2.active {
                     color: #ed1e46; 
+                }
+
+                .media {
+                    display: flex;
+                    gap: 15px;
+                    cursor: pointer;
+                }
+
+                .tab-body {
+                    width: 100%;
+                    padding: 50px 138px;
+                    background-color: #F5F5F5;
+                    border-bottom-right-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                    margin-bottom: 74px;
                 }
             `}</style>
         </>

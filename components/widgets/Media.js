@@ -1,6 +1,6 @@
 import { getImageUri } from "../../utils/funcs";
 
-const Media = ({ id, url, type, wokshop, createdAt, isFullWidth }) => {
+const Media = ({ id, url, type, wokshop, createdAt }) => {
     return (
         <>
             <div className="workshop-card">
@@ -24,7 +24,6 @@ const Media = ({ id, url, type, wokshop, createdAt, isFullWidth }) => {
             <style jsx>{`
                 .workshop-card {
                     height: 320px;
-                    border-radius: 10px;
                     cursor: pointer;
                     transition: all .5s ease;
                     overflow: hidden;
@@ -32,7 +31,8 @@ const Media = ({ id, url, type, wokshop, createdAt, isFullWidth }) => {
                     justify-content: center;
                     align-items: center;
                     position: relative;
-                    width: ${isFullWidth ? '100%' : '94%'};
+                    width: 100%;
+                    border: 10px solid #fff;
                 }
 
                 .workshop-card:hover .glass {
