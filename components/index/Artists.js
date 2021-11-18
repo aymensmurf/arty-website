@@ -5,43 +5,52 @@ import ArtistsSeeMoreCard from "../widgets/ArtistsSeeMoreCard";
 const Artists = ({ data }) => {
     return (
         <>
+            <a name="artists"></a>
+
             <section>
-                <div className="container artists-container">
-                    {data.map(({ _id, name, avatar, username }, i) => (
-                        <React.Fragment key={_id}>
+                <div className="container grid">
+                    {data.map(({ _id, name, avatar, username }, i) => {
+                        if (i === 3) {
+                            return (
+                                <React.Fragment key={_id}>
+                                    <div style={{ gridColumn: '4 / 7' }}>
+                                        <ArtistsSeeMoreCard />
+                                    </div>
+
+
+                                    <Artist
+                                        name={name}
+                                        avatar={avatar}
+                                        username={username}
+                                        scaleOnHover
+                                    />
+                                </React.Fragment>
+                            )
+                        }
+
+                        return (
                             <Artist
+                                key={_id}
                                 name={name}
                                 avatar={avatar}
                                 username={username}
                                 scaleOnHover
                             />
-
-                            {(i === 1) && (
-                                <div className="see-more-card">
-                                    <ArtistsSeeMoreCard />
-                                </div>
-                            )}
-                        </React.Fragment>
-                    ))}
+                        )
+                    })}
                 </div>
             </section>
 
             <style jsx>{`
                 section {
-                    background: #f0f0f0;
-                    padding-top: 90px;
-                    padding-bottom: 66px;
+                    background: #f6f6f6;
+                    padding: 40px 0px;
                 }
 
-                .artists-container {
+                .grid {
                     display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    align-items: center;
-                    gap: 30px;
-                }
-
-                .see-more-card {
-                    grid-column: 3 / 5;
+                    grid-template-columns: repeat(6, 1fr);
+                    gap: 16px;
                 }
             `}</style>
         </>

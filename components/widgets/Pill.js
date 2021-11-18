@@ -1,8 +1,8 @@
-const Pill = ({ title, isActive }) => {
+const Pill = ({ title, isActive, isOneColor = false, handleClick }) => {
     return (
         <>
-            <div className={`pill ${isActive ? 'active' : ''}`}>
-                <p className={`${isActive ? 'active' : ''}`}>{title}</p>
+            <div className={`pill ${isActive ? 'active' : ''}`} onClick={handleClick}>
+                {title}
             </div>
 
             <style jsx>{`
@@ -11,24 +11,20 @@ const Pill = ({ title, isActive }) => {
                     background: #e4e4e4;
                     padding: 10px 24px;
                     cursor: pointer;
-                }
-
-                .pill.active {
-                    background: linear-gradient(120deg, #f68955 0%, #ed1e46 100%);
-                }
-
-                p {
                     font-family: "Poppins";
                     font-weight: 600;
                     font-size: 13px;
                     text-align: center;
                     color: #797979;
-                    text-transform: uppercase;
+                    text-transform: uppercase;  
+                    transition: all .3s ease;
                 }
 
-                p.active {
+                .pill.active {
                     color: #fff;
+                    background: ${isOneColor ? '#ED1E46' : 'linear-gradient(120deg, #f68955 0%, #ed1e46 100%)'};
                 }
+
             `}</style>
         </>
     )

@@ -14,7 +14,7 @@ const Download = ({ setCommingSoon }) => {
                 <div className="download-section">
                     <div className="download-container container">
                         <img src="/img/logo-pink.svg" alt="Arty" className="logo" />
-                        <p>Find all sort of Artist in ARTY and get to know, meet them and play music, dance, paint with them and much more.</p>
+                        <p>Find all sort of Artists in ARTY and get to know, meet them and play music, dance, paint with them and much more.</p>
 
                         <div className="icons-container">
                             <img src="/img/app-store-white.svg" alt="App store" onClick={setCommingSoon} />
@@ -27,7 +27,7 @@ const Download = ({ setCommingSoon }) => {
             <style jsx>{`
                 .phones-section {
                     background: url('/img/bg-lava.png');
-                    min-height: 800px;
+                    min-height: 553px;
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: cover;
@@ -99,13 +99,19 @@ const Download = ({ setCommingSoon }) => {
                 }
 
                 #img-download-1 {
+                    width: 360px;
+                    height: 694px;
+                    object-fit: contain;
                     position: absolute;
                     bottom: -200px;
                     right: calc(50%)
                 }
                 #img-download-2 {
+                    width: 360px;
+                    height: 694px;
+                    object-fit: contain;
                     position: absolute;
-                    bottom: -300px;
+                    bottom: -280px;
                     left: calc(50%)
                 }
             `}</style>

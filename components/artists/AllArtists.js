@@ -22,6 +22,10 @@ const AllArtists = ({ data }) => {
             </section>
 
             <style jsx>{`
+                .container {
+                    max-width: 1096px;
+                }
+
                 h2 {
                     font-family: "Republica";
                     font-weight: normal;

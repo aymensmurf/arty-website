@@ -55,7 +55,7 @@ const Index = ({ artists, workshops }) => {
       <Download
         setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
       />
-      
+
       {workshops.length > 0 && <Workshops data={workshops} />}
       {artists.length > 0 && <Artists data={artists} />}
 

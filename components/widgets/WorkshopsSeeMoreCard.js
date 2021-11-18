@@ -1,10 +1,10 @@
-const ArtistsSeeMoreCard = () => {
+const WorkshopsSeeMoreCard = () => {
     return (
         <>
-            <a href="/artists">
+            <a href="/workshops">
                 <div className="workshops-card">
-                    <h1>Artists</h1>
-                    <p>consectetur adipiscing elit. Cras ac ante quis est consequat tristique sed ac purus.</p>
+                    <h2>Last added</h2>
+                    <h1>Workshops</h1>
 
                     <div className="btn">
                         See more
@@ -16,7 +16,7 @@ const ArtistsSeeMoreCard = () => {
                 .workshops-card {
                     width: 100%;
                     height: 100%;
-                    background: url("/img/bg-artist-card.png");
+                    background: url("/img/bg-workshops-header.png");
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: cover;
@@ -33,19 +33,19 @@ const ArtistsSeeMoreCard = () => {
                     box-shadow: inset  0px 320px 0px 0 rgb(0, 0, 0, .2);
                 }
 
+                h2 {
+                    font-family: "Poppins";
+                    font-weight: 600;
+                    font-size: 41px;
+                    line-height: 52px;
+                    color: #fff;
+                }
+
                 h1 {
                     font-family: "Poppins";
                     font-weight: 600;
                     font-size: 62px;
                     line-height: 72px;
-                    color: #fff;
-                }
-
-                p {
-                    font-family: "Poppins";
-                    font-weight: 300;
-                    font-size: 22px;
-                    line-height: 25px;
                     color: #fff;
                 }
 
@@ -67,4 +67,4 @@ const ArtistsSeeMoreCard = () => {
     )
 }
 
-export default ArtistsSeeMoreCard;
+export default WorkshopsSeeMoreCard;

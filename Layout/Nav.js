@@ -62,15 +62,15 @@ const Nav = ({ contact, isStaticNav = false, openContact, closeContact, commingS
     return (
         <>
             <nav id="main-nav">
-                <div className="container grid-3" style={{ padding: '20px 10px' }}>
+                <div className="container grid-3" style={{ padding: '0px 10px' }}>
                     <div>
-                        <a className="nav-link" href="/#features">Features</a>
-                        <a className="nav-link" href="/#faq">FAQ</a>
-                        <a className="nav-link" href="/#download">Download</a>
+                        <a className="nav-link" href="/#home">Home</a>
+                        <a className="nav-link" href="/#workshops">Workshops</a>
+                        <a className="nav-link" href="/#artists">Artists</a>
                         <a className="nav-link" onClick={openContact}>Contact</a>
                     </div>
                     <div style={{ textAlign: 'center' }}>
-                        <a href="/#home" style={{ marginRight: 0 }}><img id="logo" src="/img/logo-white.svg" alt="Jam" style={{ width: 200, height: 87 }} /></a>
+                        <a href="/#home" style={{ marginRight: 0 }}><img id="logo" src="/img/logo-white.svg" alt="Jam" style={{ width: 157, height: 76 }} /></a>
                     </div>
                     <div id="stores" style={{ textAlign: 'end' }}>
                         <a>
@@ -110,9 +110,10 @@ const Nav = ({ contact, isStaticNav = false, openContact, closeContact, commingS
                 }
 
                 .nav-link {
-                    margin-right: 40px;
+                    font-size: 20px;
                     color: #fff;
                     cursor: pointer;
+                    margin-right: 30px;
                 }
 
                 #logo {
@@ -122,6 +123,9 @@ const Nav = ({ contact, isStaticNav = false, openContact, closeContact, commingS
                 }
 
                 #stores img {
+                    width: 70px;
+                    height: 46px;
+                    object-fit: contain;
                     cursor: pointer;
                 }
 

@@ -47,7 +47,7 @@ const Details = ({ data, setCommingSoon }) => {
                             {(data.participants.length > 0) && (
                                 <div className="participents-container" style={{ marginTop: 38 }}>
                                     {data.participants.map(({ user }, i) => (
-                                        (data.participants.length === 8 || i <= 8) && (
+                                        (data.participants.length === 9 || i <= 7) && (
                                             <img key={user.username} src={getImageUri(user.avatar)} alt={user.username} className="avatar" />
                                         )
                                     ))}

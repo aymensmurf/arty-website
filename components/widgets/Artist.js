@@ -1,20 +1,22 @@
 import { getImageUri } from "../../utils/funcs";
 
-const Artist = ({ name, avatar, username, isFullWidth = true, scaleOnHover = false }) => {
+const Artist = ({ name, avatar, username }) => {
     return (
         <>
             <a href={`/${username}`}>
-                <div className="artis-card">
-                    <img src={getImageUri(avatar)} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <div className="artist-card">
+                    <img src={getImageUri(avatar)} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 10 }} />
 
-                    <div className="glass">
-                        <p className="title">{name}</p>
+                    <div className="content">
+                        <p className="artis">{name}</p>
+                        <div className="btn">View</div>
                     </div>
                 </div>
             </a>
 
             <style jsx>{`
-                .artis-card {
+                .artist-card {
+                    width: 100%;
                     height: 300px;
                     border-radius: 10px;
                     cursor: pointer;
@@ -23,56 +25,51 @@ const Artist = ({ name, avatar, username, isFullWidth = true, scaleOnHover = fal
                     display: flex;
                     align-items: flex-end;
                     position: relative;
-                    width: ${isFullWidth ? '100%' : '94%'};
                 }
-
-                .artis-card:hover {
-                    transform: scale(${scaleOnHover ? 1.05 : 1});
+                .artist-card:hover {
+                    transform: scale(1.05);
                 }
-
-                .artis-card:hover .glass {
-                    bottom: 0px;
-                }
-
-                .glass {
+                
+                .content {
                     width: 100%;
-                    height: 74px;
-                    padding: 20px;
+                    height: 100%;
+                    background-color: rgb(0, 0, 0, .2);
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-end;
+                    padding: 12px 60px 33px;
                     position: absolute;
-                    bottom: -114px;
-                    z-index: 1;
-                    background: inherit;
-                    overflow: hidden;
+                    bottom: -100%;
+                    left: 0;
                     transition: all .5s ease;
                 }
-                  
-                .glass:before {
-                    content: "";
-                    position: absolute;
-                    background: inherit;
-                    z-index: -1;
-                    top: -345px;
-                    left: 0;
-                    right: 0;
+
+                .artist-card:hover .content {
                     bottom: 0;
-                    filter: blur(40px);
-                    margin: -80px;
-                    box-shadow: inset 0 0 0 200px rgba(0,0,0,0.3);
                 }
 
-                .title {
-                    font-family: Poppins;
-                    font-weight: 500;
-                    font-size: 24px;
+                .artis {
+                    font-family: "Poppins";
+                    font-weight: 600;
+                    font-size: 28px;
+                    line-height: 30px;
                     color: #fff;
                     text-align: center;
                 }
 
-                .artist {
-                    font-family: Poppins;
-                    font-weight: normal;
-                    font-size: 20px;
+                .btn {
+                    border-radius: 20px;
+                    background: transparent;
+                    border: 1px solid #fff;
+                    padding: 9px 30px;
+                    font-family: "Poppins";
+                    font-weight: 500;
+                    font-size: 16px;
+                    text-align: center;
                     color: #fff;
+                    margin-top: 10px;
                 }
             `}</style>
         </>
