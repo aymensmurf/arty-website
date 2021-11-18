@@ -1,6 +1,6 @@
 import { getImageUri } from "../../utils/funcs";
 
-const Workshop = ({ title, banner, slug, host, isOwner }) => {
+const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = true, scaleOnHover = true }) => {
     return (
         <>
             <a href={`/workshops/${slug}`}>
@@ -17,7 +17,6 @@ const Workshop = ({ title, banner, slug, host, isOwner }) => {
 
             <style jsx>{`
                 .workshop-card {
-                    width: 100%;
                     height: 320px;
                     border-radius: 10px;
                     cursor: pointer;
@@ -27,10 +26,11 @@ const Workshop = ({ title, banner, slug, host, isOwner }) => {
                     align-items: flex-end;
                     position: relative;
                     border: 10px solid white;
+                    width: ${isFullWidth ? '100%' : '94%'};
                 }
 
                 .workshop-card:hover {
-                    transform: scale(1.05);
+                    transform: scale(${scaleOnHover ? 1.05 : 1});
                 }
                 
                 .content {

@@ -1,6 +1,6 @@
 import { getImageUri } from "../../utils/funcs";
 
-const Artist = ({ name, avatar, username }) => {
+const Artist = ({ name, avatar, username, isFullWidth = true, scaleOnHover = true }) => {
     return (
         <>
             <a href={`/${username}`}>
@@ -16,7 +16,6 @@ const Artist = ({ name, avatar, username }) => {
 
             <style jsx>{`
                 .artist-card {
-                    width: 100%;
                     height: 300px;
                     border-radius: 10px;
                     cursor: pointer;
@@ -25,9 +24,10 @@ const Artist = ({ name, avatar, username }) => {
                     display: flex;
                     align-items: flex-end;
                     position: relative;
+                    width: ${isFullWidth ? '100%' : '94%'};
                 }
                 .artist-card:hover {
-                    transform: scale(1.05);
+                    transform: scale(${scaleOnHover ? 1.05 : 1});
                 }
                 
                 .content {
