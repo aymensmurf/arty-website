@@ -14,9 +14,13 @@ const Pill = ({ title, isActive, isOneColor = false, handleClick }) => {
                     font-family: "Poppins";
                     font-weight: 600;
                     font-size: 13px;
-                    text-align: center;
+                    line-height: 14px;
                     color: #797979;
-                    text-transform: uppercase;  
+                    text-transform: uppercase;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
                     transition: all .3s ease;
                 }
 

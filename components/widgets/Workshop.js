@@ -26,6 +26,7 @@ const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = true, scal
                     align-items: flex-end;
                     position: relative;
                     border: 10px solid white;
+                    background-color: #fff;
                     width: ${isFullWidth ? '100%' : '94%'};
                 }
 
@@ -59,6 +60,7 @@ const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = true, scal
                     font-weight: 600;
                     font-size: 28px;
                     color: #fff;
+                    text-align: center;
                 }
 
                 .artist {
@@ -66,6 +68,7 @@ const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = true, scal
                     font-weight: 600;
                     font-size: 18px;
                     color: #fff;
+                    text-align: center;
                 }
 
                 .btn {

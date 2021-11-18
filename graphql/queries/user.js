@@ -89,8 +89,8 @@ export const SEARCH_USERS = gql`
 `
 
 export const GET_FEATURED_USERS = gql`
-    query GetFeaturedUsers {
-        getFeaturedUsers {
+    query GetFeaturedUsers($limit: Int) {
+        getFeaturedUsers(limit: $limit) {
             _id
             name
             avatar

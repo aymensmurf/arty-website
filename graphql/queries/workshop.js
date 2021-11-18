@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const GET_FEATURED_WORKSHOPS = gql`
-    query GetFeaturedWorkshops {
-        getFeaturedWorkshops {
+    query GetFeaturedWorkshops($limit: Int) {
+        getFeaturedWorkshops(limit: $limit) {
             _id
             title
             banner
