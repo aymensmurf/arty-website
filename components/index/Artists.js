@@ -43,7 +43,7 @@ const Artists = ({ data }) => {
 
             <style jsx>{`
                 section {
-                    background: #f6f6f6;
+                    background: #fff;
                     padding: 40px 0px;
                 }
 

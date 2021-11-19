@@ -62,6 +62,18 @@ const WorkshopsSeeMoreCard = () => {
                     color: #ed1e46;
                     margin-top: 40px;
                 }
+
+                @media only screen and (max-width: 614px){
+                    h2 {
+                        font-size: 26px;
+                        line-height: 30px;
+                    }
+    
+                    h1 {
+                        font-size: 36px;
+                        line-height: 42px;
+                    }
+                }
             `}</style>
         </>
     )
