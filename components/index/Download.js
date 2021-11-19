@@ -70,8 +70,11 @@ const Download = ({ setCommingSoon }) => {
 
                 .icons-container {
                     display: flex;
-                    gap: 42px;
+                    justify-content: center;
+                    align-items: center;
                     flex-wrap: wrap;
+                    column-gap: 42px;
+                    row-gap: 10px;
                     margin-top: 40px;
                 }
 
@@ -113,6 +116,39 @@ const Download = ({ setCommingSoon }) => {
                     position: absolute;
                     bottom: -280px;
                     left: calc(50%)
+                }
+
+                @media only screen and (max-width: 1402px){
+                    .download-container{
+                        padding: 0px 300px;
+                    }
+                }
+
+                @media only screen and (max-width: 1202px){
+                    .download-container{
+                        padding: 0px 100px;
+                    }
+                }
+
+                @media only screen and (max-width: 770px){
+                    .download-container{
+                        padding: 0px 30px;
+                    }
+
+                    #img-download-1 {
+                        right: calc(50% - 180px)
+                    }
+
+                    #img-download-2 {
+                        display: none;
+                    }
+                }
+
+                @media only screen and (max-width: 390px){
+                    #img-download-1 {
+                        width: 300px;
+                        right: calc(50% - 150px)
+                    }
                 }
             `}</style>
         </>
