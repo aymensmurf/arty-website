@@ -5,6 +5,7 @@ import { Init, Home, Features, FAQ, InitTablet, Download, Workshops, Artists } f
 import client from '../graphql';
 import { GET_FEATURED_USERS } from '../graphql/queries/user';
 import { GET_FEATURED_WORKSHOPS } from '../graphql/queries/workshop';
+import FeaturesTablet from '../components/index/FeaturesTablet';
 
 const Index = ({ artists, workshops }) => {
   const [pressed, setPressed] = useState(false);
@@ -59,8 +60,9 @@ const Index = ({ artists, workshops }) => {
       {workshops.length > 0 && <Workshops data={workshops} />}
       {artists.length > 0 && <Artists data={artists} />}
 
-
       <Features />
+      <FeaturesTablet />
+
       <FAQ
         openContact={() => { setCommingSoon(false); setContact(true); }}
         setCommingSoon={() => { setCommingSoon(true); setContact(true); }}

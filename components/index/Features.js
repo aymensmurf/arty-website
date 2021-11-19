@@ -31,10 +31,10 @@ const Features = () => {
     }, [])
 
     return (
-        <>
+        <div className="visible-desktop">
             <a name="features"></a>
             <section style={{ backgroundColor: '##F7F7F7' }}>
-                <div className="container" style={{ padding: 100, display: 'flex' }}>
+                <div className="container">
                     <div style={{ width: '40%', paddingRight: 20, display: 'flex', alignItems: 'center' }}>
                         <img src="/img/features/feature-1.png" alt="Mockup" id="feature-img" style={{ width: '100%', objectFit: 'contain' }} />
                     </div>
@@ -69,8 +69,13 @@ const Features = () => {
             </section>
 
             <style jsx>{`
+                .container {
+                    padding: 100px;
+                    display: flex;
+                }
+
                 h1 {
-                    font-family: Poppins;
+                    font-family: "Poppins";
                     font-weight: 500;
                     font-size: 48px;
                     line-height: 50px;
@@ -79,14 +84,20 @@ const Features = () => {
                 }
 
                 p {
-                    font-family: Poppins;
+                    font-family: "Poppins";
                     font-weight: 500;
                     font-size: 20px;
                     line-height: 22px;
                     color: #151515;
                 }
+
+                @media only screen and (max-width: 1163px) {
+                    .container {
+                        padding: 100px 30px;
+                    } 
+                }
             `}</style>
-        </>
+        </div>
     )
 }
 
