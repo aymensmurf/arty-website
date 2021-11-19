@@ -8,5 +8,6 @@ import InitTablet from './InitTablet'
 import Download from './Download'
 import Workshops from './Workshops'
 import Artists from './Artists'
+import ArtistsTablet from './ArtistsTablet'
 
-export { Init, Home, Features, FAQ, InitTablet, Download, Workshops, Artists, FeaturesTablet, HomeTablet }
+export { Init, Home, Features, FAQ, InitTablet, Download, Workshops, Artists, ArtistsTablet, FeaturesTablet, HomeTablet }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Layout from '../Layout/Layout'
-import { Init, Home, Features, FAQ, InitTablet, Download, Workshops, Artists, FeaturesTablet, HomeTablet } from '../components/index'
+import { Init, Home, Features, FAQ, InitTablet, Download, Workshops, Artists, FeaturesTablet, HomeTablet, ArtistsTablet } from '../components/index'
 import client from '../graphql';
 import { GET_FEATURED_USERS } from '../graphql/queries/user';
 import { GET_FEATURED_WORKSHOPS } from '../graphql/queries/workshop';
@@ -59,7 +59,9 @@ const Index = ({ artists, workshops }) => {
       />
 
       {workshops.length > 0 && <Workshops data={workshops} />}
+
       {artists.length > 0 && <Artists data={artists} />}
+      {artists.length > 0 && <ArtistsTablet data={artists} />}
 
       <Features />
       <FeaturesTablet />

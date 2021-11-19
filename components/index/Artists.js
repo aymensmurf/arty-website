@@ -4,7 +4,7 @@ import ArtistsSeeMoreCard from "../widgets/ArtistsSeeMoreCard";
 
 const Artists = ({ data }) => {
     return (
-        <>
+        <div className="visible-desktop">
             <a name="artists"></a>
 
             <section>
@@ -67,28 +67,8 @@ const Artists = ({ data }) => {
                         grid-row: 1 / 1;
                     }
                 }
-
-                @media only screen and (max-width: 840px) {
-                    .grid {
-                        grid-template-columns: repeat(2, 1fr);
-                    }
-
-                    .special-card {
-                        grid-column: 1 / 3;
-                    }
-                }
-
-                @media only screen and (max-width: 570px) {
-                    .grid {
-                        grid-template-columns: 1fr;
-                    }
-
-                    .special-card {
-                        grid-column: 1 / 2;
-                    }
-                }
             `}</style>
-        </>
+        </div>
     )
 }
 
