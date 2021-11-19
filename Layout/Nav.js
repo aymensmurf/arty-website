@@ -62,7 +62,7 @@ const Nav = ({ contact, isStaticNav = false, openContact, closeContact, commingS
     return (
         <>
             <nav id="main-nav">
-                <div className="container grid-3" style={{ padding: '0px 10px' }}>
+                <div className="container grid-3">
                     <div>
                         <a className="nav-link" href="/#home">Home</a>
                         <a className="nav-link" href="/#workshops">Workshops</a>
@@ -70,7 +70,7 @@ const Nav = ({ contact, isStaticNav = false, openContact, closeContact, commingS
                         <a className="nav-link" onClick={openContact}>Contact</a>
                     </div>
                     <div style={{ textAlign: 'center' }}>
-                        <a href="/#home" style={{ marginRight: 0 }}><img id="logo" src="/img/logo-white.svg" alt="Jam" style={{ width: 157, height: 76 }} /></a>
+                        <a href="/#home" style={{ marginRight: 0 }}><img id="logo" src="/img/logo-white.svg" alt="Jam" style={{ width: 157, height: 76, objectFit: 'contain' }} /></a>
                     </div>
                     <div id="stores" style={{ textAlign: 'end' }}>
                         <a>

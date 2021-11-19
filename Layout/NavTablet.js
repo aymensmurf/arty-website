@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Contact from '../components/widgets/Contact'
 
-const NavTablet = ({ contact, commingSoon, openContact, closeContact, setCommingSoon }) => {
+const NavTablet = ({ contact, commingSoon, isStaticNav = false, openContact, closeContact, setCommingSoon }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
@@ -53,40 +53,41 @@ const NavTablet = ({ contact, commingSoon, openContact, closeContact, setComming
     return (
         <>
             <nav id="main-nav-tablet">
-                <a href="/#home-t"><img id="logo" src="/img/logo.svg" alt="Jam" style={{ width: 200, height: 87 }} /></a>
+                <a href="/#home-t"><img id="logo" src="/img/logo-white.svg" alt="Jam" style={{ width: 157, height: 76, objectFit: 'contain' }} /></a>
                 <div style={{ display: 'flex' }} onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <img src={`/img/${isMenuOpen ? 'menu-close' : 'menu'}.svg`} alt="Menu icon" style={{ marginRight: 5 }} />
-                    <p>Menu</p>
+                    <p style={{ color: '#fff' }}>Menu</p>
                 </div>
             </nav>
 
             <div id="menu">
-                <a href="/#features-t"><h3>Features</h3></a>
-                <a href="/#faq"><h3>FAQ</h3></a>
-                <h3>Download</h3>
+                <a href="/#home"><h3>Home</h3></a>
+                <a href="/#workshops"><h3>Workshops</h3></a>
+                <a href="/#artists"><h3>Artists</h3></a>
+                <h3 style={{ marginBottom: 20 }} onClick={openContact}>Contact</h3>
                 <a>
-                    <img src="/img/google-play-tablet.png" alt="Google play" onClick={setCommingSoon} style={{ marginTop: 12 }} />
+                    <img src="/img/google-play-white.svg" alt="Google play" onClick={setCommingSoon} style={{ marginTop: 12, height: 60, objectFit: 'contain' }} />
                 </a>
                 <a>
-                    <img src="/img/app-store-tablet.png" alt="App store" onClick={setCommingSoon} style={{ marginTop: 12 }} />
+                    <img src="/img/app-store-white.svg" alt="App store" onClick={setCommingSoon} style={{ marginTop: 12, height: 60, objectFit: 'contain' }} />
                 </a>
-                <h3 style={{ marginBottom: 30 }} onClick={openContact}>Contact</h3>
             </div>
 
             <Contact show={contact} handleClose={closeContact} commingSoon={commingSoon} />
 
             <style jsx>{`
                 #main-nav-tablet {
-                    background-color: transparent;
                     position: fixed;
                     top: 0;
                     width: 100%;
                     transition: all .5s ease;
                     z-index: 99;
-                    padding: 20px 30px;
+                    padding: 0px 30px;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    background-color: ${isStaticNav ? '#ED1E46' : 'transparent'};
+                    position: ${isStaticNav ? 'relative' : 'fixed'} ;
                 }
                 
                 #main-nav-tablet.hide {
@@ -94,7 +95,7 @@ const NavTablet = ({ contact, commingSoon, openContact, closeContact, setComming
                 }
 
                 #main-nav-tablet.bg-color {
-                    background-color: #fff;
+                    background-color: #ED1E46;
                 }
 
                 #logo {
@@ -105,9 +106,7 @@ const NavTablet = ({ contact, commingSoon, openContact, closeContact, setComming
 
                 #menu {
                     background: linear-gradient(225deg, rgba(237,30,70,1) 0%, rgba(246,137,85,1) 100%);
-                    min-height: ${isMenuOpen ? '100vh' : '0vh'};
                     position: fixed;
-                    top: ${isMenuOpen ? '0' : '-100vh'};
                     width: 100%;
                     transition: all .7s ease;
                     z-index: 98;
@@ -115,13 +114,15 @@ const NavTablet = ({ contact, commingSoon, openContact, closeContact, setComming
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
+                    top: ${isMenuOpen ? '0' : '-100vh'};
+                    min-height: ${isMenuOpen ? '100vh' : '0vh'};
                 }
 
                 h3 {
                     color: #fff;
                     font-size: 30px;
                     line-height: 36px;
-                    margin-top: 30px;
+                    margin-top: 15px;
                 }
 
                 @media only screen and (max-width: 424px){
