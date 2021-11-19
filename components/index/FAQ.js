@@ -55,9 +55,8 @@ const FAQ = ({ openContact, setCommingSoon }) => {
                     </div>
 
                     <h1 className="slogan" style={{ overflow: 'hidden', marginTop: 180 }}>
-                        Connect, aspire and inspire to do <br />
+                        Connect, aspire and inspire to do &nbsp;
                         <span className="word-container-bottom" style={{ zIndex: 1 }}>{WORDS[wordIndex]}</span>&nbsp;
-                        with Arty!
                     </h1>
 
                     <img src="/img/singers.svg" alt="Arty Land" className="singers" />
@@ -145,14 +144,6 @@ const FAQ = ({ openContact, setCommingSoon }) => {
                         padding: 70px 100px;
                     }
                 }
-
-                @media only screen and (max-width: 829px){
-                    h1.slogan {
-                        font-size: 40px;
-                        line-height: 50px;
-                    }
-                }
-
                 @media only screen and (max-width: 730px){
                     h1 {
                         font-size: 50px;
@@ -167,18 +158,10 @@ const FAQ = ({ openContact, setCommingSoon }) => {
                     }
 
                     h1.slogan {
-                        font-size: 30px;
-                        line-height: 40px;
+                        font-size: 38px;
+                        line-height: 48px;
                     }
                 }
-
-                @media only screen and (max-width: 569px){
-                    h1.slogan {
-                        font-size: 28px;
-                        line-height: 35px;
-                    }
-                }
-
                 
                 @media only screen and (max-width: 457px){
                     .container {

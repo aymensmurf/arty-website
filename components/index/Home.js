@@ -29,9 +29,8 @@ const Home = () => {
             <section style={{ minHeight: '100vh', background: '#000' }}>
                 <div className="container" style={{ paddingTop: 200 }}>
                     <h1 style={{ overflow: 'hidden' }}>
-                        Connect, aspire and inspire to do <br />
+                        Connect, aspire and inspire to do &nbsp;<br />
                         <span className="word-container-bottom" style={{ zIndex: 1, color: '#ED1E46' }}>{WORDS[wordIndex]}</span>&nbsp;
-                        with Arty!
                     </h1>
                 </div>
 
@@ -83,17 +82,6 @@ const Home = () => {
                     justify-content: center;
                     align-items: center;
                     align-content: center
-                }
-
-                @media only screen and (max-width: 1439px){
-                    .container {
-                        padding-top: 170px;
-                        padding-bottom: 100px;
-                    }
-
-                    h1 {
-                        font-size: 46px;
-                    }
                 }
             `}</style>
         </>
