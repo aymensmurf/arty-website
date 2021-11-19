@@ -30,7 +30,7 @@ const Skill = ({ title, isActive, setIsActive }) => {
                     <div className="box" style={{ opacity: isActive ? 1 : 0 }} />
                 </div>
 
-                <div className={isActive && "active-audio"} onClick={handleClick}>
+                <div onClick={handleClick}>
                     {isActive ? (
                         <img src="/img/skills/btn-pause.svg" alt="Play" className="btn-action" />
                     ) : (

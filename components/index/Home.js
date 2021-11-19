@@ -23,7 +23,7 @@ const Home = () => {
     }, [wordIndex]);
 
     return (
-        <>
+        <div className="visible-desktop">
             <a name="home"></a>
 
             <section style={{ minHeight: '100vh', background: '#000' }}>
@@ -84,7 +84,7 @@ const Home = () => {
                     align-content: center
                 }
             `}</style>
-        </>
+        </div>
     )
 }
 

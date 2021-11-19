@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Layout from '../Layout/Layout'
-import { Init, Home, Features, FAQ, InitTablet, Download, Workshops, Artists } from '../components/index'
+import { Init, Home, Features, FAQ, InitTablet, Download, Workshops, Artists, FeaturesTablet, HomeTablet } from '../components/index'
 import client from '../graphql';
 import { GET_FEATURED_USERS } from '../graphql/queries/user';
 import { GET_FEATURED_WORKSHOPS } from '../graphql/queries/workshop';
-import FeaturesTablet from '../components/index/FeaturesTablet';
 
 const Index = ({ artists, workshops }) => {
   const [pressed, setPressed] = useState(false);
@@ -53,6 +52,8 @@ const Index = ({ artists, workshops }) => {
     >
 
       <Home />
+      <HomeTablet />
+
       <Download
         setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
       />
