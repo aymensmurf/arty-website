@@ -18,13 +18,6 @@ const settings = {
                 slidesToScroll: 1
             }
         },
-        {
-            breakpoint: 504,
-            settings: {
-                slidesToShow: .98,
-                slidesToScroll: 1
-            }
-        },
     ]
 };
 
@@ -34,7 +27,7 @@ const ArtistsTablet = ({ data }) => {
             <a name="artists"></a>
 
             <section>
-                <div className="container">
+                <div className="container" style={{ paddingRight: 15, paddingLeft: 15 }}>
                     <ArtistsSeeMoreCard />
                 </div>
 
