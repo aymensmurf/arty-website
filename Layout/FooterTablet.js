@@ -4,7 +4,7 @@ const FooterTablet = () => {
     return (
         <>
             <footer>
-                <img src="/img/logo.svg" alt="Jam" style={{ width: 200, height: 87 }} />
+                <img src="/img/logo-white.svg" alt="Jam" style={{ width: 200, height: 87 }} />
 
                 <div style={{ marginTop: 40, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <a href="/privacy-policy">Privacy policy</a>
@@ -60,6 +60,17 @@ const FooterTablet = () => {
                     color: #fff;
                     font-size: 40px;
                     margin-right: 32px;
+                }
+
+                @media only screen and (max-width: 364px){
+                    .social-media {
+                        margin-top: 40px;
+                    }
+
+                    .social-media i {
+                        font-size: 30px;
+                        margin-right: 30px;
+                    }
                 }
             `}</style>
         </>

@@ -77,6 +77,7 @@ const FAQ = ({ openContact, setCommingSoon }) => {
                 .faq-container {
                     background: url('/img/bg-faq.png');
                     background-attachment: fixed;
+                    background-size: cover;
                     background-repeat: no-repeat;
                     box-shadow: inset  0px 2000px 0px 0 rgb(0, 0, 0, .2);
                     padding: 70px 250px;
@@ -89,7 +90,7 @@ const FAQ = ({ openContact, setCommingSoon }) => {
                 }
 
                 h1 {
-                    font-family: Poppins;
+                    font-family: "Poppins";
                     font-weight: 600;
                     font-size: 67px;
                 }
@@ -125,6 +126,68 @@ const FAQ = ({ openContact, setCommingSoon }) => {
                     object-fit: contain;
                     margin-top: 50px;
                     margin-bottom: -4px;
+                }
+
+                @media only screen and (max-width: 1480px){
+                    .description {
+                        padding: 0px 100px;
+                    }
+                }
+
+                @media only screen and (max-width: 1283px){
+                    .description {
+                        padding: 0px 30px;
+                    }
+                }
+
+                @media only screen and (max-width: 1145px){
+                    .faq-container {
+                        padding: 70px 100px;
+                    }
+                }
+
+                @media only screen and (max-width: 829px){
+                    h1.slogan {
+                        font-size: 40px;
+                        line-height: 50px;
+                    }
+                }
+
+                @media only screen and (max-width: 730px){
+                    h1 {
+                        font-size: 50px;
+                        line-height: 56px;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                @media only screen and (max-width: 695px){
+                    .faq-container {
+                        padding: 70px 30px;
+                    }
+
+                    h1.slogan {
+                        font-size: 30px;
+                        line-height: 40px;
+                    }
+                }
+
+                @media only screen and (max-width: 569px){
+                    h1.slogan {
+                        font-size: 28px;
+                        line-height: 35px;
+                    }
+                }
+
+                
+                @media only screen and (max-width: 457px){
+                    .container {
+                        padding: 0px 10px;
+                    }
+
+                    .faq-container {
+                        padding: 70px 10px;
+                    }
                 }
             `}</style>
         </>
