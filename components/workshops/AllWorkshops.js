@@ -40,7 +40,24 @@ const AllWorkshops = ({ data }) => {
                     display: grid;
                     grid-template-columns: repeat(4, 1fr);
                     align-items: center;
-                    gap: 30px;
+                }
+
+                @media only screen and (max-width: 1023px){
+                    .grid {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }
+
+                @media only screen and (max-width: 767px){
+                    .grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+                @media only screen and (max-width: 639px){
+                    .grid {
+                        grid-template-columns: 1fr;
+                    }
                 }
             `}</style>
         </>

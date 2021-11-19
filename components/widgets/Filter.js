@@ -1,16 +1,16 @@
 import React from "react";
 import Pill from "./Pill";
 
-const Filter = ({ title, options, isActive, selectedFilters, handleOptionClick }) => {
+const Filter = ({ id, title, options, isActive, selectedFilters, handleOptionClick }) => {
     return (
-        <>
+        <div className="visible-desktop">
             <div style={{ position: 'relative' }}>
                 <div className="pill-container">
                     <Pill title={title} isActive={isActive} />
                 </div>
 
                 {options && (
-                    <div className="options">
+                    <div className="options" style={id <= 2 ? { left: 0 } : { right: 0 }}>
                         <div className="options-content">
                             {Object.entries(options).map(([key, value]) => (
                                 <React.Fragment key={key}>
@@ -54,7 +54,6 @@ const Filter = ({ title, options, isActive, selectedFilters, handleOptionClick }
                     padding-top: 10px;
                     position: absolute;
                     top: 40px;
-                    left: 0px;
                     z-index: 2;
                     overflow: hidden;
                     transition: all .5s ease;
@@ -99,7 +98,7 @@ const Filter = ({ title, options, isActive, selectedFilters, handleOptionClick }
                     margin-bottom: 10px;
                 }
             `}</style>
-        </>
+        </div>
     )
 }
 

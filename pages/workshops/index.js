@@ -4,6 +4,7 @@ import { AllWorkshops } from "../../components/workshops";
 import Filters from '../../components/widgets/Filters';
 import client from '../../graphql';
 import { SEARCH_WORKSHOPS } from '../../graphql/queries/workshop';
+import FiltersTablet from '../../components/widgets/FiltersTablet';
 
 const Workshops = () => {
     const [contact, setContact] = useState(false);
@@ -57,6 +58,7 @@ const Workshops = () => {
             setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
         >
             <Filters filters={filters} setFilters={setFilters} />
+            <FiltersTablet filters={filters} setFilters={setFilters} />
 
             {workshops.length > 0 ? (
                 <AllWorkshops data={workshops} />

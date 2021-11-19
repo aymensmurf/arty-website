@@ -101,7 +101,7 @@ export const PAINTINGS = {
 
 export const DANCE = {
     DANCES: {
-        title: "Dance",
+        title: "",
         options: [
             'Hiphop/Breakdance',
             'Contemporary',
@@ -119,7 +119,7 @@ export const DANCE = {
 
 export const THEATER = {
     THEATRES: {
-        title: "Theater",
+        title: "",
         options: [
             'Creative Writing',
             'One Man Show',

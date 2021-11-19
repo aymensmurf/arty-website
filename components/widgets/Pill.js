@@ -9,7 +9,7 @@ const Pill = ({ title, isActive, isOneColor = false, handleClick }) => {
                 .pill {
                     border-radius: 20px;
                     background: #e4e4e4;
-                    padding: 10px 24px;
+                    padding: 10px 30px;
                     cursor: pointer;
                     font-family: "Poppins";
                     font-weight: 600;
@@ -22,6 +22,7 @@ const Pill = ({ title, isActive, isOneColor = false, handleClick }) => {
                     justify-content: center;
                     text-align: center;
                     transition: all .3s ease;
+                    user-select: none;
                 }
 
                 .pill.active {

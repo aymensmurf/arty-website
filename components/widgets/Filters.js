@@ -24,6 +24,7 @@ const Filters = ({ filters, setFilters }) => {
         <>
             <section className="container">
                 <Filter
+                    id={0}
                     title="MUSIC"
                     options={MUSIC}
                     isActive={filters.genres.length > 0 || filters.instruments.length > 0}
@@ -31,6 +32,7 @@ const Filters = ({ filters, setFilters }) => {
                     handleOptionClick={toggleElm}
                 />
                 <Filter
+                    id={1}
                     title="PAINTING"
                     options={PAINTINGS}
                     isActive={filters.paintings.length > 0 || filters.paintingtools.length > 0}
@@ -38,6 +40,7 @@ const Filters = ({ filters, setFilters }) => {
                     handleOptionClick={toggleElm}
                 />
                 <Filter
+                    id={2}
                     title="DANCE"
                     options={DANCE}
                     isActive={filters.dances.length > 0}
@@ -45,6 +48,7 @@ const Filters = ({ filters, setFilters }) => {
                     handleOptionClick={toggleElm}
                 />
                 <Filter
+                    id={3}
                     title="THEATER"
                     options={THEATER}
                     isActive={filters.theatres.length > 0}
@@ -52,6 +56,7 @@ const Filters = ({ filters, setFilters }) => {
                     handleOptionClick={toggleElm}
                 />
                 <Filter
+                    id={4}
                     title="PHOTOGRAPHY"
                     options={PHOTOGRAPHY}
                     isActive={filters.photographies.length > 0 || filters.photographytools.length > 0}
@@ -60,6 +65,7 @@ const Filters = ({ filters, setFilters }) => {
                 />
 
                 <Filter
+                    id={5}
                     title="MORE"
                     options={MORE_SKILLS}
                     isActive={
@@ -88,6 +94,7 @@ const Filters = ({ filters, setFilters }) => {
                 .container {
                     display: flex;
                     justify-content: center;
+                    flex-wrap: wrap;
                     gap: 17px;
                     margin-top: 100px;
                 }
