@@ -21,7 +21,19 @@ const Workshops = ({ data }) => {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
                     gap: 16px;
-                }                
+                }
+
+                @media only screen and (max-width: 913px){
+                    .workshops {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+                @media only screen and (max-width: 662px){
+                    .workshops {
+                        grid-template-columns: 1fr;
+                    }
+                }
             `}</style>
         </>
     )

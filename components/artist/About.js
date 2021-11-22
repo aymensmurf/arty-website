@@ -45,6 +45,7 @@ const About = ({ description, skills }) => {
                 
                 .skills {
                     display: flex;
+                    flex-wrap: wrap;
                     gap: 10px;
                     margin-top: 10px;
                 }

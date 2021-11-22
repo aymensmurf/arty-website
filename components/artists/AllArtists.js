@@ -5,11 +5,11 @@ const AllArtists = ({ data }) => {
     return (
         <>
             <section className="container" style={{ marginTop: 100 }}>
-                <Masonry breakpointCols={4} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
+                <Masonry breakpointCols={{ default: 4, 1023: 3, 767: 2, 600: 1 }} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
                     {data.map(({ _id, name, avatar, username }, i) => (
                         <div key={_id} style={{ marginBottom: 20 }}>
-                            {(i === 1) && <h2>Arty</h2>}
-                            {(i === 3) && <h2>Artists</h2>}
+                            {(i === 1) && <h2 className="visible-desktop">Arty</h2>}
+                            {(i === 3) && <h2 className="visible-desktop">Artists</h2>}
                             <Artist
                                 name={name}
                                 avatar={avatar}

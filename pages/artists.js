@@ -4,6 +4,7 @@ import { AllArtists } from "../components/artists";
 import Filters from "../components/widgets/Filters";
 import client from '../graphql';
 import { SEARCH_USERS } from '../graphql/queries/user';
+import FiltersTablet from '../components/widgets/FiltersTablet';
 
 const Artists = () => {
     const [contact, setContact] = useState(false);
@@ -57,6 +58,7 @@ const Artists = () => {
             setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
         >
             <Filters filters={filters} setFilters={setFilters} />
+            <FiltersTablet filters={filters} setFilters={setFilters} />
 
             {users.length > 0 ? (
                 <AllArtists data={users} />

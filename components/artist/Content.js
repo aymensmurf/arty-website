@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { getImageUri } from "../../utils/funcs";
-import MoreArtists from "./MoreArtists";
 import Medias from "./Medias";
 import Workshops from "./Workshops";
 import About from "./About";
+import SocialMedia from "./SocialMedia";
 
 const Content = ({ data }) => {
     const [tabIndex, setTabIndex] = useState(0);
@@ -26,7 +26,9 @@ const Content = ({ data }) => {
 
                     <h1>{data.name}</h1>
                     <p>@{data.username}</p>
-
+                    <div className="below-620" style={{ marginTop: 15 }}>
+                        <SocialMedia spotify={data.spotify} youtube={data.youtube} soundcloud={data.soundcloud} />
+                    </div>
                 </div>
 
                 <div className="tab-header">
@@ -41,23 +43,8 @@ const Content = ({ data }) => {
                             <h2 className={tabIndex === 2 && 'active'}>About</h2>
                         </div>
                     </div>
-
-                    <div className="media">
-                        {data.spotify && (
-                            <a href={data.spotify} target="_blank" rel="noopener noreferrer">
-                                <img src="/img/spotify.svg" alt="Spotify" />
-                            </a>
-                        )}
-                        {data.youtube && (
-                            <a href={data.youtube} target="_blank" rel="noopener noreferrer">
-                                <img src="/img/youtube.svg" alt="YouTube" />
-                            </a>
-                        )}
-                        {data.soundcloud && (
-                            <a href={data.soundcloud} target="_blank" rel="noopener noreferrer" style={{ marginRight: 16 }}>
-                                <img src="/img/soundcloud.svg" alt="YouTube" />
-                            </a>
-                        )}
+                    <div className="above-620">
+                        <SocialMedia spotify={data.spotify} youtube={data.youtube} soundcloud={data.soundcloud} />
                     </div>
                 </div>
 
@@ -78,8 +65,6 @@ const Content = ({ data }) => {
                         )
                     }
                 </div>
-
-                <MoreArtists />
             </section>
 
 
@@ -163,19 +148,55 @@ const Content = ({ data }) => {
                     color: #ed1e46; 
                 }
 
-                .media {
-                    display: flex;
-                    gap: 15px;
-                    cursor: pointer;
-                }
-
                 .tab-body {
                     width: 100%;
+                    max-height: 760px;
+                    overflow-y: auto;
                     padding: 50px 138px;
                     background-color: #F5F5F5;
                     border-bottom-right-radius: 10px;
                     border-bottom-left-radius: 10px;
                     margin-bottom: 74px;
+                }
+
+                .above-620 {
+                    display: block;
+                }
+
+                .below-620 {
+                    display: none;
+                    clear: both;
+                }
+
+                @media only screen and (max-width: 1439px){
+                    .tab-header, .tab-body {
+                        padding: 24px 40px;
+                    }
+                }
+
+                @media only screen and (max-width: 620px){
+                    .above-620 {
+                        display: none;
+                        clear: both;
+                    }
+    
+                    .below-620 {
+                        display: block;
+                    }
+                }
+
+                @media only screen and (max-width: 448px){
+                    .tab-header, .tab-body {
+                        padding: 24px 20px;
+                    }
+
+                    .tab {
+                        padding: 4px 10px;
+                    }
+    
+                    h2 {
+                        font-size: 15px;
+                    }
                 }
             `}</style>
         </>

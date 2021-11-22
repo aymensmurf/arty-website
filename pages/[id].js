@@ -3,6 +3,7 @@ import Layout from "../Layout/Layout";
 import { Content } from "../components/artist";
 import client from '../graphql';
 import { GET_USER_BY_USERNAME } from '../graphql/queries/user';
+import MoreArtists from '../components/artist/MoreArtists';
 
 const Artist = ({ data }) => {
     const [contact, setContact] = useState(false);
@@ -22,6 +23,8 @@ const Artist = ({ data }) => {
             ) : (
                 <h1>Not found</h1>
             )}
+
+            <MoreArtists />
         </Layout>
     )
 }

@@ -102,6 +102,20 @@ const HomeTablet = () => {
                         margin: 0px;
                     }
                 }
+
+                @media only screen and (max-width: 463px){
+                    h1 {
+                        font-size: 36px;
+                        line-height: 42px;
+                    }
+                }
+
+                @media only screen and (max-width: 374px){
+                    h1 {
+                        font-size: 30px;
+                        line-height: 36px;
+                    }
+                }
             `}</style>
         </div>
     )

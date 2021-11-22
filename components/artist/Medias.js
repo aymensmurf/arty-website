@@ -25,7 +25,37 @@ const Medias = ({ data }) => {
                 }
 
                 .highlighted {
-                    grid-column: 1 / 3
+                    grid-column: 1 / 3;
+                }
+
+                @media only screen and (max-width: 1024px){
+                    .medias {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+
+                    .highlighted {
+                        grid-column: 1 / 3;
+                    }
+                }
+
+                @media only screen and (max-width: 768px){
+                    .medias {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+
+                    .highlighted {
+                        grid-column: 1 / 3;
+                    }
+                }
+
+                @media only screen and (max-width: 582px){
+                    .medias {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .highlighted {
+                        grid-column: 1 / 2;
+                    }
                 }
             `}</style>
         </>
