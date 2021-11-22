@@ -4,11 +4,11 @@ const Header = ({ banner }) => {
     return (
         <>
             <section className="container">
-
+                <div className="bg"></div>
             </section>
 
             <style jsx>{`
-                section {
+                .bg {
                     width: 100%;
                     height: 240px;
                     background-repeat: no-repeat;

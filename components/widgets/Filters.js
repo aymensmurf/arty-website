@@ -22,7 +22,7 @@ const Filters = ({ filters, setFilters }) => {
 
     return (
         <>
-            <section className="container">
+            <section className="container visible-desktop">
                 <Filter
                     id={0}
                     title="MUSIC"
@@ -96,7 +96,7 @@ const Filters = ({ filters, setFilters }) => {
                     justify-content: center;
                     flex-wrap: wrap;
                     gap: 17px;
-                    margin-top: 100px;
+                    margin-top: 40px;
                 }
             `}</style>
         </>

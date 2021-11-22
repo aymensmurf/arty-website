@@ -10,7 +10,23 @@ const settings = {
     slidesToShow: 3,
     slidesToScroll: 3,
     arrows: false,
-    dots: true
+    dots: true,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        },
+    ]
 };
 
 const MoreWorkshops = () => {
@@ -36,33 +52,33 @@ const MoreWorkshops = () => {
         }
     }
 
-    console.log(`workshops`, workshops)
-
     if (workshops.length > 0) {
         return (
             <>
                 <section className="container">
-                    <h1>More Workshops</h1>
+                    <div className="bg">
+                        <h1>More Workshops</h1>
 
-                    <div className="glass">
-                        <Slider {...settings}>
-                            {workshops.map(({ _id, title, slug, banner, host }) => (
-                                <Workshop
-                                    key={_id}
-                                    title={title}
-                                    banner={banner}
-                                    slug={slug}
-                                    host={host.username}
-                                    isFullWidth={false}
-                                    scaleOnHover={false}
-                                />
-                            ))}
-                        </Slider>
+                        <div className="glass">
+                            <Slider {...settings}>
+                                {workshops.map(({ _id, title, slug, banner, host }) => (
+                                    <Workshop
+                                        key={_id}
+                                        title={title}
+                                        banner={banner}
+                                        slug={slug}
+                                        host={host.username}
+                                        isFullWidth={false}
+                                        scaleOnHover={false}
+                                    />
+                                ))}
+                            </Slider>
+                        </div>
                     </div>
                 </section>
 
                 <style jsx>{`
-                    section {
+                    .bg {
                         background: url("/img/bg-artist-card.png");
                         background-repeat: no-repeat;
                         background-size: cover;
@@ -77,9 +93,9 @@ const MoreWorkshops = () => {
                         font-weight: 600;
                         font-size: 58px;
                         letter-spacing: -0.02em;
-                        line-height: 44px;
+                        line-height: 60px;
                         text-align: center;
-                        color: #fff;                     
+                        color: #fff;
                     }
 
                     .glass {
@@ -105,6 +121,51 @@ const MoreWorkshops = () => {
                         filter: blur(40px);
                         margin: -200px;
                         box-shadow: inset 0 0 0 30px rgba(255, 255, 255, 0.15);
+                    }
+
+                    @media only screen and (max-width: 1567px){
+                        .bg {
+                            padding: 50px 80px;
+                        }
+
+                        .glass {
+                            padding: 100px 50px; 
+                        }
+                    }
+
+                    @media only screen and (max-width: 1200px){
+                        .bg {
+                            padding: 50px 30px;
+                        }
+
+                        .glass {
+                            padding: 100px 40px; 
+                        }
+                    }
+
+                    @media only screen and (max-width: 767px){
+                        .bg {
+                            padding: 30px 30px;
+                        }
+
+                        .glass {
+                            padding: 40px 60px; 
+                        }
+
+                        h1 {
+                            font-size: 42px;
+                            line-height: 44px;
+                        }
+                    }
+
+                    @media only screen and (max-width: 549px){
+                        .bg {
+                            padding: 30px 30px;
+                        }
+
+                        .glass {
+                            padding: 40px 20px; 
+                        }
                     }
                 `}</style>
             </>

@@ -15,7 +15,7 @@ const Details = ({ data, setCommingSoon }) => {
     return (
         <>
             <section className="container">
-                <div className="flex">
+                <div className="grid">
                     <div className="details">
                         <div className="flex" style={{ alignItems: 'center', gap: 20 }}>
                             <img src={getImageUri(data.host.avatar)} alt={data.host.name} className="avatar" />
@@ -41,7 +41,7 @@ const Details = ({ data, setCommingSoon }) => {
 
                     <div className="participents">
                         <div>
-                            <h2 style={{ color: '#222' }}>Particpents <span style={{ marginLeft: 25, color: '#80CC72' }}>{data.participants.length} People</span></h2>
+                            <h2 style={{ color: '#222' }}>Particpents <span className="participants-nb">{data.participants.length} People</span></h2>
 
                             {(data.participants.length > 0) && (
                                 <div className="participents-container" style={{ marginTop: 38 }}>
@@ -66,9 +66,9 @@ const Details = ({ data, setCommingSoon }) => {
                     <div className="join-arty">
                         <h1>JOIN ARTY FOR MORE</h1>
 
-                        <div className="flex" style={{ gap: 24, marginTop: 35 }}>
+                        <div className="flex" style={{ gap: 24, marginTop: 35, justifyContent: 'center' }}>
                             <a>
-                                <img src="/img/nav-google.png" alt="Google Play" onClick={setCommingSoon} style={{ marginRight: 10, cursor: 'pointer' }} />
+                                <img src="/img/nav-google.png" alt="Google Play" onClick={setCommingSoon} style={{ cursor: 'pointer' }} />
                             </a>
                             <a>
                                 <img src="/img/nav-apple.png" alt="App store" onClick={setCommingSoon} style={{ cursor: 'pointer' }} />
@@ -86,14 +86,19 @@ const Details = ({ data, setCommingSoon }) => {
                     margin-bottom: 140px;
                 }
 
+                .grid {
+                    display: grid;
+                    grid-template-columns: 47% 30% calc(23% - 60px);
+                    gap: 30px;
+                }
+
                 .flex {
                     display: flex;
-                    gap: 30px;
                     flex-wrap: wrap;
+                    gap: 30px;
                 }
 
                 .details {
-                    width: 47%;
                     border-radius: 25px;
                     background: #fdfdfd;
                     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.16);
@@ -101,11 +106,10 @@ const Details = ({ data, setCommingSoon }) => {
                 }
 
                 .participents {
-                    width: 30%;
                     border-radius: 25px;
                     background: #fdfdfd;
                     border: 1px solid #ed1e46;
-                    padding: 46px 70px;
+                    padding: 46px 35px;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -113,7 +117,6 @@ const Details = ({ data, setCommingSoon }) => {
                 }
 
                 .join-arty {
-                    width: calc(23% - 60px);
                     border-radius: 25px;
                     background: url("/img/bg-join-arty.png");
                     background-repeat: no-repeat;
@@ -140,18 +143,17 @@ const Details = ({ data, setCommingSoon }) => {
                 }
 
                 h1 {
-                    font-size: 32px;
+                    font-size: 28px;
                     line-height: 22px;
                 }
 
                 h2 {
                     font-size: 27px;
-                    line-height: 19px;
+                    line-height: 30px;
                     color: #ed1e46;
                 }
 
                 h3 {
-                    font-family: Poppins;
                     font-weight: 500;
                     font-size: 24px;
                     line-height: 22px;
@@ -171,10 +173,15 @@ const Details = ({ data, setCommingSoon }) => {
                 .participents-container {
                     display: flex;
                     align-items: center;
-                    justify-content: space-between;
                     flex-wrap: wrap;
                     column-gap: 30px;
                     row-gap: 20px;
+                }
+
+                .participants-nb {
+                    margin-left: 25px;
+                    color: #80CC72;
+                    white-space: nowrap;
                 }
 
                 .more {
@@ -190,18 +197,71 @@ const Details = ({ data, setCommingSoon }) => {
                 }
 
                 .join-arty h1 {
-                    font-family: Poppins;
+                    font-family: "Poppins";
                     font-weight: bold;
-                    font-size: 46px;
-                    line-height: 50px;
+                    font-size: 38px;
+                    line-height: 40px;
                     color: #fff;
                     text-align: center;
                 }
 
                 .theme {
                     display: flex;
+                    flex-wrap: wrap;
                     gap: 10px;
                     margin-top: 10px;
+                }
+
+                @media only screen and (max-width: 1536px){
+                    .participants-nb {
+                        margin-left: 0px;
+                    }
+                }
+
+                @media only screen and (max-width: 1220px){
+                    .grid {
+                        grid-template-columns: 60% calc(40% - 30px);
+                    }
+
+                    .join-arty {
+                        grid-column: 1 / 3;
+                    }
+                }
+
+                @media only screen and (max-width: 1023px){
+                    .grid {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .join-arty {
+                        grid-column: 1 / 2;
+                    }
+                }
+
+                @media only screen and (max-width: 490px){
+                    h1 {
+                        font-size: 24px;
+                        line-height: 22px;
+                    }
+                    h2, h3, h4 {
+                        font-size: 20px;
+                        line-height: 20px;
+                    }
+
+                    .join-arty h1 {
+                        font-size: 30px;
+                        line-height: 30px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+                }
+
+                @media only screen and (max-width: 427px){
+                    .participents-container {
+                        gap: 15px;
+                    }
                 }
             `}</style>
         </>

@@ -22,7 +22,7 @@ const Workshop = ({ data }) => {
                 data={data}
                 setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
             />
-            
+
             <MoreWorkshops />
         </Layout>
     )

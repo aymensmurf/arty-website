@@ -27,7 +27,7 @@ const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = true, scal
                     position: relative;
                     border: 10px solid white;
                     background-color: #fff;
-                    width: ${isFullWidth ? '100%' : '94%'};
+                    width: ${isFullWidth ? '100%' : '96%'};
                 }
 
                 .workshop-card:hover {
