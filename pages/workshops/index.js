@@ -5,10 +5,12 @@ import Filters from '../../components/widgets/Filters';
 import client from '../../graphql';
 import { SEARCH_WORKSHOPS } from '../../graphql/queries/workshop';
 import FiltersTablet from '../../components/widgets/FiltersTablet';
+import Spinner from '../../components/widgets/Spinner';
 
 const Workshops = () => {
     const [contact, setContact] = useState(false);
     const [commingSoon, setCommingSoon] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [workshops, setWorkshops] = useState([]);
     const [filters, setFilters] = useState({
         genres: [],
@@ -33,6 +35,8 @@ const Workshops = () => {
     }, [filters]);
 
     const getWorkshops = async () => {
+        setIsLoading(true);
+
         try {
             const { data } = await client.query({
                 query: SEARCH_WORKSHOPS,
@@ -46,6 +50,8 @@ const Workshops = () => {
         } catch (error) {
             console.error(`error`, error)
         }
+
+        setIsLoading(false);
     }
 
     return (
@@ -60,10 +66,18 @@ const Workshops = () => {
             <Filters filters={filters} setFilters={setFilters} />
             <FiltersTablet filters={filters} setFilters={setFilters} />
 
-            {workshops.length > 0 ? (
-                <AllWorkshops data={workshops} />
+            {isLoading ? (
+                <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '140px 20px' }}>
+                    <Spinner />
+                </div>
             ) : (
-                <h1>Nth to c here</h1>
+                workshops.length > 0 ? (
+                    <AllWorkshops data={workshops} />
+                ) : (
+                    <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '140px 20px' }}>
+                        <img src="/img/404-workshops.svg" alt="No workshops found" />
+                    </div>
+                )
             )}
         </Layout>
     )

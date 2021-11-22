@@ -61,8 +61,6 @@ const Nav = ({ contact, isStaticNav = false, openContact, closeContact, commingS
     }, []);
 
     useEffect(() => {
-        console.log(`object`, window.location.pathname)
-
         setLocation(window.location.pathname);
     }, []);
 

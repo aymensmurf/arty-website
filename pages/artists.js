@@ -5,10 +5,12 @@ import Filters from "../components/widgets/Filters";
 import client from '../graphql';
 import { SEARCH_USERS } from '../graphql/queries/user';
 import FiltersTablet from '../components/widgets/FiltersTablet';
+import Spinner from '../components/widgets/Spinner';
 
 const Artists = () => {
     const [contact, setContact] = useState(false);
     const [commingSoon, setCommingSoon] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [users, setUsers] = useState([]);
     const [filters, setFilters] = useState({
         genres: [],
@@ -33,6 +35,8 @@ const Artists = () => {
     }, [filters]);
 
     const getUsers = async () => {
+        setIsLoading(true);
+
         try {
             const { data } = await client.query({
                 query: SEARCH_USERS,
@@ -46,6 +50,8 @@ const Artists = () => {
         } catch (error) {
             console.error(`error`, error)
         }
+
+        setIsLoading(false);
     }
 
     return (
@@ -60,10 +66,19 @@ const Artists = () => {
             <Filters filters={filters} setFilters={setFilters} />
             <FiltersTablet filters={filters} setFilters={setFilters} />
 
-            {users.length > 0 ? (
-                <AllArtists data={users} />
+
+            {isLoading ? (
+                <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '140px 20px' }}>
+                    <Spinner />
+                </div>
             ) : (
-                <h1>Nth to c here</h1>
+                users.length > 0 ? (
+                    <AllArtists data={users} />
+                ) : (
+                    <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '140px 20px' }}>
+                        <img src="/img/404-artists.svg" alt="No artists found" />
+                    </div>
+                )
             )}
         </Layout>
     )

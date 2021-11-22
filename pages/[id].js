@@ -21,7 +21,9 @@ const Artist = ({ data }) => {
             {data ? (
                 <Content data={data} />
             ) : (
-                <h1>Not found</h1>
+                <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '300px 20px' }}>
+                    <img src="/img/404.svg" alt="No workshops found" />
+                </div>
             )}
 
             <MoreArtists />

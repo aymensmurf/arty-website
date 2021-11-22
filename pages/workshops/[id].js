@@ -17,11 +17,19 @@ const Workshop = ({ data }) => {
             closeContact={() => { setContact(false); }}
             setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
         >
-            <Header banner={data.banner} />
-            <Details
-                data={data}
-                setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
-            />
+            {data ? (
+                <>
+                    <Header banner={data.banner} />
+                    <Details
+                        data={data}
+                        setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
+                    />
+                </>
+            ) : (
+                <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '300px 20px' }}>
+                    <img src="/img/404.svg" alt="No workshops found" />
+                </div>
+            )}
 
             <MoreWorkshops />
         </Layout>

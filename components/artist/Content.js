@@ -54,12 +54,16 @@ const Content = ({ data }) => {
                             data.media && data.media.length > 0 ?
                                 <Medias data={data.media} />
                                 :
-                                <h1>Nth to c here</h1>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                    <img src="/img/404-media.svg" alt="No media found" />
+                                </div>
                         ) : (tabIndex === 1) ? (
                             data.workshops && data.workshops.length > 0 ?
                                 <Workshops data={data.workshops} />
                                 :
-                                <h1>Nth to c here</h1>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                    <img src="/img/404-workshops.svg" alt="No workshops found" />
+                                </div>
                         ) : (
                             <About description={data.description} skills={skills} />
                         )
