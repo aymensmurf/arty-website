@@ -33,7 +33,7 @@ const Artist = ({ name, avatar, username, isFullWidth = true, scaleOnHover = tru
                 .content {
                     width: 100%;
                     height: 100%;
-                    background-color: rgb(0, 0, 0, .7);
+                    background-color: rgb(0, 0, 0, .3);
                     border-radius: 10px;
                     display: flex;
                     flex-direction: column;

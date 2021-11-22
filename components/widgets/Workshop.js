@@ -12,6 +12,11 @@ const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = true, scal
                         {(!isOwner || host) && (<p className="artist">@{host}</p>)}
                         <div className="btn">View</div>
                     </div>
+
+                    <div className="title-container">
+                        <div className="overlay"></div>
+                        <p className="title" style={{ position: 'relative' }}>{title}</p>
+                    </div>
                 </div>
             </a>
 
@@ -33,11 +38,35 @@ const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = true, scal
                 .workshop-card:hover {
                     transform: scale(${scaleOnHover ? 1.05 : 1});
                 }
+
+                .title-container {
+                    width: 100%;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-end;
+                    padding: 10px 60px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    transition: all .5s ease;
+                }
+
+                .title-container .overlay {
+                    position: absolute;
+                     top: 0;
+                     left: 0;
+                     width: 100%;
+                     height: 100%;
+                     background-color: rgba(0, 0, 0, .3);
+                     filter: blur(10px);
+                }
                 
                 .content {
                     width: 100%;
                     height: 100%;
-                    background-color: rgb(0, 0, 0, .7);
+                    background-color: rgb(0, 0, 0, .3);
                     border-radius: 10px;
                     display: flex;
                     flex-direction: column;
@@ -55,10 +84,14 @@ const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = true, scal
                     opacity: 1;
                 }
 
+                .workshop-card:hover .title-container {
+                    opacity: 0;
+                }
+
                 .title {
                     font-family: "Poppins";
                     font-weight: 600;
-                    font-size: 28px;
+                    font-size: 24px;
                     color: #fff;
                     text-align: center;
                 }
@@ -66,7 +99,7 @@ const Workshop = ({ title, banner, slug, host, isOwner, isFullWidth = true, scal
                 .artist {
                     font-family: "Poppins";
                     font-weight: 600;
-                    font-size: 18px;
+                    font-size: 16px;
                     color: #fff;
                     text-align: center;
                 }

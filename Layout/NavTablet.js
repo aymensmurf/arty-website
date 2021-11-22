@@ -53,7 +53,7 @@ const NavTablet = ({ contact, commingSoon, isStaticNav = false, openContact, clo
     return (
         <>
             <nav id="main-nav-tablet">
-                <a href="/#home-t"><img id="logo" src="/img/logo-white.svg" alt="Jam" style={{ width: 157, height: 76, objectFit: 'contain' }} /></a>
+                <a href="/#home-t"><img id="logo" src="/img/logo-white.svg" alt="Jam" style={{ width: 120, objectFit: 'contain' }} /></a>
                 <div style={{ display: 'flex' }} onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <img src={`/img/${isMenuOpen ? 'menu-close' : 'menu'}.svg`} alt="Menu icon" style={{ marginRight: 5 }} />
                     <p style={{ color: '#fff' }}>Menu</p>
@@ -62,8 +62,8 @@ const NavTablet = ({ contact, commingSoon, isStaticNav = false, openContact, clo
 
             <div id="menu">
                 <a href="/#home"><h3>Home</h3></a>
-                <a href="/#workshops"><h3>Workshops</h3></a>
-                <a href="/#artists"><h3>Artists</h3></a>
+                <a href="/workshops"><h3>Workshops</h3></a>
+                <a href="/artists"><h3>Artists</h3></a>
                 <h3 style={{ marginBottom: 20 }} onClick={openContact}>Contact</h3>
                 <a>
                     <img src="/img/google-play-white.svg" alt="Google play" onClick={setCommingSoon} style={{ marginTop: 12, height: 60, objectFit: 'contain' }} />
@@ -82,7 +82,7 @@ const NavTablet = ({ contact, commingSoon, isStaticNav = false, openContact, clo
                     width: 100%;
                     transition: all .5s ease;
                     z-index: 99;
-                    padding: 0px 30px;
+                    padding: 10px 30px;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;

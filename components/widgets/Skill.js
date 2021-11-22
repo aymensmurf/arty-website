@@ -23,14 +23,14 @@ const Skill = ({ title, isActive, setIsActive }) => {
 
     return (
         <>
-            <div className="skill-container">
+            <div className="skill-container" onClick={handleClick}>
                 <div className="stage" style={{ opacity: isActive ? 1 : .25 }}>
                     <img src="/img/skills/light-bulb.svg" alt="Light bulb" className="light-bulb" />
                     <img src={`/img/skills/${title}.svg`} alt={title} className="skill" />
                     <div className="box" style={{ opacity: isActive ? 1 : 0 }} />
                 </div>
 
-                <div onClick={handleClick}>
+                <div>
                     {isActive ? (
                         <img src="/img/skills/btn-pause.svg" alt="Play" className="btn-action" />
                     ) : (
@@ -55,6 +55,7 @@ const Skill = ({ title, isActive, setIsActive }) => {
                     align-items: center;
                     justify-content: space-between;
                     position: relative;
+                    cursor: pointer;
                 }
 
                 .stage {

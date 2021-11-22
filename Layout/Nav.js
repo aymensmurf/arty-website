@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Contact from '../components/widgets/Contact'
 
 const Nav = ({ contact, isStaticNav = false, openContact, closeContact, commingSoon, setCommingSoon }) => {
+    const [location, setLocation] = useState("");
 
     useEffect(() => {
         let doc = document.documentElement;
@@ -57,7 +58,13 @@ const Nav = ({ contact, isStaticNav = false, openContact, closeContact, commingS
         };
 
         window.addEventListener('scroll', checkScroll);
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        console.log(`object`, window.location.pathname)
+
+        setLocation(window.location.pathname);
+    }, []);
 
     return (
         <>
@@ -65,8 +72,8 @@ const Nav = ({ contact, isStaticNav = false, openContact, closeContact, commingS
                 <div className="container grid-3">
                     <div>
                         <a className="nav-link" href="/#home">Home</a>
-                        <a className="nav-link" href="/#workshops">Workshops</a>
-                        <a className="nav-link" href="/#artists">Artists</a>
+                        <a className="nav-link" href="/workshops" style={{ color: location === '/workshops' && '#000' }}>Workshops</a>
+                        <a className="nav-link" href="/artists" style={{ color: location === '/artists' && '#000' }}>Artists</a>
                         <a className="nav-link" onClick={openContact}>Contact</a>
                     </div>
                     <div style={{ textAlign: 'center' }}>
