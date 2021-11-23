@@ -5,6 +5,7 @@ import { Content } from "../components/artist";
 import client from '../graphql';
 import { GET_USER_BY_USERNAME } from '../graphql/queries/user';
 import MoreArtists from '../components/artist/MoreArtists';
+import { getImageUri } from '../utils/funcs';
 
 const Artist = ({ data }) => {
     const [contact, setContact] = useState(false);
@@ -16,11 +17,11 @@ const Artist = ({ data }) => {
                 <meta name="title" content={data.name ? data.name : "Arty"} />
 
                 <meta property="og:title" content={data.name ? data.name : "Arty"} />
-                <meta property="og:image" content={data.avatar ? data.avatar : "/img/singers.svg"} />
+                <meta property="og:image" content={data.avatar ? getImageUri(data.avatar) : "/img/singers.svg"} />
                 <meta property="og:type" content="website" />
 
                 <meta property="twitter:title" content={data.name ? data.name : "Arty"} />
-                <meta property="twitter:image" content={data.avatar ? data.avatar : "/img/singers.svg"} />
+                <meta property="twitter:image" content={data.avatar ? getImageUri(data.avatar) : "/img/singers.svg"} />
                 <meta property="twitter:card" content="summary_large_image" />
             </Head>
 

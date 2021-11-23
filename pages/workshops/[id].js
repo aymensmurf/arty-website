@@ -4,6 +4,7 @@ import Layout from "../../Layout/Layout";
 import { Details, Header, MoreWorkshops } from "../../components/workshop";
 import { GET_WORKSHOP_BY_SLUG } from '../../graphql/queries/workshop';
 import client from '../../graphql';
+import { getImageUri } from '../../utils/funcs';
 
 const Workshop = ({ data }) => {
     const [contact, setContact] = useState(false);
@@ -17,12 +18,12 @@ const Workshop = ({ data }) => {
 
                 <meta property="og:title" content={data.title ? data.title : "Arty"} />
                 <meta property="og:description" content={data.description ? data.description : "Connect, aspire and inspire"} />
-                <meta property="og:image" content={data.banner ? data.banner : "/img/singers.svg"} />
+                <meta property="og:image" content={data.banner ? getImageUri(data.banner) : "/img/singers.svg"} />
                 <meta property="og:type" content="website" />
 
                 <meta property="twitter:title" content={data.title ? data.title : "Arty"} />
                 <meta property="twitter:description" content={data.description ? data.description : "Connect, aspire and inspire"} />
-                <meta property="twitter:image" content={data.banner ? data.banner : "/img/singers.svg"} />
+                <meta property="twitter:image" content={data.banner ? getImageUri(data.banner) : "/img/singers.svg"} />
                 <meta property="twitter:card" content="summary_large_image" />
             </Head>
 
