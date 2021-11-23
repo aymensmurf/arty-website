@@ -24,7 +24,7 @@ const Details = ({ data, setCommingSoon }) => {
                         <h2 style={{ marginTop: 35 }}>{data.title}</h2>
                         <h3 style={{ marginTop: 13 }}>Start : {new Date(data.start).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'medium' })}</h3>
                         <h3 style={{ marginTop: 11 }}>End : {new Date(data.start).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'medium' })}</h3>
-                        <h4 style={{ marginTop: 31 }}>Discription</h4>
+                        <h4 style={{ marginTop: 31 }}>Description</h4>
                         <p style={{ marginTop: 10 }}>{data.description}</p>
 
                         {theme.length > 0 && (
