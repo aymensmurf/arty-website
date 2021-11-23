@@ -11,6 +11,29 @@ const Index = ({ artists, workshops }) => {
   const [contact, setContact] = useState(false);
   const [commingSoon, setCommingSoon] = useState(false);
 
+  const [skills, setSkills] = useState({
+    skill1: {
+      state: false,
+      audio: typeof Audio !== "undefined" ? new Audio('/audio/skill-1.mp3') : undefined
+    },
+    skill2: {
+      state: false,
+      audio: typeof Audio !== "undefined" ? new Audio('/audio/skill-2.mp3') : undefined
+    },
+    skill3: {
+      state: false,
+      audio: typeof Audio !== "undefined" ? new Audio('/audio/skill-3.mp3') : undefined
+    },
+    skill4: {
+      state: false,
+      audio: typeof Audio !== "undefined" ? new Audio('/audio/skill-4.mp3') : undefined
+    },
+    skill5: {
+      state: false,
+      audio: typeof Audio !== "undefined" ? new Audio('/audio/skill-5.mp3') : undefined
+    },
+  });
+
   useEffect(() => {
     if (!document.referrer) {
       setPressed(false);
@@ -18,6 +41,45 @@ const Index = ({ artists, workshops }) => {
       setPressed(true);
     }
   }, []);
+
+  const handlePress = () => {
+    setPressed(true);
+
+    // Auto play guitar
+    let _skills = { ...skills };
+    _skills.skill3.state = true;
+    _skills.skill3.audio.currentTime = 0;
+    _skills.skill3.audio.loop = true;
+    _skills.skill3.audio.play();
+    setSkills(_skills);
+  };
+
+  const handleSkillClick = (title) => {
+    const _title = title.toLowerCase().replace('-', '');
+    let _skills = { ...skills };
+
+    _skills[_title].state = !_skills[_title].state;
+
+    _skills.skill1.audio.currentTime = 0;
+    _skills.skill2.audio.currentTime = 0;
+    _skills.skill3.audio.currentTime = 0;
+    _skills.skill4.audio.currentTime = 0;
+    _skills.skill5.audio.currentTime = 0;
+
+    _skills.skill1.audio.loop = true;
+    _skills.skill2.audio.loop = true;
+    _skills.skill3.audio.loop = true;
+    _skills.skill4.audio.loop = true;
+    _skills.skill5.audio.loop = true;
+
+    if (_skills[_title].state) {
+      _skills[_title].audio.play();
+    } else {
+      _skills[_title].audio.pause();
+    }
+
+    setSkills(_skills);
+  };
 
   if (!pressed) {
     return (
@@ -32,11 +94,11 @@ const Index = ({ artists, workshops }) => {
         </Head>
 
         <div className="visible-desktop">
-          <Init pressed={pressed} setPressedTrue={() => setPressed(true)} />
+          <Init pressed={pressed} setPressedTrue={handlePress} />
         </div>
 
         <div className="visible-tablet">
-          <InitTablet pressed={pressed} setPressedTrue={() => setPressed(true)} />
+          <InitTablet pressed={pressed} setPressedTrue={handlePress} />
         </div>
       </>
     )
@@ -51,8 +113,8 @@ const Index = ({ artists, workshops }) => {
       setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
     >
 
-      <Home />
-      <HomeTablet />
+      <Home skills={skills} handleSkillClick={handleSkillClick} />
+      <HomeTablet skills={skills} handleSkillClick={handleSkillClick} />
 
       <Download
         setCommingSoon={() => { setCommingSoon(true); setContact(true); }}

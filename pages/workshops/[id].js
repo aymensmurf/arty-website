@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Head from 'next/head';
 import Layout from "../../Layout/Layout";
 import { Details, Header, MoreWorkshops } from "../../components/workshop";
 import { GET_WORKSHOP_BY_SLUG } from '../../graphql/queries/workshop';
@@ -9,30 +10,47 @@ const Workshop = ({ data }) => {
     const [commingSoon, setCommingSoon] = useState(false);
 
     return (
-        <Layout
-            isStaticNav
-            contact={contact}
-            commingSoon={commingSoon}
-            openContact={() => { setCommingSoon(false); setContact(true); }}
-            closeContact={() => { setContact(false); }}
-            setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
-        >
-            {data ? (
-                <>
-                    <Header banner={data.banner} />
-                    <Details
-                        data={data}
-                        setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
-                    />
-                </>
-            ) : (
-                <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '300px 20px' }}>
-                    <img src="/img/404.svg" alt="No workshops found" />
-                </div>
-            )}
+        <>
+            <Head>
+                <meta name="title" content={data.title ? data.title : "Arty"} />
+                <meta name="description" content={data.description ? data.description : "Connect, aspire and inspire"} />
 
-            <MoreWorkshops />
-        </Layout>
+                <meta property="og:title" content={data.title ? data.title : "Arty"} />
+                <meta property="og:description" content={data.description ? data.description : "Connect, aspire and inspire"} />
+                <meta property="og:image" content={data.banner ? data.banner : "/img/singers.svg"} />
+                <meta property="og:type" content="website" />
+
+                <meta property="twitter:title" content={data.title ? data.title : "Arty"} />
+                <meta property="twitter:description" content={data.description ? data.description : "Connect, aspire and inspire"} />
+                <meta property="twitter:image" content={data.banner ? data.banner : "/img/singers.svg"} />
+                <meta property="twitter:card" content="summary_large_image" />
+            </Head>
+
+            <Layout
+                isStaticNav
+                contact={contact}
+                commingSoon={commingSoon}
+                openContact={() => { setCommingSoon(false); setContact(true); }}
+                closeContact={() => { setContact(false); }}
+                setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
+            >
+                {data ? (
+                    <>
+                        <Header banner={data.banner} />
+                        <Details
+                            data={data}
+                            setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
+                        />
+                    </>
+                ) : (
+                    <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '300px 20px' }}>
+                        <img src="/img/404.svg" alt="No workshops found" />
+                    </div>
+                )}
+
+                <MoreWorkshops />
+            </Layout>
+        </>
     )
 }
 

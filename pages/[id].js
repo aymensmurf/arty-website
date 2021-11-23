@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Head from 'next/head';
 import Layout from "../Layout/Layout";
 import { Content } from "../components/artist";
 import client from '../graphql';
@@ -10,24 +11,38 @@ const Artist = ({ data }) => {
     const [commingSoon, setCommingSoon] = useState(false);
 
     return (
-        <Layout
-            isStaticNav
-            contact={contact}
-            commingSoon={commingSoon}
-            openContact={() => { setCommingSoon(false); setContact(true); }}
-            closeContact={() => { setContact(false); }}
-            setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
-        >
-            {data ? (
-                <Content data={data} />
-            ) : (
-                <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '300px 20px' }}>
-                    <img src="/img/404.svg" alt="No workshops found" />
-                </div>
-            )}
+        <>
+            <Head>
+                <meta name="title" content={data.name ? data.name : "Arty"} />
 
-            <MoreArtists />
-        </Layout>
+                <meta property="og:title" content={data.name ? data.name : "Arty"} />
+                <meta property="og:image" content={data.avatar ? data.avatar : "/img/singers.svg"} />
+                <meta property="og:type" content="website" />
+
+                <meta property="twitter:title" content={data.name ? data.name : "Arty"} />
+                <meta property="twitter:image" content={data.avatar ? data.avatar : "/img/singers.svg"} />
+                <meta property="twitter:card" content="summary_large_image" />
+            </Head>
+
+            <Layout
+                isStaticNav
+                contact={contact}
+                commingSoon={commingSoon}
+                openContact={() => { setCommingSoon(false); setContact(true); }}
+                closeContact={() => { setContact(false); }}
+                setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
+            >
+                {data ? (
+                    <Content data={data} />
+                ) : (
+                    <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '300px 20px' }}>
+                        <img src="/img/404.svg" alt="No workshops found" />
+                    </div>
+                )}
+
+                <MoreArtists />
+            </Layout>
+        </>
     )
 }
 

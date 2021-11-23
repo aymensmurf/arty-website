@@ -21,13 +21,8 @@ const settings = {
     ]
 };
 
-const HomeTablet = () => {
+const HomeTablet = ({ skills, handleSkillClick }) => {
     const [wordIndex, setWordIndex] = useState(0);
-    const [isSkill1, setIsSkill1] = useState(false);
-    const [isSkill2, setIsSkill2] = useState(false);
-    const [isSkill3, setIsSkill3] = useState(false);
-    const [isSkill4, setIsSkill4] = useState(false);
-    const [isSkill5, setIsSkill5] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -60,28 +55,28 @@ const HomeTablet = () => {
                         <Slider {...settings}>
                             <Skill
                                 title="skill-1"
-                                isActive={isSkill1}
-                                setIsActive={setIsSkill1}
+                                isActive={skills.skill1.state}
+                                handleClick={handleSkillClick}
                             />
                             <Skill
                                 title="skill-2"
-                                isActive={isSkill2}
-                                setIsActive={setIsSkill2}
+                                isActive={skills.skill2.state}
+                                handleClick={handleSkillClick}
                             />
                             <Skill
                                 title="skill-3"
-                                isActive={isSkill3}
-                                setIsActive={setIsSkill3}
+                                isActive={skills.skill3.state}
+                                handleClick={handleSkillClick}
                             />
                             <Skill
                                 title="skill-4"
-                                isActive={isSkill4}
-                                setIsActive={setIsSkill4}
+                                isActive={skills.skill4.state}
+                                handleClick={handleSkillClick}
                             />
                             <Skill
                                 title="skill-5"
-                                isActive={isSkill5}
-                                setIsActive={setIsSkill5}
+                                isActive={skills.skill5.state}
+                                handleClick={handleSkillClick}
                             />
                         </Slider>
                     </div>
