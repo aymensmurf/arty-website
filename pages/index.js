@@ -85,7 +85,7 @@ const Index = ({ artists, workshops }) => {
     return (
       <>
         <Head>
-          <title>ARTY</title>
+          <title>ARTY - Where everything is art</title>
 
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />
 
@@ -116,14 +116,12 @@ const Index = ({ artists, workshops }) => {
       <Home skills={skills} handleSkillClick={handleSkillClick} />
       <HomeTablet skills={skills} handleSkillClick={handleSkillClick} />
 
-      <Download
-        setCommingSoon={() => { setCommingSoon(true); setContact(true); }}
-      />
+      <Download setCommingSoon={() => { setCommingSoon(true); setContact(true); }} />
 
       {workshops.length > 0 && <Workshops data={workshops} />}
 
       {artists.length > 3 && <Artists data={artists} />}
-      {artists.length > 0 && <ArtistsTablet data={artists} />}
+      {artists.length > 3 && <ArtistsTablet data={artists} />}
 
       <Features />
       <FeaturesTablet />

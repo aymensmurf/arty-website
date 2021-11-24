@@ -60,7 +60,7 @@ const MoreArtists = () => {
         }
     }
 
-    if (users.length > 0) {
+    if (users.length >= 3) {
         return (
             <>
                 <section className="container">

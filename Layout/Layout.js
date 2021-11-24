@@ -10,7 +10,7 @@ const Layout = ({ children, contact, commingSoon, isStaticNav, openContact, clos
     return (
         <>
             <Head>
-                <title>ARTY</title>
+                <title>ARTY - Where everything is art</title>
 
                 <link rel="shortcut icon" href="/favicon.png" type="image/png" />
 

@@ -150,6 +150,12 @@ const Download = ({ setCommingSoon }) => {
                         right: calc(50% - 150px)
                     }
                 }
+
+                @supports (-webkit-touch-callout: none) {
+                    .phones-section {
+                        background-attachment: inherit;
+                    }
+                }
             `}</style>
         </>
     )

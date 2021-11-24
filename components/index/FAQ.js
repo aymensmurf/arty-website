@@ -172,6 +172,12 @@ const FAQ = ({ openContact, setCommingSoon }) => {
                         padding: 70px 10px;
                     }
                 }
+
+                @supports (-webkit-touch-callout: none) {
+                    .faq-container {
+                        background-attachment: inherit;
+                    }
+                }
             `}</style>
         </>
     )

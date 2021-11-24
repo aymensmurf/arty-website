@@ -60,7 +60,7 @@ const MoreWorkshops = () => {
         }
     }
 
-    if (workshops.length > 0) {
+    if (workshops.length >= 3) {
         return (
             <>
                 <section className="container">
