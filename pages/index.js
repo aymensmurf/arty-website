@@ -122,7 +122,7 @@ const Index = ({ artists, workshops }) => {
 
       {workshops.length > 0 && <Workshops data={workshops} />}
 
-      {artists.length > 0 && <Artists data={artists} />}
+      {artists.length > 3 && <Artists data={artists} />}
       {artists.length > 0 && <ArtistsTablet data={artists} />}
 
       <Features />
@@ -138,8 +138,8 @@ const Index = ({ artists, workshops }) => {
 
 export async function getServerSideProps() {
   try {
-    const { data: usersData } = await client.query({ query: GET_FEATURED_USERS });
-    const { data: workshopsData } = await client.query({ query: GET_FEATURED_WORKSHOPS });
+    const { data: usersData } = await client.query({ query: GET_FEATURED_USERS, fetchPolicy: 'network-only' });
+    const { data: workshopsData } = await client.query({ query: GET_FEATURED_WORKSHOPS, fetchPolicy: 'network-only' });
 
     return {
       props: {
