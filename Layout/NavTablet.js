@@ -68,7 +68,7 @@ const NavTablet = ({ contact, commingSoon, isStaticNav = false, openContact, clo
                 <a>
                     <img src="/img/google-play-white.svg" alt="Google play" onClick={setCommingSoon} style={{ marginTop: 12, height: 60, objectFit: 'contain' }} />
                 </a>
-                <a>
+                <a href="https://play.google.com/store/apps/details?id=land.arty.app" target="_blank" rel="noopener noreferrer">
                     <img src="/img/app-store-white.svg" alt="App store" onClick={setCommingSoon} style={{ marginTop: 12, height: 60, objectFit: 'contain' }} />
                 </a>
             </div>

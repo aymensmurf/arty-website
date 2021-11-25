@@ -78,8 +78,8 @@ const Nav = ({ contact, isStaticNav = false, openContact, closeContact, commingS
                         <a href="/#home" style={{ marginRight: 0 }}><img id="logo" src="/img/logo-white.svg" alt="Jam" style={{ width: 157, height: 76, objectFit: 'contain' }} /></a>
                     </div>
                     <div id="stores" style={{ textAlign: 'end' }}>
-                        <a>
-                            <img src="/img/nav-google.png" alt="Google Play" onClick={setCommingSoon} style={{ marginRight: 10 }} />
+                        <a href="https://play.google.com/store/apps/details?id=land.arty.app" target="_blank" rel="noopener noreferrer">
+                            <img src="/img/nav-google.png" alt="Google Play" style={{ marginRight: 10 }} />
                         </a>
                         <a>
                             <img src="/img/nav-apple.png" alt="App store" onClick={setCommingSoon} />

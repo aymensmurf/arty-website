@@ -67,8 +67,8 @@ const Details = ({ data, setCommingSoon }) => {
                         <h1>JOIN ARTY FOR MORE</h1>
 
                         <div className="flex" style={{ gap: 24, marginTop: 35, justifyContent: 'center' }}>
-                            <a>
-                                <img src="/img/nav-google.png" alt="Google Play" onClick={setCommingSoon} style={{ cursor: 'pointer' }} />
+                            <a href="https://play.google.com/store/apps/details?id=land.arty.app" target="_blank" rel="noopener noreferrer">
+                                <img src="/img/nav-google.png" alt="Google Play" style={{ cursor: 'pointer' }} />
                             </a>
                             <a>
                                 <img src="/img/nav-apple.png" alt="App store" onClick={setCommingSoon} style={{ cursor: 'pointer' }} />

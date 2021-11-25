@@ -49,8 +49,12 @@ const FAQ = ({ openContact, setCommingSoon }) => {
                         <a name="download"></a>
                         <h1 style={{ marginTop: 70 }}>Download now</h1>
                         <div id="faq-stores" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', marginTop: 25 }}>
-                            <img src="/img/google-play-white.svg" alt="Google play" onClick={setCommingSoon} style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
-                            <img src="/img/app-store-white.svg" alt="App store" onClick={setCommingSoon} style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }} />
+                            <a href="https://play.google.com/store/apps/details?id=land.arty.app" target="_blank" rel="noopener noreferrer" style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }}>
+                                <img src="/img/google-play-white.svg" alt="Google play" />
+                            </a>
+                            <a style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }}>
+                                <img src="/img/app-store-white.svg" alt="App store" onClick={setCommingSoon} />
+                            </a>
                         </div>
                     </div>
 

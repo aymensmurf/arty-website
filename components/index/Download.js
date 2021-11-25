@@ -17,8 +17,12 @@ const Download = ({ setCommingSoon }) => {
                         <p>Find all sort of Artists in ARTY and get to know, meet them and play music, dance, paint with them and much more.</p>
 
                         <div className="icons-container">
-                            <img src="/img/app-store-white.svg" alt="App store" onClick={setCommingSoon} />
-                            <img src="/img/google-play-white.svg" alt="Google play" onClick={setCommingSoon} />
+                            <a href="https://play.google.com/store/apps/details?id=land.arty.app" target="_blank" rel="noopener noreferrer">
+                                <img src="/img/google-play-white.svg" alt="Google play" />
+                            </a>
+                            <a>
+                                <img src="/img/app-store-white.svg" alt="App store" onClick={setCommingSoon} />
+                            </a>
                         </div>
                     </div>
                 </div>
