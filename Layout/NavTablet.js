@@ -66,7 +66,7 @@ const NavTablet = ({ contact, commingSoon, isStaticNav = false, openContact, clo
                 <a href="/artists"><h3>Artists</h3></a>
                 <h3 style={{ marginBottom: 20 }} onClick={openContact}>Contact</h3>
                 <a href="https://play.google.com/store/apps/details?id=land.arty.app" target="_blank" rel="noopener noreferrer">
-                    <img src="/img/google-play-white.svg" alt="Google play" onClick={setCommingSoon} style={{ marginTop: 12, height: 60, objectFit: 'contain' }} />
+                    <img src="/img/google-play-white.svg" alt="Google play" style={{ marginTop: 12, height: 60, objectFit: 'contain' }} />
                 </a>
                 <a>
                     <img src="/img/app-store-white.svg" alt="App store" onClick={setCommingSoon} style={{ marginTop: 12, height: 60, objectFit: 'contain' }} />
