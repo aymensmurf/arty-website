@@ -21,7 +21,7 @@ const Content = ({ data }) => {
             <section className="container">
                 <div style={{ display: "flex", flexDirection: 'column', alignItems: 'center' }}>
                     <div className="circle">
-                        <img src={getImageUri(data.avatar)} alt="Artist Name" className="avatar" />
+                        <img src={getImageUri(data.avatar)} alt={data.name} className="avatar" />
                     </div>
 
                     <h1>{data.name}</h1>
