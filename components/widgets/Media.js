@@ -3,7 +3,7 @@ import { getImageUri } from "../../utils/funcs";
 const Media = ({ id, url, type, wokshop, createdAt }) => {
     return (
         <>
-            <div className="workshop-card">
+            <div className="media-card">
                 {type === "photo" ? (
                     <>
                         <img src={getImageUri(url)} alt="Media" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'relative', zIndex: 1 }} />
@@ -22,7 +22,7 @@ const Media = ({ id, url, type, wokshop, createdAt }) => {
             </div>
 
             <style jsx>{`
-                .workshop-card {
+                .media-card {
                     height: 320px;
                     cursor: pointer;
                     transition: all .5s ease;
@@ -35,7 +35,7 @@ const Media = ({ id, url, type, wokshop, createdAt }) => {
                     border: 10px solid #fff;
                 }
 
-                .workshop-card:hover .glass {
+                .media-card:hover .glass {
                     bottom: 0px;
                 }
 
