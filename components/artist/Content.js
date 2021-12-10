@@ -154,7 +154,7 @@ const Content = ({ data }) => {
 
                 .tab-body {
                     width: 100%;
-                    max-height: 760px;
+                    // max-height: 760px;
                     overflow-y: auto;
                     padding: 50px 138px;
                     background-color: #F5F5F5;
