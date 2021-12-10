@@ -1,5 +1,5 @@
-// export const SERVER_URL = 'https://api.arty.land';
-export const SERVER_URL = 'https://api-dev.arty.land';
+export const SERVER_URL = 'https://api.arty.land';
+// export const SERVER_URL = 'https://api-dev.arty.land';
 export const API_URL = SERVER_URL + '/api';
 
 export const WORDS = ["Music", "Painting", "Dance", "Theater", "Photography", "Sculpture", "Architecture", "Literature", "Calligraphy", "Hand Crafts", "Sand Art"]
