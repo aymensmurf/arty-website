@@ -4,23 +4,36 @@ const Header = ({ title, banner }) => {
 	return (
 		<>
 			<section className="container">
-				<img src={getImageUri(banner)} alt={title} />
+				<div className="header">
+					<img src={getImageUri(banner)} alt={title} className="img" />
+					<img src={getImageUri(banner)} alt={title} className="img-bg" />
+				</div>
 			</section>
 
 			<style jsx>{`
-				.container {
+				.header {
 					width: 100%;
 					height: 240px;
 					border-radius: 25px;
 					margin-top: 30px;
 					overflow: hidden;
+					position: relative;
 				}
 
-				img {
+				.img-bg {
 					width: 100%;
 					height: 100%;
 					object-fit: cover;
-					border-radius: 25px;
+					filter: blur(20px);
+					position: relative;
+				}
+
+				.img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+					position: absolute;
+					z-index: 2;
 				}
 			`}</style>
 		</>
