@@ -70,7 +70,8 @@ const Medias = ({ data }) => {
 
 				@media only screen and (max-width: 582px) {
 					.medias {
-						grid-template-columns: 1fr;
+						grid-template-columns: repeat(3, 1fr);
+						gap: 5px;
 					}
 
 					.highlighted {

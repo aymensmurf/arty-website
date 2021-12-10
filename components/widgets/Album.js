@@ -1,12 +1,77 @@
 import { useEffect, useState } from "react";
+import client from "../../graphql";
+import { GET_MEDIA_SPARKS } from "../../graphql/queries/mediaSparks";
 import { getImageUri } from "../../utils/funcs";
 
 const Album = ({ data, mediaIndex, isAlbumVisible, setIsAlbumVisible }) => {
 	const [index, setIndex] = useState(0);
+	const [nbSparks, setNbSparks] = useState(0);
 
 	useEffect(() => {
 		setIndex(mediaIndex);
 	}, [mediaIndex]);
+
+	useEffect(() => {
+		getMediaSparks();
+	}, [index]);
+
+	useEffect(() => {
+		document.addEventListener("touchstart", handleTouchStart, false);
+		document.addEventListener("touchmove", handleTouchMove, false);
+
+		var xDown = null;
+		var yDown = null;
+
+		function getTouches(evt) {
+			return (
+				evt.touches || // browser API
+				evt.originalEvent.touches
+			); // jQuery
+		}
+
+		function handleTouchStart(evt) {
+			const firstTouch = getTouches(evt)[0];
+			xDown = firstTouch.clientX;
+			yDown = firstTouch.clientY;
+		}
+
+		function handleTouchMove(evt) {
+			if (!xDown || !yDown) {
+				return;
+			}
+
+			var xUp = evt.touches[0].clientX;
+			var yUp = evt.touches[0].clientY;
+
+			var xDiff = xDown - xUp;
+			var yDiff = yDown - yUp;
+
+			if (Math.abs(xDiff) > Math.abs(yDiff)) {
+				/*most significant*/
+				if (xDiff > 0) {
+					/* left swipe */
+					handleNext();
+				} else {
+					/* right swipe */
+					handlePrev();
+				}
+			} else {
+				if (yDiff > 0) {
+					/* up swipe */
+				} else {
+					/* down swipe */
+				}
+			}
+			/* reset values */
+			xDown = null;
+			yDown = null;
+		}
+
+		return () => {
+			document.removeEventListener("touchstart", handleTouchStart);
+			document.removeEventListener("touchmove", handleTouchMove);
+		};
+	}, [index]);
 
 	const handleNext = () => {
 		if (index >= data.length - 1) {
@@ -31,17 +96,46 @@ const Album = ({ data, mediaIndex, isAlbumVisible, setIsAlbumVisible }) => {
 		}, 600);
 	};
 
+	const getMediaSparks = async () => {
+		if (data && data.length > 0 && data[index] && data[index]._id) {
+			try {
+				const { data: mediaSparksData } = await client.query({
+					query: GET_MEDIA_SPARKS,
+					variables: { media: data[index]._id },
+					fetchPolicy: "network-only",
+				});
+
+				if (
+					mediaSparksData &&
+					mediaSparksData.getMediaSparks &&
+					mediaSparksData.getMediaSparks.length > 0
+				) {
+					const _nbSparks = mediaSparksData.getMediaSparks.reduce(
+						(prev, current) => prev + current.clicks,
+						0
+					);
+
+					setNbSparks(_nbSparks);
+				} else {
+					setNbSparks(0);
+				}
+			} catch (error) {
+				console.log(`error`, error);
+			}
+		}
+	};
+
 	return (
 		<>
 			<div className="album-container">
 				<div className="album-overlay" onClick={handleClose} />
 
 				<div className="album-inner-block">
-					<div className="btn" onClick={handlePrev}>
+					<div className="btn btn-arrow-left" onClick={handlePrev}>
 						<img src="/img/arrow-left.svg" alt="Arrow left" className="icon" />
 					</div>
 
-					<div className="content">
+					<div className="content" id="content">
 						{Array.isArray(data) &&
 							data.length > 0 &&
 							data[index] &&
@@ -60,7 +154,7 @@ const Album = ({ data, mediaIndex, isAlbumVisible, setIsAlbumVisible }) => {
 							))}
 					</div>
 
-					<div className="btn" onClick={handleNext}>
+					<div className="btn btn-arrow-right" onClick={handleNext}>
 						<img
 							src="/img/arrow-right.svg"
 							alt="Arrow right"
@@ -69,27 +163,28 @@ const Album = ({ data, mediaIndex, isAlbumVisible, setIsAlbumVisible }) => {
 					</div>
 
 					<div
-						className="btn"
+						className="btn btn-close"
 						style={{ position: "absolute", top: 0, right: 0 }}
 					>
 						<img
 							src="/img/close.svg"
 							alt="Close"
 							className="icon"
-							style={{ width: 60, height: 60 }}
+							style={{ width: 30, height: 30 }}
 							onClick={handleClose}
+						/>
+					</div>
+
+					<div className={`sparks ${nbSparks > 0 ? "active" : "inactive"}`}>
+						<p>{nbSparks} Sparks</p>
+						<img
+							src="/img/sparks.svg"
+							alt="Spark"
+							style={{ height: 28, width: 28, objectFit: "contain" }}
 						/>
 					</div>
 				</div>
 			</div>
-
-			<style>{`
-				body {
-					width: 100%;
-					overflow-y: ${isAlbumVisible ? "hidden" : "auto"};
-					position: ${isAlbumVisible ? "fixed" : "relative"};
-				}
-			`}</style>
 
 			<style jsx>{`
 				.album-container {
@@ -113,7 +208,7 @@ const Album = ({ data, mediaIndex, isAlbumVisible, setIsAlbumVisible }) => {
 					left: 0;
 					width: 100%;
 					height: 100%;
-					background-color: rgba(0, 0, 0, 0.8);
+					background-color: rgba(0, 0, 0, 0.9);
 					visibility: inherit;
 					transition: opacity 300ms ease;
 					opacity: ${isAlbumVisible ? "1" : "0"};
@@ -133,15 +228,15 @@ const Album = ({ data, mediaIndex, isAlbumVisible, setIsAlbumVisible }) => {
 				}
 
 				.content {
+					position: absolute;
 					width: 100%;
 					height: 100%;
+					z-index: 1;
 				}
 
 				.btn {
-					height: 60px;
-					width: 60px;
-					min-height: 60px;
-					min-width: 60px;
+					height: 50px;
+					width: 50px;
 					border-radius: 30px;
 					background-color: rgba(0, 0, 0, 0.2);
 					display: flex;
@@ -149,6 +244,21 @@ const Album = ({ data, mediaIndex, isAlbumVisible, setIsAlbumVisible }) => {
 					justify-content: center;
 					cursor: pointer;
 					pointer-events: all;
+					position: absolute;
+					z-index: 2;
+				}
+
+				.btn-arrow-left {
+					left: 0;
+				}
+
+				.btn-arrow-right {
+					right: 0;
+				}
+
+				.btn-close {
+					height: 40px;
+					width: 40px;
 				}
 
 				img {
@@ -162,6 +272,41 @@ const Album = ({ data, mediaIndex, isAlbumVisible, setIsAlbumVisible }) => {
 					height: 30px;
 					object-fit: contain;
 					filter: invert(1);
+				}
+
+				.sparks {
+					padding: 10px 14px;
+					background-color: #2c2c2c;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 8px;
+					border-radius: 100px;
+					position: absolute;
+					left: 50%;
+					z-index: 2;
+					transform: translate(-50%, -50%);
+					transition: all 400ms ease;
+					bottom: ${isAlbumVisible ? "0px" : "-200px"};
+				}
+
+				.sparks.active {
+					bottom: 0px;
+				}
+
+				.sparks.inactive {
+					bottom: -200px;
+				}
+
+				.sparks p {
+					color: #fff;
+					font-size: 14px;
+				}
+
+				@media only screen and (max-width: 582px) {
+					.btn {
+						display: none;
+					}
 				}
 			`}</style>
 		</>
