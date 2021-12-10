@@ -1,10 +1,10 @@
 import { getImageUri } from "../../utils/funcs";
 
-const Header = ({ banner }) => {
+const Header = ({ title, banner }) => {
 	return (
 		<>
 			<section className="container">
-				<img src={getImageUri(banner)} alt="BG" />
+				<img src={getImageUri(banner)} alt={title} />
 			</section>
 
 			<style jsx>{`
@@ -13,15 +13,15 @@ const Header = ({ banner }) => {
 					height: 240px;
 					border-radius: 25px;
 					margin-top: 30px;
-                    overflow: hidden;
+					overflow: hidden;
 				}
 
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
 					border-radius: 25px;
-                }
+				}
 			`}</style>
 		</>
 	);
