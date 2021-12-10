@@ -4,7 +4,7 @@ const AllWorkshops = ({ data }) => {
     return (
         <>
             <section className="container">
-                <div className="grid" style={{ marginTop: 100, marginBottom: 100 }}>
+                <div className="grid" style={{ marginTop: 40, marginBottom: 100 }}>
                     {data.map(({ _id, title, slug, banner, host }) => (
                         <Workshop
                             key={_id}

@@ -1,26 +1,30 @@
 import { getImageUri } from "../../utils/funcs";
 
 const Header = ({ banner }) => {
-    return (
-        <>
-            <section className="container">
-                <div className="bg"></div>
-            </section>
+	return (
+		<>
+			<section className="container">
+				<img src={getImageUri(banner)} alt="BG" />
+			</section>
 
-            <style jsx>{`
-                .bg {
+			<style jsx>{`
+				.container {
+					width: 100%;
+					height: 240px;
+					border-radius: 25px;
+					margin-top: 30px;
+                    overflow: hidden;
+				}
+
+                img {
                     width: 100%;
-                    height: 240px;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    background-position: center;
-                    border-radius: 25px;
-                    margin-top: 30px;
-                    background: url(${getImageUri(banner)});
+                    height: 100%;
+                    object-fit: cover;
+					border-radius: 25px;
                 }
-            `}</style>
-        </>
-    )
-}
+			`}</style>
+		</>
+	);
+};
 
 export default Header;
