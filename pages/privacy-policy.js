@@ -32,15 +32,14 @@ const Index = () => {
 					<h1>Privacy Policy</h1>
 
 					<p>
-						ARTY built the ARTY app as a Free app. This SERVICE is provided by
-						ARTY at no cost and is intended to be used as it is.
+						ARTY is a Free app which SERVICE is provided at no cost and is
+						intended to be used as it is.
 					</p>
 					<p>
-						This page is used to inform visitors about our policies with the
-						collection, use, and disclosure of Personal Information if anyone
-						decided to use our Service. If you choose to use our Service, then
-						you agree to the collection and use of information in relation to
-						this policy.
+						This privacy policy aims to help our users get a clearer view about
+						the collection, use and disclosure of their personal information. So
+						,if you choose to use our services, you have to agree to the
+						collection and use of your information in relation to this policy.
 					</p>
 					<p>
 						The Personal Information that we collect is used for providing and
@@ -51,12 +50,7 @@ const Index = () => {
 						otherwise in this Privacy Policy.
 					</p>
 
-					<h2>Information Collection and Use</h2>
-					<p>
-						For a better experience, while using our Service, we may require you
-						to provide us with certain personal information. The latter will be
-						retained by us and used as described in this privacy policy.
-					</p>
+					<h2>We collect information in a few different ways</h2>
 					<p>
 						The app does use third party services that may collect information
 						used to identify you.
@@ -75,31 +69,125 @@ const Index = () => {
 						</a>
 					</p>
 
-					<h2>Log Data</h2>
 					<p>
-						We want to inform you that whenever you use our Service, in a case
-						of an error in the app we collect data and information (through
-						third party products) on your phone called Log Data which may
-						include information such as your device Internet Protocol (“IP”)
-						address, device name, operating system version, the configuration of
-						the app when utilizing our Service, the time and date of your use of
-						the Service, and other statistics.
+						1. When you give it to us or give us permission to obtain it When
+						you sign up for or use ARTY, you voluntarily share certain
+						information including your name, birthday date, email address,
+						photos and any other information you give us. You can also choose to
+						share your precise location using your device settings or through
+						photos. We will still use your IP address, which is used to
+						approximate your location, even if you don't choose to share your
+						precise location. You will also have the option to share other
+						information about yourself such as your Youtube, Soundcloud, Behance
+						and Instagram accounts.
+					</p>
+					<p>
+						If you are connected to Google or other third-party accounts to
+						ARTY, we use information from those accounts to improve your ARTY
+						experience. This depends on the privacy policies or settings for
+						those accounts.
 					</p>
 
-					<h2>Cookies</h2>
 					<p>
-						Cookies are files with a small amount of data that are commonly used
-						as anonymous unique identifiers. These are sent to your browser from
-						the websites that you visit and are stored on your device’s internal
-						memory.
+						2. We also get technical information when you use ARTY When you use
+						a website, mobile application or other internet services, certain
+						internet and electronic network activity information gets created
+						and logged automatically. This is also true when you use ARTY. Here
+						are some of the types of information we collect:
 					</p>
+
+					<ul
+						style={{
+							textAlign: "left",
+							listStyleImage: "url(/img/circle.svg)",
+						}}
+					>
+						<li>
+							<span style={{ fontStyle: "italic" }}>Log data</span>: When you
+							use ARTY, our servers record information (“log data”), including
+							information that your browser automatically sends whenever you
+							visit a website, or that your mobile app automatically sends when
+							you’re using it. This log data includes your Internet Protocol
+							address (which we use to infer your approximate location), the
+							address of and activity on websites you visit that incorporate
+							ARTY features (like the “Save” button—more details below),
+							searches, browser type and settings, the date and time of your
+							request, how you used ARTY, cookie data and device data.
+						</li>
+						<li>
+							<span style={{ fontStyle: "italic" }}>Cookies</span> are files
+							with a small amount of data that are commonly used as anonymous
+							unique identifiers. These are sent to your browser from the
+							websites that you visit and are stored on your device’s internal
+							memory. This Service does not use these “cookies” explicitly.
+							However, the app may use third party code and libraries that use
+							“cookies” to collect information and improve their services. You
+							have the option to either accept or refuse these cookies and know
+							when a cookie is being sent to your device. If you choose to
+							refuse our cookies, you may not be able to use some portions of
+							this Service.
+						</li>
+						<li>
+							<span style={{ fontStyle: "italic" }}>Device information</span>:
+							In addition to log data, we collect information about the device
+							you’re using ARTY on, including the type of device, operating
+							system, settings, unique device identifiers and crash data that
+							helps us understand when something breaks.
+						</li>
+						<li>
+							<span style={{ fontStyle: "italic" }}>
+								Clickstream data and inferences
+							</span>
+							: When you’re on ARTY, we use your activity—such as which arts you
+							click on, workshops you create, and any text that you add in
+							description—along with the information you provided when you first
+							signed up to make inferences about you and your preferences. For
+							example, if you create a workshop about dancing, we may infer that
+							you are fond of this skill.
+						</li>
+					</ul>
+
+					<h2>How and when we share information</h2>
 					<p>
-						This Service does not use these “cookies” explicitly. However, the
-						app may use third party code and libraries that use “cookies” to
-						collect information and improve their services. You have the option
-						to either accept or refuse these cookies and know when a cookie is
-						being sent to your device. If you choose to refuse our cookies, you
-						may not be able to use some portions of this Service.
+						Anyone can see the workshops you create and profile information you
+						give us. We also make this public information available through what
+						are called APIs (basically a technical way to share information
+						quickly). We also share your information with:
+					</p>
+					<ul
+						style={{
+							textAlign: "left",
+							listStyleImage: "url(/img/circle.svg)",
+						}}
+					>
+						<li>
+							Other services, at your direction, to enable you to sign up for or
+							log in to ARTY, or when you decide to link your ARTY account to
+							those services, like Google, or when you publish your content on
+							ARTY to them. For example, if you choose to publish your workshop
+							to Instagram or google, then information about that content will
+							be shared with Instagram or google.
+						</li>
+						<li>
+							Law enforcement agencies or government agencies. We only share
+							information if we believe that disclosure is reasonably necessary
+							to comply with a law, regulation or legal request; to protect the
+							safety, rights, or property of the public, any person, or ARTY; or
+							to detect, prevent, or otherwise address fraud, security or
+							technical issues.
+						</li>
+					</ul>
+
+					<h2>How long we keep your information</h2>
+
+					<p>
+						We keep your information only as long as we need it to provide ARTY
+						to you and fulfil the purposes described in this policy. This is
+						also the case for anyone that we share your information with and who
+						carries out services on our behalf. When we no longer need to use
+						your information and there is no need for us to keep it to comply
+						with our legal or regulatory obligations, we’ll either remove it
+						from our systems or depersonalise it so that we can't identify you.
 					</p>
 
 					<h2>Service Providers</h2>
@@ -134,6 +222,19 @@ const Index = () => {
 						internet, or method of electronic storage is 100% secure and
 						reliable, and we cannot guarantee its absolute security.
 					</p>
+					<p>
+						It is your responsibility to keep your passwords private and secure.
+						We strongly recommend against sharing your logins and passwords with
+						others. We take the protection of your information very seriously
+						and employ measures through administrative, technical, and physical
+						safeguards designed to protect information against loss, theft,
+						misuse, unauthorised access, disclosure, alteration, and
+						destruction. We encrypt all data in transit and at rest. We take
+						reasonable precautions to ensure the integrity and security of our
+						network and systems, but cannot guarantee these security measures
+						will prevent third parties from obtaining information by illegal
+						actions or attacks.
+					</p>
 
 					<h2>Links to Other Sites</h2>
 					<p>
@@ -165,7 +266,7 @@ const Index = () => {
 						page.
 					</p>
 					<p style={{ textDecoration: "underline" }}>
-						This policy is effective as of 2021-08-14
+						This policy is effective as of 2021-12-14
 					</p>
 
 					<h2>Contact Us</h2>
@@ -182,7 +283,7 @@ const Index = () => {
 					max-width: 820px;
 					margin-right: auto;
 					margin-left: auto;
-					text-align: center;
+					text-align: left;
 					padding: 100px 30px 200px;
 				}
 
@@ -198,6 +299,10 @@ const Index = () => {
 
 				p {
 					margin-top: 22px;
+				}
+
+				li {
+					margin-top: 16px;
 				}
 
 				a {
