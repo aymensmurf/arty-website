@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { MEDIA_POSITIONS } from "../../utils/consts";
 import { getImageUri } from "../../utils/funcs";
+import Album from "../widgets/Album";
 
 const Media = ({ media }) => {
-	console.log(`MEDIA_POSITIONS.length`, MEDIA_POSITIONS.length);
+	const [isAlbumVisible, setIsAlbumVisible] = useState(false);
+	const [mediaIndex, setMediaIndex] = useState(0);
+
 	return (
 		<>
 			<section>
@@ -12,6 +16,10 @@ const Media = ({ media }) => {
 					{media.map(({ _id, url }, i) => (
 						<img
 							key={_id}
+							onClick={() => {
+								setMediaIndex(i);
+								setIsAlbumVisible(true);
+							}}
 							src={getImageUri(url)}
 							style={{
 								width: MEDIA_POSITIONS[i].w,
@@ -29,6 +37,13 @@ const Media = ({ media }) => {
 					</a>
 				</div>
 			</section>
+
+			<Album
+				data={media}
+				mediaIndex={mediaIndex}
+				isAlbumVisible={isAlbumVisible}
+				setIsAlbumVisible={setIsAlbumVisible}
+			/>
 
 			<style jsx>{`
 				section {
@@ -57,11 +72,11 @@ const Media = ({ media }) => {
 					border-radius: 10px;
 					box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.14);
 					cursor: pointer;
-					transition: all 300ms ease;
+					transition: all 0.5s ease;
 				}
 
 				img:hover {
-					transform: scale(1.05);
+					transform: scale(1.1);
 				}
 
 				.btn {

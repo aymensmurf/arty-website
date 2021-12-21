@@ -6,7 +6,12 @@ export const GET_ALL_MEDIA_PAGINATED = gql`
 			media {
 				_id
 				url
-				sparks
+				type
+				createdAt
+				sparks {
+					_id
+					clicks
+				}
 			}
 			totalPages
 			currentPage

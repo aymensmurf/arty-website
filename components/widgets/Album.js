@@ -1,19 +1,12 @@
 import { useEffect, useState } from "react";
-import client from "../../graphql";
-import { GET_MEDIA_SPARKS } from "../../graphql/queries/mediaSparks";
 import { getImageUri } from "../../utils/funcs";
 
 const Album = ({ data, mediaIndex, isAlbumVisible, setIsAlbumVisible }) => {
 	const [index, setIndex] = useState(0);
-	const [nbSparks, setNbSparks] = useState(0);
 
 	useEffect(() => {
 		setIndex(mediaIndex);
 	}, [mediaIndex]);
-
-	useEffect(() => {
-		getMediaSparks();
-	}, [index]);
 
 	useEffect(() => {
 		document.addEventListener("touchstart", handleTouchStart, false);
@@ -96,92 +89,47 @@ const Album = ({ data, mediaIndex, isAlbumVisible, setIsAlbumVisible }) => {
 		}, 600);
 	};
 
-	const getMediaSparks = async () => {
-		if (data && data.length > 0 && data[index] && data[index]._id) {
-			try {
-				const { data: mediaSparksData } = await client.query({
-					query: GET_MEDIA_SPARKS,
-					variables: { media: data[index]._id },
-					fetchPolicy: "network-only",
-				});
-
-				if (
-					mediaSparksData &&
-					mediaSparksData.getMediaSparks &&
-					mediaSparksData.getMediaSparks.length > 0
-				) {
-					const _nbSparks = mediaSparksData.getMediaSparks.reduce(
-						(prev, current) => prev + current.clicks,
-						0
-					);
-
-					setNbSparks(_nbSparks);
-				} else {
-					setNbSparks(0);
-				}
-			} catch (error) {
-				console.log(`error`, error);
-			}
-		}
-	};
-
 	return (
 		<>
-			<div className="album-container">
-				<div className="album-overlay" onClick={handleClose} />
+			<div className='album-container'>
+				<div className='album-overlay' onClick={handleClose} />
 
-				<div className="album-inner-block">
-					<div className="btn btn-arrow-left" onClick={handlePrev}>
-						<img src="/img/arrow-left.svg" alt="Arrow left" className="icon" />
+				<div className='album-inner-block'>
+					<div className='btn btn-arrow-left' onClick={handlePrev}>
+						<img src='/img/arrow-left.svg' alt='Arrow left' className='icon' />
 					</div>
 
-					<div className="content" id="content">
+					<div className='content' id='content'>
 						{Array.isArray(data) &&
 							data.length > 0 &&
 							data[index] &&
 							(data[index].type === "photo" ? (
 								<img src={getImageUri(data[index].url)} />
 							) : (
-								<video
-									width="100%"
-									height="100%"
-									style={{ pointerEvents: "all" }}
-									controls
-								>
-									<source src={getImageUri(data[index].url)} type="video/mp4" />
+								<video width='100%' height='100%' style={{ pointerEvents: "all" }} controls>
+									<source src={getImageUri(data[index].url)} type='video/mp4' />
 									Your browser does not support the video tag.
 								</video>
 							))}
 					</div>
 
-					<div className="btn btn-arrow-right" onClick={handleNext}>
-						<img
-							src="/img/arrow-right.svg"
-							alt="Arrow right"
-							className="icon"
-						/>
+					<div className='btn btn-arrow-right' onClick={handleNext}>
+						<img src='/img/arrow-right.svg' alt='Arrow right' className='icon' />
 					</div>
 
-					<div
-						className="btn btn-close"
-						style={{ position: "absolute", top: 0, right: 0 }}
-					>
+					<div className='btn btn-close' style={{ position: "absolute", top: 0, right: 0 }}>
 						<img
-							src="/img/close.svg"
-							alt="Close"
-							className="icon"
+							src='/img/close.svg'
+							alt='Close'
+							className='icon'
 							style={{ width: 30, height: 30 }}
 							onClick={handleClose}
 						/>
 					</div>
 
-					<div className={`sparks ${nbSparks > 0 ? "active" : "inactive"}`}>
-						<p>{nbSparks} Sparks</p>
-						<img
-							src="/img/sparks.svg"
-							alt="Spark"
-							style={{ height: 28, width: 28, objectFit: "contain" }}
-						/>
+					<div className={`sparks ${data[index]?.sparks.length > 0 ? "active" : "inactive"}`}>
+						<p>{data[index].sparks.reduce((prev, current) => prev + current.clicks, 0)} Sparks</p>
+						<img src='/img/sparks.svg' alt='Spark' style={{ height: 28, width: 28, objectFit: "contain" }} />
 					</div>
 				</div>
 			</div>
