@@ -14,29 +14,20 @@ const Artist = ({ data }) => {
 	return (
 		<>
 			<Head>
-				<meta name="title" content={data.name ? data.name : "Arty"} />
+				<meta name='title' content={data?.name ? data.name : "Arty"} />
 
-				<meta property="og:title" content={data.name ? data.name : "Arty"} />
-				<meta
-					property="og:image"
-					content={data.avatar ? getImageUri(data.avatar) : "/img/singers.svg"}
-				/>
-				<meta property="og:type" content="website" />
+				<meta property='og:title' content={data?.name ? data.name : "Arty"} />
+				<meta property='og:image' content={data?.avatar ? getImageUri(data.avatar) : "/img/singers.svg"} />
+				<meta property='og:type' content='website' />
 
-				<meta
-					property="twitter:title"
-					content={data.name ? data.name : "Arty"}
-				/>
-				<meta
-					property="twitter:image"
-					content={data.avatar ? getImageUri(data.avatar) : "/img/singers.svg"}
-				/>
-				<meta property="twitter:card" content="summary_large_image" />
+				<meta property='twitter:title' content={data?.name ? data.name : "Arty"} />
+				<meta property='twitter:image' content={data?.avatar ? getImageUri(data.avatar) : "/img/singers.svg"} />
+				<meta property='twitter:card' content='summary_large_image' />
 			</Head>
 
 			<Layout
 				isStaticNav
-				selectedNavItem="artists"
+				selectedNavItem='artists'
 				contact={contact}
 				commingSoon={commingSoon}
 				openContact={() => {
@@ -49,21 +40,19 @@ const Artist = ({ data }) => {
 				setCommingSoon={() => {
 					setCommingSoon(true);
 					setContact(true);
-				}}
-			>
+				}}>
 				{data ? (
 					<Content data={data} />
 				) : (
 					<div
-						className="container"
+						className='container'
 						style={{
 							display: "flex",
 							alignItems: "center",
 							justifyContent: "center",
 							padding: "300px 20px",
-						}}
-					>
-						<img src="/img/404.svg" alt="No workshops found" />
+						}}>
+						<img src='/img/404.svg' alt='No workshops found' />
 					</div>
 				)}
 
