@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { getImageUri, timeToReadbleTime } from "../../utils/funcs";
 
 const Album = ({ data, mediaIndex, showUser = true, isAlbumVisible, setIsAlbumVisible }) => {
-	console.log(`data`, data);
-
 	const [index, setIndex] = useState(0);
 
 	useEffect(() => {
