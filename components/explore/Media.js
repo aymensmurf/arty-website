@@ -34,12 +34,12 @@ const Media = ({ media }) => {
 							</div>
 						))}
 					</div>
-				</div>
 
-				<div style={{ display: "flex", justifyContent: "center" }}>
-					<a href='/#download'>
-						<div className='btn'>Download the App for more Artworks</div>
-					</a>
+					<div style={{ display: "flex", justifyContent: "center" }}>
+						<a href='/#download'>
+							<div className='btn'>Download the App for more Artworks</div>
+						</a>
+					</div>
 				</div>
 
 				<Album
@@ -51,12 +51,12 @@ const Media = ({ media }) => {
 			</section>
 
 			<style jsx>{`
-				.container {
-					max-width: 1440px;
-				}
-
 				section {
 					padding: 60px 0px 100px;
+				}
+
+				.container {
+					max-width: 1440px;
 				}
 
 				.grid-4 {
@@ -113,7 +113,7 @@ const Media = ({ media }) => {
 					width: fit-content;
 					border-radius: 38px;
 					background: #ed1e46;
-					padding: 25px 44px;
+					padding: 12px 44px;
 					font-family: "Poppins";
 					font-weight: bold;
 					font-size: 18px;
