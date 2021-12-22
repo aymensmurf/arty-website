@@ -7,14 +7,16 @@ const Workshops = ({ data }) => {
 			<a name='workshops'></a>
 
 			<section>
-				<div className='container grid'>
-					<div className='special-card'>
-						<WorkshopsSeeMoreCard />
-					</div>
+				<div className='container '>
+					<div className='workshops-container grid'>
+						<div className='special-card'>
+							<WorkshopsSeeMoreCard />
+						</div>
 
-					{data.map(({ _id, title, slug, banner, host }) => (
-						<Workshop key={_id} title={title} banner={banner} slug={slug} host={host.username} />
-					))}
+						{data.map(({ _id, title, slug, banner, host }) => (
+							<Workshop key={_id} title={title} banner={banner} slug={slug} host={host.username} />
+						))}
+					</div>
 				</div>
 			</section>
 
@@ -23,7 +25,7 @@ const Workshops = ({ data }) => {
 					margin-bottom: 76px;
 				}
 
-				.container {
+				.workshops-container {
 					background: #f6f6f6;
 					padding: 60px 68px;
 					border-radius: 25px;
@@ -52,6 +54,12 @@ const Workshops = ({ data }) => {
 
 					.special-card {
 						grid-column: 1 / 2;
+					}
+				}
+
+				@media only screen and (max-width: 600px) {
+					.workshops-container {
+						padding: 60px 20px;
 					}
 				}
 			`}</style>

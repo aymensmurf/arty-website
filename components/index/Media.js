@@ -50,7 +50,7 @@ const Media = ({ media }) => {
 				}
 
 				.container {
-					padding: 0px 70px;
+					padding: 0px 100px;
 				}
 
 				.inner-container {
@@ -106,6 +106,37 @@ const Media = ({ media }) => {
 					border: 1px solid #ed1e46;
 					background: transparent;
 					color: #ed1e46;
+				}
+
+				@media only screen and (max-width: 1440px) {
+					.inner-container {
+						padding: 55px 60px;
+					}
+				}
+
+				@media only screen and (max-width: 1024px) {
+					.container {
+						padding: 0px 68px;
+					}
+
+					.inner-container {
+						padding: 55px 30px;
+					}
+				}
+
+				@media only screen and (max-width: 600px) {
+					.container {
+						padding: 0px 20px;
+					}
+
+					.inner-container {
+						padding: 55px 20px;
+					}
+
+					h1 {
+						font-size: 40px;
+						line-height: 40px;
+					}
 				}
 			`}</style>
 		</>

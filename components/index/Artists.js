@@ -8,27 +8,29 @@ const Artists = ({ data }) => {
 			<a name='artists'></a>
 
 			<section>
-				<div className='container grid'>
-					{data.map(({ _id, name, avatar, username }, i) => {
-						if (i === 3) {
-							return (
-								<React.Fragment key={_id}>
-									<div className='special-card'>
-										<ArtistsSeeMoreCard />
-									</div>
+				<div className='container'>
+					<div className='artists-container grid'>
+						{data.map(({ _id, name, avatar, username }, i) => {
+							if (i === 3) {
+								return (
+									<React.Fragment key={_id}>
+										<div className='special-card'>
+											<ArtistsSeeMoreCard />
+										</div>
 
-									<Artist name={name} avatar={avatar} username={username} scaleOnHover />
-								</React.Fragment>
-							);
-						}
+										<Artist name={name} avatar={avatar} username={username} scaleOnHover />
+									</React.Fragment>
+								);
+							}
 
-						return <Artist key={_id} name={name} avatar={avatar} username={username} scaleOnHover />;
-					})}
+							return <Artist key={_id} name={name} avatar={avatar} username={username} scaleOnHover />;
+						})}
+					</div>
 				</div>
 			</section>
 
 			<style jsx>{`
-				.container {
+				.artists-container {
 					background: #f6f6f6;
 					padding: 60px 68px;
 					border-radius: 25px;
@@ -52,6 +54,12 @@ const Artists = ({ data }) => {
 					.special-card {
 						grid-column: 2 / 4;
 						grid-row: 1 / 1;
+					}
+				}
+
+				@media only screen and (max-width: 600px) {
+					.artists-container {
+						padding: 60px 20px;
 					}
 				}
 			`}</style>

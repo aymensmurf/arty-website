@@ -14,17 +14,7 @@ const Media = ({ media }) => {
 						{media.map(({ _id, type, url }, i) => (
 							<div
 								key={_id}
-								className={`media-container ${(i === 0 || i === 15 || i === 26) && "highlighted"}`}
-								style={{
-									gridArea:
-										i === 0
-											? `1 / 1 / span 2 / span 2`
-											: i === 15
-											? `5 / 3 / span 2 / span 2`
-											: i === 26
-											? `9 / 1 / span 2 / span 2`
-											: null,
-								}}
+								className='media-container'
 								onClick={() => {
 									setMediaIndex(i);
 									setIsAlbumVisible(true);
@@ -61,6 +51,10 @@ const Media = ({ media }) => {
 			</section>
 
 			<style jsx>{`
+				.container {
+					max-width: 1440px;
+				}
+
 				section {
 					padding: 60px 0px 100px;
 				}
@@ -73,10 +67,30 @@ const Media = ({ media }) => {
 
 				.media-container {
 					width: 100%;
-					height: 448px;
+					height: 360px;
 					cursor: pointer;
 					overflow: hidden;
 					border-radius: 5px;
+					transition: all 0.5s ease;
+				}
+
+				.media-container:hover {
+					transform: scale(1.03);
+				}
+
+				.media-container:nth-child(1) {
+					grid-area: 1 / 1 / span 2 / span 2;
+					height: 736px;
+				}
+
+				.media-container:nth-child(16) {
+					grid-area: 5 / 3 / span 2 / span 2;
+					height: 736px;
+				}
+
+				.media-container:nth-child(27) {
+					grid-area: 9 / 1 / span 2 / span 2;
+					height: 736px;
 				}
 
 				img,
@@ -93,10 +107,6 @@ const Media = ({ media }) => {
 					position: absolute;
 					top: 15px;
 					left: 8px;
-				}
-
-				.highlighted {
-					height: 100%;
 				}
 
 				.btn {
@@ -118,6 +128,64 @@ const Media = ({ media }) => {
 					border: 1px solid #ed1e46;
 					background: #fff;
 					color: #ed1e46;
+				}
+
+				@media only screen and (max-width: 768px) {
+					.media-container {
+						height: 200px;
+					}
+					.media-container:nth-child(1) {
+						height: 416px;
+					}
+
+					.media-container:nth-child(16) {
+						height: 416px;
+					}
+
+					.media-container:nth-child(27) {
+						height: 416px;
+					}
+				}
+
+				@media only screen and (max-width: 600px) {
+					.media-container {
+						height: 140px;
+					}
+					.media-container:nth-child(1) {
+						height: 296px;
+					}
+
+					.media-container:nth-child(16) {
+						height: 296px;
+					}
+
+					.media-container:nth-child(27) {
+						height: 296px;
+					}
+				}
+
+				@media only screen and (max-width: 425px) {
+					.grid-4 {
+						grid-template-columns: repeat(3, 1fr);
+					}
+					.media-container:nth-child(1) {
+						grid-area: 1 / 1 / span 2 / span 2;
+					}
+
+					.media-container:nth-child(11) {
+						grid-area: 5 / 2 / span 2 / span 2;
+						height: 296px;
+					}
+
+					.media-container:nth-child(16) {
+						grid-area: auto;
+						height: 140px;
+					}
+
+					.media-container:nth-child(27) {
+						grid-area: auto;
+						height: 140px;
+					}
 				}
 			`}</style>
 		</>
