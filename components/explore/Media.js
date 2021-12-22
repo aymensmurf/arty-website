@@ -48,7 +48,7 @@ const Media = ({ media }) => {
 
 				<div style={{ display: "flex", justifyContent: "center" }}>
 					<a href='/#download'>
-						<div className='btn'>For more artworks download the app</div>
+						<div className='btn'>Download the App for more Artworks</div>
 					</a>
 				</div>
 

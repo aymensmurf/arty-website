@@ -24,8 +24,9 @@ const Media = ({ media }) => {
 							style={{
 								width: MEDIA_POSITIONS[i].w,
 								height: MEDIA_POSITIONS[i].h,
-								top: `${MEDIA_POSITIONS[i].t}%`,
-								left: `calc(${MEDIA_POSITIONS[i].l}% - ${(MEDIA_POSITIONS[i].w + 10) / 2}px)`,
+								transform: `translateX(${Math.floor(Math.random() * (100 - -40 + 1)) + -40}%) translateY(${
+									Math.floor(Math.random() * (100 - -40 + 1)) + -40
+								}%)`,
 							}}
 						/>
 					))}
@@ -54,7 +55,7 @@ const Media = ({ media }) => {
 					font-family: "Poppins";
 					font-weight: bold;
 					font-size: 58px;
-					line-height: 40px;
+					line-height: 54px;
 					text-align: center;
 					color: #ed1e46;
 				}
@@ -64,10 +65,13 @@ const Media = ({ media }) => {
 					position: relative;
 					min-height: 450px;
 					margin-bottom: 96px;
+					display: flex;
+					align-items: center;
+					justifycontent: center;
 				}
 
 				img {
-					position: absolute;
+					// position: absolute;
 					object-fit: cover;
 					border-radius: 10px;
 					box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.14);
