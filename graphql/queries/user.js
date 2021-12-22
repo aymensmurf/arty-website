@@ -37,6 +37,12 @@ export const GET_USER_BY_USERNAME = gql`
 					_id
 					clicks
 				}
+				user {
+					_id
+					name
+					avatar
+					username
+				}
 			}
 			workshops {
 				_id

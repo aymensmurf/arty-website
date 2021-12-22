@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { getImageUri } from "../../utils/funcs";
+import { getImageUri, timeToReadbleTime } from "../../utils/funcs";
 
-const Album = ({ data, mediaIndex, isAlbumVisible, setIsAlbumVisible }) => {
+const Album = ({ data, mediaIndex, showUser = true, isAlbumVisible, setIsAlbumVisible }) => {
+	console.log(`data`, data);
+
 	const [index, setIndex] = useState(0);
 
 	useEffect(() => {
@@ -95,6 +97,19 @@ const Album = ({ data, mediaIndex, isAlbumVisible, setIsAlbumVisible }) => {
 				<div className='album-overlay' onClick={handleClose} />
 
 				<div className='album-inner-block'>
+					{showUser && data[index].user && (
+						<a href={`/${data[index]?.user?.username}`}>
+							<div className='user'>
+								<img src={getImageUri(data[index]?.user?.avatar)} alt={data[index]?.user?.name} />
+
+								<div className='details'>
+									<p>{data[index]?.user?.name}</p>
+									<p>{timeToReadbleTime(data[index]?.createdAt)}</p>
+								</div>
+							</div>
+						</a>
+					)}
+
 					<div className='btn btn-arrow-left' onClick={handlePrev}>
 						<img src='/img/arrow-left.svg' alt='Arrow left' className='icon' />
 					</div>
@@ -117,7 +132,7 @@ const Album = ({ data, mediaIndex, isAlbumVisible, setIsAlbumVisible }) => {
 						<img src='/img/arrow-right.svg' alt='Arrow right' className='icon' />
 					</div>
 
-					<div className='btn btn-close' style={{ position: "absolute", top: 0, right: 0 }}>
+					<div className='btn btn-close' style={{ position: "absolute", top: 10, right: 10 }}>
 						<img
 							src='/img/close.svg'
 							alt='Close'
@@ -180,6 +195,44 @@ const Album = ({ data, mediaIndex, isAlbumVisible, setIsAlbumVisible }) => {
 					width: 100%;
 					height: 100%;
 					z-index: 1;
+				}
+
+				.user {
+					position: absolute;
+					top: 10px;
+					left: 10px;
+					display: flex;
+					align-items: center;
+					gap: 15px;
+					z-index: 2;
+					cursor: pointer;
+					pointer-events: all;
+				}
+
+				.user img {
+					width: 60px;
+					height: 60px;
+					border-radius: 40px;
+					object-fit: cover;
+				}
+
+				.user .details {
+					padding: 10px 14px;
+					background-color: #2c2c2c;
+					gap: 8px;
+					border-radius: 20px;
+				}
+
+				.user .details p:nth-child(1) {
+					color: #fff;
+					font-size: 16px;
+					font-weight: bold;
+				}
+
+				.user .details p:nth-child(2) {
+					color: #fff;
+					font-size: 11px;
+					margin-top: 6px;
 				}
 
 				.btn {

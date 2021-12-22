@@ -122,8 +122,6 @@ const Index = ({ artists, workshops, media }) => {
 		);
 	}
 
-	console.log(`media`, media);
-
 	return (
 		<Layout
 			contact={contact}

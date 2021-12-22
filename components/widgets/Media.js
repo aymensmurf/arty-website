@@ -3,12 +3,12 @@ import { getImageUri } from "../../utils/funcs";
 const Media = ({ id, url, type, wokshop, createdAt }) => {
 	return (
 		<>
-			<div className="media-card">
+			<div className='media-card'>
 				{type === "photo" ? (
 					<>
 						<img
 							src={getImageUri(url)}
-							alt="Media"
+							alt='Media'
 							style={{
 								width: "100%",
 								height: "100%",
@@ -18,16 +18,14 @@ const Media = ({ id, url, type, wokshop, createdAt }) => {
 							}}
 						/>
 
-						<div className="glass">
-							<p className="title">{wokshop}</p>
-							<p className="artist">
-								{new Date(createdAt).toLocaleDateString()}
-							</p>
+						<div className='glass'>
+							<p className='title'>{wokshop}</p>
+							<p className='artist'>{new Date(createdAt).toLocaleDateString()}</p>
 						</div>
 					</>
 				) : (
-					<video width="100%" height="100%" controls>
-						<source src={getImageUri(url)} type="video/mp4" />
+					<video width='100%' height='100%' controls>
+						<source src={getImageUri(url)} type='video/mp4' />
 						Your browser does not support the video tag.
 					</video>
 				)}
