@@ -187,7 +187,11 @@ export async function getServerSideProps() {
 	} catch (error) {}
 
 	try {
-		const { data: mediaData } = await client.query({ query: GET_ALL_MEDIA_PAGINATED, fetchPolicy: "network-only" });
+		const { data: mediaData } = await client.query({
+			query: GET_ALL_MEDIA_PAGINATED,
+			variables: { limit: 9 },
+			fetchPolicy: "network-only",
+		});
 
 		props = { ...props, media: mediaData.getAllMediaPaginated || [] };
 	} catch (error) {}

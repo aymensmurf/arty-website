@@ -10,32 +10,30 @@ const Media = ({ media }) => {
 	return (
 		<>
 			<section>
-				<h1>Discover New Artists and artworks</h1>
+				<div className='container'>
+					<div className='inner-container'>
+						<h1>Discover New Artists and artworks</h1>
 
-				<div className='media-container'>
-					{media.map(({ _id, url }, i) => (
-						<img
-							key={_id}
-							onClick={() => {
-								setMediaIndex(i);
-								setIsAlbumVisible(true);
-							}}
-							src={getImageUri(url)}
-							style={{
-								width: MEDIA_POSITIONS[i].w,
-								height: MEDIA_POSITIONS[i].h,
-								transform: `translateX(${Math.floor(Math.random() * (100 - -40 + 1)) + -40}%) translateY(${
-									Math.floor(Math.random() * (100 - -40 + 1)) + -40
-								}%)`,
-							}}
-						/>
-					))}
-				</div>
+						<div className='media-container'>
+							{media.map(({ _id, url }, i) => (
+								<img
+									key={_id}
+									onClick={() => {
+										setMediaIndex(i);
+										setIsAlbumVisible(true);
+									}}
+									src={getImageUri(url)}
+									style={{ gridArea: i === 3 ? "1 / 3 / span 2 / span 2" : null, height: i === 3 ? 408 : 198 }}
+								/>
+							))}
+						</div>
 
-				<div style={{ display: "flex", justifyContent: "center" }}>
-					<a href='/explore'>
-						<div className='btn'>Explore Now</div>
-					</a>
+						<div style={{ display: "flex", justifyContent: "center" }}>
+							<a href='/explore'>
+								<div className='btn'>Explore Now</div>
+							</a>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -51,6 +49,16 @@ const Media = ({ media }) => {
 					margin-bottom: 76px;
 				}
 
+				.container {
+					padding: 0px 70px;
+				}
+
+				.inner-container {
+					background: #fce9ff;
+					border-radius: 31px;
+					padding: 55px 136px;
+				}
+
 				h1 {
 					font-family: "Poppins";
 					font-weight: bold;
@@ -61,33 +69,30 @@ const Media = ({ media }) => {
 				}
 
 				.media-container {
-					margin-top: 50px;
-					position: relative;
-					min-height: 450px;
-					margin-bottom: 96px;
-					display: flex;
-					align-items: center;
-					justifycontent: center;
+					margin-top: 90px;
+					margin-bottom: 75px;
+					display: grid;
+					grid-template-columns: repeat(6, 1fr);
+					gap: 12px;
 				}
 
 				img {
-					// position: absolute;
+					width: 100%;
 					object-fit: cover;
 					border-radius: 10px;
-					box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.14);
-					cursor: pointer;
 					transition: all 0.5s ease;
+					cursor: pointer;
 				}
 
 				img:hover {
-					transform: scale(1.1);
+					transform: scale(1.03);
 				}
 
 				.btn {
 					width: fit-content;
 					border-radius: 38px;
 					background: #ed1e46;
-					padding: 25px 44px;
+					padding: 12px 44px;
 					font-family: "Poppins";
 					font-weight: bold;
 					font-size: 18px;
@@ -99,7 +104,7 @@ const Media = ({ media }) => {
 
 				.btn:hover {
 					border: 1px solid #ed1e46;
-					background: #fff;
+					background: transparent;
 					color: #ed1e46;
 				}
 			`}</style>
