@@ -23,7 +23,6 @@ const Media = ({ media }) => {
 										setIsAlbumVisible(true);
 									}}
 									src={getImageUri(url)}
-									style={{ gridArea: i === 3 ? "1 / 3 / span 2 / span 2" : null, height: i === 3 ? 408 : 198 }}
 								/>
 							))}
 						</div>
@@ -69,8 +68,8 @@ const Media = ({ media }) => {
 				}
 
 				.media-container {
-					margin-top: 90px;
-					margin-bottom: 75px;
+					margin-top: 70px;
+					margin-bottom: 60px;
 					display: grid;
 					grid-template-columns: repeat(6, 1fr);
 					gap: 12px;
@@ -78,10 +77,16 @@ const Media = ({ media }) => {
 
 				img {
 					width: 100%;
+					height: 198px;
 					object-fit: cover;
 					border-radius: 10px;
 					transition: all 0.5s ease;
 					cursor: pointer;
+				}
+
+				img:nth-child(4) {
+					grid-area: 1 / 3 / span 2 / span 2;
+					height: 408px;
 				}
 
 				img:hover {
@@ -124,7 +129,7 @@ const Media = ({ media }) => {
 					}
 				}
 
-				@media only screen and (max-width: 600px) {
+				@media only screen and (max-width: 768px) {
 					.container {
 						padding: 0px 20px;
 					}
@@ -136,6 +141,45 @@ const Media = ({ media }) => {
 					h1 {
 						font-size: 40px;
 						line-height: 40px;
+					}
+
+					img {
+						height: 140px;
+					}
+
+					img:nth-child(4) {
+						height: 292px;
+					}
+				}
+
+				@media only screen and (max-width: 767px) {
+					.media-container {
+						grid-template-columns: repeat(4, 1fr);
+					}
+				}
+
+				@media only screen and (max-width: 425px) {
+					.media-container {
+						grid-template-columns: repeat(3, 1fr);
+					}
+
+					img {
+						height: 120px;
+					}
+
+					img:nth-child(4) {
+						grid-area: 1 / 2 / span 2 / span 2;
+						height: 252px;
+					}
+				}
+
+				@media only screen and (max-width: 424px) {
+					img {
+						height: 100px;
+					}
+
+					img:nth-child(4) {
+						height: 212px;
 					}
 				}
 			`}</style>
