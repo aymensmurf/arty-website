@@ -78,6 +78,14 @@ const Nav = ({
 						<a className='nav-link' href='/#home'>
 							Home
 						</a>
+						<a
+							className='nav-link'
+							href='/explore'
+							style={{
+								color: (location.includes("/explore") || selectedNavItem === "explore") && "#000",
+							}}>
+							Explore
+						</a>
 						<a className='nav-link' href='/workshops' style={{ color: location.includes("/workshops") && "#000" }}>
 							Workshops
 						</a>
@@ -88,14 +96,6 @@ const Nav = ({
 								color: (location.includes("/artists") || selectedNavItem === "artists") && "#000",
 							}}>
 							Artists
-						</a>
-						<a
-							className='nav-link'
-							href='/explore'
-							style={{
-								color: (location.includes("/explore") || selectedNavItem === "explore") && "#000",
-							}}>
-							Explore
 						</a>
 						<a className='nav-link' onClick={openContact}>
 							Contact

@@ -65,14 +65,14 @@ const NavTablet = ({ contact, commingSoon, isStaticNav = false, openContact, clo
 				<a href='/#home'>
 					<h3>Home</h3>
 				</a>
+				<a href='/explore'>
+					<h3>Explore</h3>
+				</a>
 				<a href='/workshops'>
 					<h3>Workshops</h3>
 				</a>
 				<a href='/artists'>
 					<h3>Artists</h3>
-				</a>
-				<a href='/explore'>
-					<h3>Explore</h3>
 				</a>
 				<h3 style={{ marginBottom: 20 }} onClick={openContact}>
 					Contact
