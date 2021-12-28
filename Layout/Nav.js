@@ -72,73 +72,60 @@ const Nav = ({
 
 	return (
 		<>
-			<nav id="main-nav">
-				<div className="container grid-3">
+			<nav id='main-nav'>
+				<div className='container grid-3'>
 					<div>
-						<a className="nav-link" href="/#home">
+						<a className='nav-link' href='/#home'>
 							Home
 						</a>
-						<a
-							className="nav-link"
-							href="/workshops"
-							style={{ color: location.includes("/workshops") && "#000" }}
-						>
+						<a className='nav-link' href='/workshops' style={{ color: location.includes("/workshops") && "#000" }}>
 							Workshops
 						</a>
 						<a
-							className="nav-link"
-							href="/artists"
+							className='nav-link'
+							href='/artists'
 							style={{
-								color:
-									(location.includes("/artists") ||
-										selectedNavItem === "artists") &&
-									"#000",
-							}}
-						>
+								color: (location.includes("/artists") || selectedNavItem === "artists") && "#000",
+							}}>
 							Artists
 						</a>
-						<a className="nav-link" onClick={openContact}>
+						<a
+							className='nav-link'
+							href='/explore'
+							style={{
+								color: (location.includes("/explore") || selectedNavItem === "explore") && "#000",
+							}}>
+							Explore
+						</a>
+						<a className='nav-link' onClick={openContact}>
 							Contact
 						</a>
 					</div>
 					<div style={{ textAlign: "center" }}>
-						<a href="/#home" style={{ marginRight: 0 }}>
+						<a href='/#home' style={{ marginRight: 0 }}>
 							<img
-								id="logo"
-								src="/img/logo-white.svg"
-								alt="Jam"
+								id='logo'
+								src='/img/logo-white.svg'
+								alt='Jam'
 								style={{ width: 157, height: 76, objectFit: "contain" }}
 							/>
 						</a>
 					</div>
-					<div id="stores" style={{ textAlign: "end" }}>
+					<div id='stores' style={{ textAlign: "end" }}>
 						<a
-							href="https://play.google.com/store/apps/details?id=land.arty.app"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<img
-								src="/img/nav-google.png"
-								alt="Google Play"
-								style={{ marginRight: 10 }}
-							/>
+							href='https://play.google.com/store/apps/details?id=land.arty.app'
+							target='_blank'
+							rel='noopener noreferrer'>
+							<img src='/img/nav-google.png' alt='Google Play' style={{ marginRight: 10 }} />
 						</a>
 						<a>
-							<img
-								src="/img/nav-apple.png"
-								alt="App store"
-								onClick={setCommingSoon}
-							/>
+							<img src='/img/nav-apple.png' alt='App store' onClick={setCommingSoon} />
 						</a>
 					</div>
 				</div>
 			</nav>
 
-			<Contact
-				show={contact}
-				handleClose={closeContact}
-				commingSoon={commingSoon}
-			/>
+			<Contact show={contact} handleClose={closeContact} commingSoon={commingSoon} />
 
 			<style jsx>{`
 				#main-nav {
@@ -165,10 +152,10 @@ const Nav = ({
 				}
 
 				.nav-link {
-					font-size: 20px;
+					font-size: 18px;
 					color: #fff;
 					cursor: pointer;
-					margin-right: 30px;
+					margin-right: 20px;
 				}
 
 				#logo {
