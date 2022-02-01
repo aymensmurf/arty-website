@@ -28,6 +28,7 @@ export const GET_USER_BY_USERNAME = gql`
 			youtube
 			spotify
 			description
+			spark
 			media {
 				_id
 				url
