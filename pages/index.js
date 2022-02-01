@@ -189,7 +189,7 @@ export async function getServerSideProps() {
 	try {
 		const { data: mediaData } = await client.query({
 			query: GET_ALL_MEDIA_PAGINATED,
-			variables: { limit: 9 },
+			variables: { limit: 9, type: "photo" },
 			fetchPolicy: "network-only",
 		});
 
