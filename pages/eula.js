@@ -28,8 +28,8 @@ const Index = () => {
 					setContact(true);
 				}}>
 				<section>
-					<h1>Terms of Use</h1>
-					<p>Last updated: February 1, 2022</p>
+					<h1>End User License Agreement (EULA)</h1>
+					<p>Last updated: February 8, 2022</p>
 
 					<h2>Interpretation and Definitions</h2>
 					<p>
