@@ -328,7 +328,9 @@ const Index = () => {
 				}
 
 				h1 {
-					font-size: 67px;
+					font-size: 50px;
+					line-height: 56px;
+					text-align: center;
 				}
 
 				h2 {

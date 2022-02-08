@@ -65,7 +65,7 @@ const Footer = () => {
 					<div style={{ display: "flex", gap: 40 }}>
 						<a href='/privacy-policy'>Privacy policy</a>
 						<a href='/terms-and-conditions'>Terms & conditions</a>
-						<a href='/eula'>Terms of use</a>
+						<a href='/eula'>EULA</a>
 					</div>
 
 					<p style={{ marginTop: 30 }}>© All rights reserved for ARTY 2021</p>

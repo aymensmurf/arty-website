@@ -9,7 +9,7 @@ const FooterTablet = () => {
 				<div style={{ marginTop: 40, display: "flex", flexDirection: "column", justifyContent: "center", gap: 25 }}>
 					<a href='/privacy-policy'>Privacy policy</a>
 					<a href='/terms-and-conditions'>Terms & conditions</a>
-					<a href='/eula'>Terms of use</a>
+					<a href='/eula'>EULA</a>
 				</div>
 
 				<div className='social-media'>
