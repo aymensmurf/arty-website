@@ -45,16 +45,12 @@ const Details = ({ data, setCommingSoon }) => {
 
 	return (
 		<>
-			<section className="container">
-				<div className="grid">
-					<div className="details">
+			<section className='container'>
+				<div className='grid'>
+					<div className='details'>
 						<a href={`/${data.host.username}`}>
-							<div className="flex" style={{ alignItems: "center", gap: 20 }}>
-								<img
-									src={getImageUri(data.host.avatar)}
-									alt={data.host.name}
-									className="avatar"
-								/>
+							<div className='flex' style={{ alignItems: "center", gap: 20 }}>
+								<img src={getImageUri(data.host.avatar)} alt={data.host.name} className='avatar' />
 								<h1>{data.host.name}</h1>
 							</div>
 						</a>
@@ -79,7 +75,7 @@ const Details = ({ data, setCommingSoon }) => {
 						{theme.length > 0 && (
 							<>
 								<h4 style={{ marginTop: 31 }}>Theme</h4>
-								<div className="theme">
+								<div className='theme'>
 									{theme.map((elm, i) => (
 										<Pill key={i} title={elm} isActive />
 									))}
@@ -88,20 +84,14 @@ const Details = ({ data, setCommingSoon }) => {
 						)}
 					</div>
 
-					<div className="participents">
+					<div className='participents'>
 						<div>
 							<h2 style={{ color: "#222" }}>
-								Particpents{" "}
-								<span className="participants-nb">
-									{data.participants.length} People
-								</span>
+								Particpents <span className='participants-nb'>{data.participants.length} People</span>
 							</h2>
 
 							{data.participants.length > 0 && (
-								<div
-									className="participents-container"
-									style={{ marginTop: 38 }}
-								>
+								<div className='participents-container' style={{ marginTop: 38 }}>
 									{data.participants.map(
 										({ user }, i) =>
 											(data.participants.length === 9 || i <= 7) && (
@@ -109,51 +99,36 @@ const Details = ({ data, setCommingSoon }) => {
 													key={user.username}
 													src={getImageUri(user.avatar)}
 													alt={user.username}
-													className="avatar"
+													className='avatar'
 												/>
 											)
 									)}
 
-									{data.participants.length > 9 && (
-										<div className="more">+{data.participants.length - 8}</div>
-									)}
+									{data.participants.length > 9 && <div className='more'>+{data.participants.length - 8}</div>}
 								</div>
 							)}
 						</div>
 
 						{data.participants.length < data.nbrparticipants && (
-							<p style={{ marginTop: 30 }}>
-								Only {data.nbrparticipants - data.participants.length} Places
-								left
-							</p>
+							<p style={{ marginTop: 30 }}>Only {data.nbrparticipants - data.participants.length} Places left</p>
 						)}
 					</div>
 
-					<div className="join-arty">
+					<div className='join-arty'>
 						<h1>JOIN ARTY FOR MORE</h1>
 
-						<div
-							className="flex"
-							style={{ gap: 24, marginTop: 35, justifyContent: "center" }}
-						>
+						<div className='flex' style={{ gap: 24, marginTop: 35, justifyContent: "center" }}>
 							<a
-								href="https://play.google.com/store/apps/details?id=land.arty.app"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<img
-									src="/img/nav-google.png"
-									alt="Google Play"
-									style={{ cursor: "pointer" }}
-								/>
+								href='https://play.google.com/store/apps/details?id=land.arty.app'
+								target='_blank'
+								rel='noopener noreferrer'>
+								<img src='/img/nav-google.png' alt='Google Play' style={{ cursor: "pointer" }} />
 							</a>
-							<a>
-								<img
-									src="/img/nav-apple.png"
-									alt="App store"
-									onClick={setCommingSoon}
-									style={{ cursor: "pointer" }}
-								/>
+							<a
+								href='https://apps.apple.com/us/app/arty-where-everything-is-art/id1606378093'
+								target='_blank'
+								rel='noopener noreferrer'>
+								<img src='/img/nav-apple.png' alt='App store' style={{ cursor: "pointer" }} />
 							</a>
 						</div>
 
@@ -163,8 +138,7 @@ const Details = ({ data, setCommingSoon }) => {
 								marginTop: 25,
 								textAlign: "center",
 								color: "#fff",
-							}}
-						>
+							}}>
 							Download the app now
 						</p>
 					</div>

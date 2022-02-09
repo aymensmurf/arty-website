@@ -48,7 +48,11 @@ const Explore = ({ data }) => {
 									style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }}>
 									<img src='/img/google-play-white.svg' alt='Google play' />
 								</a>
-								<a style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }}>
+								<a
+									href='https://apps.apple.com/us/app/arty-where-everything-is-art/id1606378093'
+									target='_blank'
+									rel='noopener noreferrer'
+									style={{ marginTop: 25, marginRight: 12, marginLeft: 12 }}>
 									<img
 										src='/img/app-store-white.svg'
 										alt='App store'

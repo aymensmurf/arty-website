@@ -84,11 +84,13 @@ const NavTablet = ({ contact, commingSoon, isStaticNav = false, openContact, clo
 						style={{ marginTop: 12, height: 60, objectFit: "contain" }}
 					/>
 				</a>
-				<a>
+				<a
+					href='https://apps.apple.com/us/app/arty-where-everything-is-art/id1606378093'
+					target='_blank'
+					rel='noopener noreferrer'>
 					<img
 						src='/img/app-store-white.svg'
 						alt='App store'
-						onClick={setCommingSoon}
 						style={{ marginTop: 12, height: 60, objectFit: "contain" }}
 					/>
 				</a>

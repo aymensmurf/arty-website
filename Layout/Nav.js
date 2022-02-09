@@ -118,8 +118,11 @@ const Nav = ({
 							rel='noopener noreferrer'>
 							<img src='/img/nav-google.png' alt='Google Play' style={{ marginRight: 10 }} />
 						</a>
-						<a>
-							<img src='/img/nav-apple.png' alt='App store' onClick={setCommingSoon} />
+						<a
+							href='https://apps.apple.com/us/app/arty-where-everything-is-art/id1606378093'
+							target='_blank'
+							rel='noopener noreferrer'>
+							<img src='/img/nav-apple.png' alt='App store' />
 						</a>
 					</div>
 				</div>
